@@ -1,4 +1,4 @@
-LOGStart created on Wednesday 2019/12/11  UTC 11:04:25:041
+LOGStart created on Monday 2023/01/16  UTC 20:12:31:996
 
 Reading "OSDD Data"...
 Reading Content "Start"
@@ -110,9 +110,9 @@ Content "name1" successfully read from "name2"
 
 
 
-LOGAppend on Wednesday 2019/12/11  UTC 11:04:25:051
+LOGAppend on Monday 2023/01/16  UTC 20:12:32:012
 
-Reading "C:\Users\andre\Documents\GIT\BM_2_SER126\Physical\Master\X20CP1584\SafeLOGIC-1\BusNavigator.iom"...
+Reading "C:\GIT\Viapack\Dev\viapack_bm_3\Physical\Main\X20CP1584\SafeLOGIC-1\BusNavigator.iom"...
 Reading Content "IOOffsets"
 IO reservations (MAX number of bytes): SI=2048  SO=2048  NSI=1024  NSO=1024   ConValid = 24  BITEMOsOffset=62  BITEMOsSize=8
 Reading properties for module "SL1.SM1". Beginning at line 3
@@ -157,4 +157,4 @@ Reading properties for channel "SafeDigitalOutput02". Beginning at line 41
 Reading properties for channel "ReleaseOutput01". Beginning at line 42
 Reading properties for channel "ReleaseOutput02". Beginning at line 43
 Module "SL1.SM3.SL1.SM3" has 4 items.
-Content "IOOffsets" successfully read from "C:\Users\andre\Documents\GIT\BM_2_SER126\Physical\Master\X20CP1584\SafeLOGIC-1\BusNavigator.iom"
+Content "IOOffsets" successfully read from "C:\GIT\Viapack\Dev\viapack_bm_3\Physical\Main\X20CP1584\SafeLOGIC-1\BusNavigator.iom"
