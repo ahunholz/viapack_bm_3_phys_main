@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MachineCollectorContentBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<!-- TeileDaten -->
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="opcUa" refId="::Collector:collectorUI.State.PieceDataIndex" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AsGlobalPV:PieceData.Data[0].CountPieces" />
+					<bt:Element index="1" refId="::AsGlobalPV:PieceData.Data[1].CountPieces" />
+					<bt:Element index="2" refId="::AsGlobalPV:PieceData.Data[2].CountPieces" />
+					<bt:Element index="3" refId="::AsGlobalPV:PieceData.Data[3].CountPieces" />
+					<bt:Element index="4" refId="::AsGlobalPV:PieceData.Data[4].CountPieces" />
+					<bt:Element index="5" refId="::AsGlobalPV:PieceData.Data[5].CountPieces" />
+					<bt:Default refId="::Machine:pieceDataEmpty.CountPieces" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varCollectorPieceDataCurrentCount" attribute="value" />		
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="opcUa" refId="::Collector:collectorUI.State.PieceDataIndex" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AsGlobalPV:PieceData.Data[0].ProgramNo" />
+					<bt:Element index="1" refId="::AsGlobalPV:PieceData.Data[1].ProgramNo" />
+					<bt:Element index="2" refId="::AsGlobalPV:PieceData.Data[2].ProgramNo" />
+					<bt:Element index="3" refId="::AsGlobalPV:PieceData.Data[3].ProgramNo" />
+					<bt:Element index="4" refId="::AsGlobalPV:PieceData.Data[4].ProgramNo" />
+					<bt:Element index="5" refId="::AsGlobalPV:PieceData.Data[5].ProgramNo" />
+					<bt:Default refId="::Machine.pieceDataEmpty:ProgramNo" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varCollectorPieceDataProgramNo" attribute="value" />		
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varCollectorPieceDataProgramNo" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="1" refId="::AsGlobalPV:CollectorParameter.Program[1].CountParts" />
+					<bt:Element index="2" refId="::AsGlobalPV:CollectorParameter.Program[2].CountParts" />
+					<bt:Element index="3" refId="::AsGlobalPV:CollectorParameter.Program[3].CountParts" />
+					<bt:Element index="4" refId="::AsGlobalPV:CollectorParameter.Program[4].CountParts" />
+					<bt:Element index="5" refId="::AsGlobalPV:CollectorParameter.Program[5].CountParts" />
+					<bt:Element index="6" refId="::AsGlobalPV:CollectorParameter.Program[6].CountParts" />
+					<bt:Element index="7" refId="::AsGlobalPV:CollectorParameter.Program[7].CountParts" />
+					<bt:Element index="8" refId="::AsGlobalPV:CollectorParameter.Program[8].CountParts" />
+					<bt:Element index="9" refId="::AsGlobalPV:CollectorParameter.Program[9].CountParts" />
+					<bt:Element index="10" refId="::AsGlobalPV:CollectorParameter.Program[10].CountParts" />
+					<bt:Default refId="::Collector:programEmpty.CountParts" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varCollectorPieceDataNominateCount" attribute="value" />		
+		</Binding>
+		
+		<!-- Maschinen Gesamtansicht. Gruppe Collector -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.PiecesInCollector" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="imgPieceInCollector" attribute="visible" />
+		</Binding>
+		
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varCollectorPieceDataCurrentCount" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="numOutCurrentCount" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varCollectorPieceDataNominateCount" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="numOutNominalCount" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.PiecesInCollector" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="lbOf" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.PiecesInCollector" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="numOutCurrentCount" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.PiecesInCollector" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="numOutNominalCount" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.PiecesInCollector" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="numOutCurrentCount1" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varCollectorPieceDataProgramNo" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="numOutCurrentCount1" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.PiecesInCollector" attribute="value" />
+			<Target xsi:type="brease" contentRefId="CollectorContent" widgetRefId="lbProgramNo" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.CollectorIsOccupied" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="imgListCollectorOccupied" attribute="selectedIndex" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.StateLVE" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetLVEserviceState" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetLVEserviceState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="txtOutLVEserviceState" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.LVEisOccupied" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="imgListLVEoccupied" attribute="selectedIndex" />
+		</Binding>
+		
+
+	
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="btnServiceLVEstep" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.LVElength" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="numOutLVElength" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Machine.MaxNumberOfParts" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="numInpParameter_02_04" attribute="node" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Machine.TimeoutPartReceived" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="numInpParameter_02_25" attribute="node" />
+		</Binding>
+		
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.MachineIsDirty" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="btnSave" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Machine.DelayLVE_Occupied" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="numInpParameter_02_26" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.LVEok" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="imgListLVEok" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.LVEisEnabled" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="imgListLVEenabled" attribute="selectedIndex" />
+		</Binding>
+		
+		<!-- Ermittlung, ob die Service-Taster angezeigt werden dürfen -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandCollectorMachine" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.State.ViewService" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandCollectorMachine" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandCollectorMachine" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandCollector" attribute="value" />
+		</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewCommandCollectorMachine" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="btnServiceLVEstep" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewCommandCollectorMachine" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="txtOutLVEserviceState" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Machine.DelayLVE_NotOccupied" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="numInpParameter_02_27" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Dynamic.HasSealLowerEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="tabItemSealLowerEdge" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Machine.DisableMonPieceReceived" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="cbParameter_2_7" attribute="value" />
+</Binding>
+</Bindings>
+
+</BindingsSet>

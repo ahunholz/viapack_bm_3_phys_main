@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreSafety" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="Mapping">
+        <Group ID="[0]">
+          <Property ID="Alarm" Value="msgEStop*" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Alarm" Value="msgPartFallen*" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Alarm" Value="msgProtSwitch_15F1" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Alarm" Value="msgAxis2InvalidMachineOption" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="msgEStop_37S1" />
+        <Property ID="Message" Value="{$Safety/txtEStop_37S1}" />
+        <Property ID="Code" Value="3200" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="msgEStop_37S4" />
+        <Property ID="Message" Value="{$Safety/txtEStop_37S4}" />
+        <Property ID="Code" Value="3201" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="msgEStop_X29" />
+        <Property ID="Message" Value="{$Safety/txtEStop_X29}" />
+        <Property ID="Code" Value="3202" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="msgEStop_X25" />
+        <Property ID="Message" Value="{$Safety/txtEStop_X25}" />
+        <Property ID="Code" Value="3203" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="msgEStop_38S1_1" />
+        <Property ID="Message" Value="{$Safety/txtEStop_38S1_1}" />
+        <Property ID="Code" Value="3204" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="msgEStop_38S1_2" />
+        <Property ID="Message" Value="{$Safety/txtEStop_38S1_2}" />
+        <Property ID="Code" Value="3205" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="msgEStop_38S5_1" />
+        <Property ID="Message" Value="{$Safety/txtEStop_38S5_1}" />
+        <Property ID="Code" Value="3206" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Name" Value="msgEStop_38S5_2" />
+        <Property ID="Message" Value="{$Safety/txtEStop_38S5_2}" />
+        <Property ID="Code" Value="3207" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[8]">
+        <Property ID="Name" Value="msgEStop_X15" />
+        <Property ID="Message" Value="{$Safety/txtEStop_X15}" />
+        <Property ID="Code" Value="3208" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[9]">
+        <Property ID="Name" Value="msgEStop_X22" />
+        <Property ID="Message" Value="{$Safety/txtEStop_X22}" />
+        <Property ID="Code" Value="3209" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[10]">
+        <Property ID="Name" Value="msgPartFallen_39B1" />
+        <Property ID="Message" Value="{$Safety/txtPartFallen_39B1}" />
+        <Property ID="Code" Value="3210" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm">
+          <Property ID="Acknowledge" Value="0" />
+          <Group ID="Recording">
+            <Property ID="UnacknowledgedToAcknowledged" Value="FALSE" />
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[11]">
+        <Property ID="Name" Value="msgPartFallen_39B2" />
+        <Property ID="Message" Value="{$Safety/txtPartFallen_39B2}" />
+        <Property ID="Code" Value="3211" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm">
+          <Property ID="Acknowledge" Value="0" />
+          <Group ID="Recording">
+            <Property ID="UnacknowledgedToAcknowledged" Value="FALSE" />
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[12]">
+        <Property ID="Name" Value="msgPartFallen_39B3" />
+        <Property ID="Message" Value="{$Safety/txtPartFallen_39B3}" />
+        <Property ID="Code" Value="3212" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm">
+          <Property ID="Acknowledge" Value="0" />
+          <Group ID="Recording">
+            <Property ID="UnacknowledgedToAcknowledged" Value="FALSE" />
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[13]">
+        <Property ID="Name" Value="msgPartFallen_39B4" />
+        <Property ID="Message" Value="{$Safety/txtPartFallen_39B4}" />
+        <Property ID="Code" Value="3213" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm">
+          <Property ID="Acknowledge" Value="0" />
+          <Group ID="Recording">
+            <Property ID="UnacknowledgedToAcknowledged" Value="FALSE" />
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[14]">
+        <Property ID="Name" Value="msgPartFallen_39B5" />
+        <Property ID="Message" Value="{$Safety/txtPartFallen_39B5}" />
+        <Property ID="Code" Value="3214" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm">
+          <Property ID="Acknowledge" Value="0" />
+          <Group ID="Recording">
+            <Property ID="UnacknowledgedToAcknowledged" Value="FALSE" />
+          </Group>
+        </Selector>
+      </Group>
+      <Group ID="[15]">
+        <Property ID="Name" Value="msgProtSwitch_15F1" />
+        <Property ID="Message" Value="{$Safety/txtProtSwitch_15F1}" />
+        <Property ID="Code" Value="3215" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[16]">
+        <Property ID="Name" Value="msgSLX910notOK" />
+        <Property ID="Message" Value="{$Safety/txtSLX910notOK}" />
+        <Property ID="Code" Value="3250" />
+        <Property ID="Severity" Value="20" />
+        <Selector ID="Behavior" Value="UserDefined">
+          <Property ID="Acknowledge" Value="0" />
+        </Selector>
+      </Group>
+      <Group ID="[17]">
+        <Property ID="Name" Value="msgSO2110notOK" />
+        <Property ID="Message" Value="{$Safety/txtSO2110notOK}" />
+        <Property ID="Code" Value="3251" />
+        <Property ID="Severity" Value="20" />
+        <Selector ID="Behavior" Value="UserDefined">
+          <Property ID="Acknowledge" Value="0" />
+        </Selector>
+      </Group>
+      <Group ID="[18]">
+        <Property ID="Name" Value="msgSP1130notOK" />
+        <Property ID="Message" Value="{$Safety/txtSP1130notOK}" />
+        <Property ID="Code" Value="3252" />
+        <Property ID="Severity" Value="20" />
+        <Selector ID="Behavior" Value="UserDefined">
+          <Property ID="Acknowledge" Value="0" />
+        </Selector>
+      </Group>
+      <Group ID="[19]">
+        <Property ID="Name" Value="msgSLX910SysError" />
+        <Property ID="Message" Value="{$Safety/txtSysError}:  {&amp;sysErrorSLX910_AddValue} - {&amp;sysErrorSLX910_AddText}" />
+        <Property ID="Code" Value="3253" />
+        <Property ID="Severity" Value="20" />
+      </Group>
+      <Group ID="[20]">
+        <Property ID="Name" Value="msgAxis2InvalidMachineOption" />
+        <Property ID="Message" Value="{$Safety/txtAxis2InvalidMachineOption}" />
+        <Property ID="Code" Value="3216" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[21]">
+        <Property ID="Name" Value="msgChangeMachineOption" />
+        <Property ID="Message" Value="{$Safety/txtChangeMachineOption}" />
+        <Property ID="Code" Value="3217" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Snippets">
+      <Group ID="[0]">
+        <Property ID="Key" Value="sysErrorSLX910_AddValue" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::Safety:sysErrorSLX910_AddValue" />
+        </Selector>
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Key" Value="sysErrorSLX910_AddText" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::Safety:sysErrorSLX910_AddText" />
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

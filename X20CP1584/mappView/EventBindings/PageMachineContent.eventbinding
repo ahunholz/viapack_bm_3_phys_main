@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="PageMachineContent_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<EventBinding id="Station1.Content.btnDriveStation1.Click">
+			<Source contentRefId="Station1Content" widgetRefId="btnDriveStation1" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varMD_Index">
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineStationDrivePage" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="Station2Content.btnDriveStation2.Click">
+			<Source contentRefId="Station2Content" widgetRefId="btnDriveStation2" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varMD_Index">
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="1" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineStationDrivePage" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="InputContent.btnInput.Click">
+			<Source contentRefId="InputContent" widgetRefId="btnInput" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::InputTr:inputTrUI.EditParameter.EditMachineActiv" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineTransferInputPage" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="HangInContent.btnDetails.Click">
+			<Source contentRefId="HangInContent" widgetRefId="btnDetails" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::HangIn:hangInUI.EditParameter.EditMachineActiv" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineHangInPage" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="HangOutContent.btnDetails.Click">
+			<Source contentRefId="HangOutContent" widgetRefId="btnDetails" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::HangOut:hangOutUI.EditParameter.EditMachineActiv" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineHangOutPage" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="OutputContent.btnDetails.Click">
+			<Source contentRefId="OutputContent" widgetRefId="btnDetails" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::OutputTr:tranOutpUI.EditParameter.EditMachineActiv" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="page_MachineTransferOutput" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageOverviewContent.btnDetails.Click">
+			<Source contentRefId="PageOverviewContent" widgetRefId="btnDetails" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.EditMachineParameter.EditActive" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.StartUpWarningMachine.IsEdit" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="2">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mnMS:mnMS_UI.Parameter.Machine.IsEdit" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="3">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="page_Machine" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="CollectorContent.btnNavMachineCollector.Click">
+			<Source contentRefId="CollectorContent" widgetRefId="btnNavMachineCollector" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::Collector:collectorUI.EditParameter.EditMachineActiv" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineCollectorPage" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="Station1Content.btnNavMachineStation1.Click">
+			<Source contentRefId="Station1Content" widgetRefId="btnNavMachineStation1" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.EditMachineActiv" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineStation1Page" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="Station2Content.btnNavMachineStation2.Click">
+			<Source contentRefId="Station2Content" widgetRefId="btnNavMachineStation2" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::Station2:station2UI.EditParameter.EditMachineActiv" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="page_MachineStation2" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

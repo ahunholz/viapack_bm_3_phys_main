@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreStation2" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="Mapping">
+        <Group ID="[0]">
+          <Property ID="Alarm" Value="MsgStation2TimeoutSealLowerEdge" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="MsgStation2TimeoutSealLowerEdge" />
+        <Property ID="Message" Value="{$Station2/txtMsgTimeoutSealLowerEdge}" />
+        <Property ID="Code" Value="4100" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

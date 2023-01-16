@@ -1,0 +1,12 @@
+(*
+T: FUNCTION_BLOCK ReleaseOutput
+FW: NO
+CI#: 84
+QSL: 3
+QVE: 3
+QVPC: 3
+QPar: 2
+QFBI: 1
+*)
+ReleaseOut	@IV 2	@TYP:1	VAR_OUTPUT
+Safe_In	@IV 1	@TYP:43	VAR_INPUT

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreHangOut" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="BySeverity">
+        <Group ID="[0]">
+          <Property ID="Severity" Value="100" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="MsgTimeoutHangOutForw" />
+        <Property ID="Message" Value="{$HangOut/txtMsgTimeoutForw}" />
+        <Property ID="Code" Value="3600" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="MsgTimeoutHangOutBack" />
+        <Property ID="Message" Value="{$HangOut/txtMsgTimeoutBack}" />
+        <Property ID="Code" Value="3601" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="MsgSensHangOut" />
+        <Property ID="Message" Value="{$HangOut/txtMsgSens}" />
+        <Property ID="Code" Value="3602" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="MsgTimeoutHangOutTransferForw" />
+        <Property ID="Message" Value="{$HangOut/txtMsgTimeoutTransferForw}" />
+        <Property ID="Code" Value="3603" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="MsgTimeoutHangOutTransferBack" />
+        <Property ID="Message" Value="{$HangOut/txtMsgTimeoutTransferBack}" />
+        <Property ID="Code" Value="3604" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="MsgSensTransfer" />
+        <Property ID="Message" Value="{$HangOut/txtMsgSensTransfer}" />
+        <Property ID="Code" Value="3605" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="MsgHangOutInvalidParameter" />
+        <Property ID="Message" Value="{$HangOut/txtMsgInvalidParameter}" />
+        <Property ID="Code" Value="3606" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gGroupAxis" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreAxis" Description="Meldungen der Hauptachse" />
+        <Property ID="1" Value="gMpAxisMain" />
+        <Property ID="2" Value="gMpAxis2" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupParameter" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreParameter" />
+        <Property ID="1" Value="gRcpFacPar" />
+        <Property ID="2" Value="gRcpMacPar" />
+        <Property ID="3" Value="gRcpProgPar" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupMachineState" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreMS" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupSafety" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreSafety" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupSystem" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreSettingBackRest" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupInputTransfer" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreInputTransfer" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupCollector" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreCollector" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupHangIn" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreHangIn" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupStation1" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreStation1" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupAxisHangOut" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreHangOut" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupStation2" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreStation2" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupMachine" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreMachine" />
+        <Property ID="1" Value="gRecipeCounterXml" />
+        <Property ID="2" Value="" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupSealing" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreSealing" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+  <Element ID="gGroupOutputTransfer" Type="mpcomgroup">
+    <Group ID="Linking">
+      <Group ID="Subnodes">
+        <Property ID="0" Value="gAlarmXCoreOutputTransfer" />
+      </Group>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX" />
+  </Element>
+</Configuration>

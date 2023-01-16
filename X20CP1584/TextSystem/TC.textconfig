@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="TextConfig" Type="TextConfig">
+    <Group ID="Languages">
+      <Property ID="UserDefaultLanguage" Value="en" />
+      <Property ID="UserFallbackLanguage" Value="en" />
+      <Group ID="TargetLanguages">
+        <Property ID="TargetLanguage[1]" Value="de" />
+        <Property ID="TargetLanguage[2]" Value="en" />
+        <Property ID="TargetLanguage[3]" Value="it" />
+        <Property ID="TargetLanguage[4]" Value="es" />
+      </Group>
+    </Group>
+    <Group ID="TargetFiles">
+      <Property ID="TargetFile[1]" Value="mappView.VisOpDisplay.Resources.Texts.txtGlobal.tmx" />
+      <Property ID="TargetFile[2]" Value="mappView.VisOpDisplay.Resources.Texts.txtPageNames.tmx" />
+      <Property ID="TargetFile[3]" Value="mappView.VisOpDisplay.Resources.Texts.txtNavigation.tmx" />
+      <Property ID="TargetFile[4]" Value="mappView.VisOpDisplay.Resources.Texts.txtUser.tmx" />
+      <Property ID="TargetFile[5]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineArea.tmx" />
+      <Property ID="TargetFile[6]" Value="mappView.VisOpDisplay.Resources.Texts.txtAlarmList.tmx" />
+      <Property ID="TargetFile[7]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineGeneral.tmx" />
+      <Property ID="TargetFile[8]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineInput.tmx" />
+      <Property ID="TargetFile[9]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineCollector.tmx" />
+      <Property ID="TargetFile[10]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineHangIn.tmx" />
+      <Property ID="TargetFile[11]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineStation1.tmx" />
+      <Property ID="TargetFile[12]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineSealing.tmx" />
+      <Property ID="TargetFile[13]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineHangOut.tmx" />
+      <Property ID="TargetFile[14]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineOutput.tmx" />
+      <Property ID="TargetFile[15]" Value="mappView.VisOpDisplay.Resources.Texts.txtMachineDrive.tmx" />
+      <Property ID="TargetFile[16]" Value="mappView.VisOpDisplay.Resources.Texts.txtParameter.tmx" />
+      <Property ID="TargetFile[17]" Value="mappView.VisOpDisplay.Resources.Texts.txtParameterHelp.tmx" />
+      <Property ID="TargetFile[18]" Value="mappView.VisOpDisplay.Resources.Texts.txtSafety.tmx" />
+      <Property ID="TargetFile[19]" Value="mappView.VisOpDisplay.Pages.InfoPage.txtInfoPage.tmx" />
+      <Property ID="TargetFile[20]" Value="mappView.VisOpDisplay.Resources.Texts.txtSettings.tmx" />
+      <Property ID="TargetFile[21]" Value="mappView.VisOpDisplay.Resources.Texts.txtTextgroups.tmx" />
+      <Property ID="TargetFile[22]" Value="mappView.VisOpDisplay.Resources.Texts.txtDialogStarting.tmx" />
+      <Property ID="TargetFile[23]" Value="mappView.VisOpDisplay.Resources.Texts.txtOverview.tmx" />
+      <Property ID="TargetFile[24]" Value="mappView.Resources.Texts.MessagesTexts.tmx" />
+      <Property ID="TargetFile[25]" Value="mappView.VisOpDisplay.Resources.Texts.txtEditProgram.tmx" />
+      <Property ID="TargetFile[26]" Value="mappView.VisOpDisplay.Resources.Texts.txtCounter.tmx" />
+      <Property ID="TargetFile[27]" Value="mappView.VisOpDisplay.Resources.Texts.txtStatisticVP.tmx" />
+      <Property ID="TargetFile[28]" Value="Achsen_Neu.PkgAxisCtrl_new.AxisCtrl.tmx" />
+      <Property ID="TargetFile[29]" Value="System.PkgParameter.msgText.tmx" />
+      <Property ID="TargetFile[30]" Value="System.PkgMachine.txtInfoPageSubSysMachine.tmx" />
+      <Property ID="TargetFile[31]" Value="System.PkgMachineState.IATMS.tmx" />
+      <Property ID="TargetFile[32]" Value="System.PkgSafety.Safety.tmx" />
+      <Property ID="TargetFile[33]" Value="System.PkgSafety.SLX910.tmx" />
+      <Property ID="TargetFile[34]" Value="System.PkgMachine.Machine.Machine.tmx" />
+      <Property ID="TargetFile[35]" Value="LibrariesHAS.hasStdLib.MachineState.hasMS.tmx" />
+      <Property ID="TargetFile[36]" Value="LibrariesHAS.hasStdLib.MachineState.hasIATMS.tmx" />
+      <Property ID="TargetFile[37]" Value="Station.PkgInputTransfer.InputTr.MsgInputTr.tmx" />
+      <Property ID="TargetFile[38]" Value="Station.PkgCollector.Collector.MsgCollector.tmx" />
+      <Property ID="TargetFile[39]" Value="Station.PkgHangInTransfer.HangIn.MsgHangIn.tmx" />
+      <Property ID="TargetFile[40]" Value="Station.PkgStation1.MsgStation1.tmx" />
+      <Property ID="TargetFile[41]" Value="Station.PkgHangOutTransfer.HangOut.MsgHangOut.tmx" />
+      <Property ID="TargetFile[42]" Value="Station.PkgSealing.Sealing.tmx" />
+      <Property ID="TargetFile[43]" Value="Station.PkgStation2.MsgStation2.tmx" />
+      <Property ID="TargetFile[44]" Value="Station.PkgOutputTransfer.MsgOutputTransfer.tmx" />
+      <Property ID="TargetFile[45]" Value="mappView.Widgets.vpWidgetLib.Resources.Texts.vpWL_VPCylService.tmx" />
+      <Property ID="TargetFile[46]" Value="LibrariesHAS.hasStdLib.UserEventTexts.tmx" />
+      <Property ID="TargetFile[47]" Value="mappView.Widgets.hasWidgetLib.Resources.Texts.LocalizableTexts.tmx" />
+    </Group>
+  </Element>
+</Configuration>

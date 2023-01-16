@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="eventbinding_ParameterHelp" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    
+		<EventBinding id="content_ParameterHelpDialog.btnClose.Click">
+			<Source contentRefId="content_ParameterHelpDialog" widgetRefId="btnClose" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+							<Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="clientSystem.Action">
+							<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialog_ParameterHelp" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="varHelpParameterno.ValueChanged">
+			<Source xsi:type="session.Event" refId="varHelpParameterno" event="ValueChanged" />
+			<EventHandler condition="newValue &gt; 0">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="dialog_ParameterHelp" />
+					</Target>
+				</Action>					
+			</EventHandler>	
+		</EventBinding>
+		
+		<EventBinding id="PageEditProgramContent.lbParameter51_01.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter51_01" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5101" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter51_02.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter51_02" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5102" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter51_03.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter51_03" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5103" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter51_04.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter51_04" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5104" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter53_01.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter53_01" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5301" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter53_02.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter53_02" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5302" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter54_01.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter54_01" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5401" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter54_02.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter54_02" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5402" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter54_03.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter54_03" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5403" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter54_04.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter54_04" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5404" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter55_01.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_01" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5501" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_03.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_03" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5503" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_04.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_04" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5504" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_50.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_50" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5550" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_51.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_51" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5551" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter55_10.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_10" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5510" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_11.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_11" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5511" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_12.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_12" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5512" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_13.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_13" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5513" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_14.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_14" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5514" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_15.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_15" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5515" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_16.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_16" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5516" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="PageEditProgramContent.lbParameter55_30.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_30" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5530" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_31.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_31" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5531" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_32.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_32" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5532" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_33.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_33" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5533" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter55_20.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_20" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5520" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_21.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_21" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5521" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_22.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_22" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5522" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_71.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_71" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5571" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_23.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_23" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5523" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_24.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_24" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5524" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_25.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_25" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5525" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_26.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_26" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5526" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_27.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_27" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5527" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_70.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_70" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5570" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_28.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_28" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5528" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_29.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_29" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5529" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter55_40.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_40" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5540" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_41.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_41" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5541" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_42.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_42" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5542" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_72.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_72" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5572" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_43.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_43" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5543" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_44.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_44" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5544" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_45.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_45" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5545" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter55_02.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_02" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5502" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_05.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_05" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5505" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_19.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_19" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5519" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_17.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_17" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5517" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_18.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_18" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5518" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_37.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_37" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5537" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_38.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_38" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5538" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_39.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_39" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5539" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_34.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_34" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5534" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_60.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_60" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5560" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_46.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_46" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5546" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_47.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_47" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5547" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_73.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_73" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5573" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter55_75.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_75" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5575" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter56_01.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter56_01" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5601" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter56_02.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter56_02" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5602" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter56_03.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter56_03" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5603" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter56_04.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter56_04" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5604" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter56_05.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter56_05" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5605" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter56_06.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter56_06" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5606" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageEditProgramContent.lbParameter56_07.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter56_07" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5607" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_01.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_01" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5701" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_02.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_02" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5702" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_03.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_03" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5703" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_04.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_04" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5704" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_05.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_05" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5705" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_06.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_06" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5706" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_07.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_07" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5707" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_08.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_08" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5708" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_30.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_30" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5730" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_09.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_09" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5709" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_10.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_10" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5710" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_11.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_11" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5711" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_12.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_12" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5712" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_20.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_20" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5720" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_21.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_21" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5721" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_22.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_22" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5722" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter57_23.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter57_23" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5723" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		
+		<EventBinding id="PageEditProgramContent.lbParameter58_01.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter58_01" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5801" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageEditProgramContent.lbParameter58_02.Click">
+			<Source contentRefId="PageEditProgramContent" widgetRefId="lbParameter58_02" xsi:type="widgets.brease.Label.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varHelpParameterno">
+						<Method xsi:type="session.VariableAction.SetValueNumber" value="5802" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

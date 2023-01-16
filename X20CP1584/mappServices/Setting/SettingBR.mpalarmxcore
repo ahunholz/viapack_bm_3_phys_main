@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreSettingBackRest" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="infoNoAccessToMemoryStick" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoNoAccessToMemoryStick} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="1" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="infoFaultOpenDirectory" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultOpenDirectory} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="2" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="infoFaultReadingDirectory" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultReadingDirectory} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="3" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="infoFaultClosingDirectory" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultClosingDirectory} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="4" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="infoFaultUnlinkDevice" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultUnlinkDevice} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="5" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="infoFaultClearDirectory" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultClearDirectory} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="6" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="infoFaultCreatingBackup" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultCreatingBackup} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="7" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Name" Value="infoFaultCopyBackup" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultCopyBackup} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="8" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[8]">
+        <Property ID="Name" Value="infoFaultDeleteFile" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultDeleteFile} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="9" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[9]">
+        <Property ID="Name" Value="infoFaultReadBackup" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultReadBackup} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="10" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[10]">
+        <Property ID="Name" Value="infoFaultBackRestSystem" />
+        <Property ID="Message" Value="{$IAT/txtInfoFaultBackRestSystem} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="11" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[11]">
+        <Property ID="Name" Value="infoFaultCreatingTemp" />
+        <Property ID="Message" Value="{$IAT/Settings/txtInfoFaultCreatingTemp} {&amp;BackRest_AlarmCode}" />
+        <Property ID="Code" Value="12" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Snippets">
+      <Group ID="[0]">
+        <Property ID="Key" Value="BackRest_AlarmCode" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::BackRest:alarmCode" />
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

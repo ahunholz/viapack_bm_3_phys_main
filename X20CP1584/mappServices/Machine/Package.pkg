@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.6.3.55 SP?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">Counter.mprecipexml</Object>
+    <Object Type="File" Description="31xx">AlmMachine.mpalarmxcore</Object>
+    <Object Type="File" Description="319xx">AlmSealing.mpalarmxcore</Object>
+  </Objects>
+</Package>

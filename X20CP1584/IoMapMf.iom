@@ -1,0 +1,22 @@
+VAR_CONFIG
+	::MFI_MFO:mfiMfoIo.MFOs[0] AT %QX."X20DO6529_26C5".DigitalOutput01;
+	::MFI_MFO:mfiMfoIo.MFOs[1] AT %QX."X20DO6529_26C5".DigitalOutput02;
+	::MFI_MFO:mfiMfoIo.MFOs[2] AT %QX."X20DO6529_26C5".DigitalOutput03;
+	::MFI_MFO:mfiMfoIo.MFOs[3] AT %QX."X20DO6529_26C5".DigitalOutput04;
+	::MFI_MFO:mfiMfoIo.MFOs[4] AT %QX."X20DO6529_26C5".DigitalOutput05;
+	::MFI_MFO:mfiMfoIo.MFOs[5] AT %QX."X20DO6529_26C5".DigitalOutput06;
+	::MFI_MFO:mfiMfoIo.MFIs[0] AT %IX."X20DI9371_22C1".DigitalInput06;
+	::MFI_MFO:mfiMfoIo.MFIs[1] AT %IX."X20DI9371_22C1".DigitalInput07;
+	::MFI_MFO:mfiMfoIo.MFIs[2] AT %IX."X20DI9371_22C1".DigitalInput08;
+	::MFI_MFO:mfiMfoIo.MFIs[3] AT %IX."X20DI9371_22C1".DigitalInput09;
+	::MFI_MFO:mfiMfoIo.MFIs[4] AT %IX."X20DI9371_22C1".DigitalInput10;
+	::MFI_MFO:mfiMfoIo.MFIs[5] AT %IX."X20DI9371_22C1".DigitalInput11;
+	::MFI_MFO:mfiMfoIo.MFOs[6] AT %QX."X20DO9322_23C5".DigitalOutput09;
+	::MFI_MFO:mfiMfoIo.MFOs[7] AT %QX."X20DO9322_23C5".DigitalOutput10;
+	::MFI_MFO:mfiMfoIo.MFOs[8] AT %QX."X20DO9322_23C5".DigitalOutput11;
+	::MFI_MFO:mfiMfoIo.MFOs[9] AT %QX."X20DO9322_23C5".DigitalOutput12;
+	::MFI_MFO:mfiMfoIo.MFOs[10] AT %QX."X20CM8281_24C1".DigitalOutput01;
+	::MFI_MFO:mfiMfoIo.MFOs[11] AT %QX."X20CM8281_24C1".DigitalOutput02;
+	::MFI_MFO:mfiMfoIo.MFOs[12] AT %QX."X20CM8281_24C5".DigitalOutput01;
+	::MFI_MFO:mfiMfoIo.MFOs[13] AT %QX."X20CM8281_24C5".DigitalOutput02;
+END_VAR

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="StateContentBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="mapp" refId="gAlarmXCore" attribute="link" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="alMain" attribute="mpLink" />
+		</Binding>
+	
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varMessageStyleConfig" attribute="value" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="alMain" attribute="styleConfiguration" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varMessageFilterConfig" attribute="value" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="alMain" attribute="filterConfiguration" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varMessageAllowToAck" attribute="value" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="btnAck" attribute="enable" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varMessageAllowToAck" attribute="value" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="btnAckAll" attribute="enable" />
+		</Binding>
+	
+	
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.ShowRestTime" attribute="value" />
+<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="numLockTime" attribute="visible" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.RemainTimeLocked" attribute="node" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="numLockTime" attribute="node" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMsg:mnMsgUI.FlyOutImage" attribute="value" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="FlyOutMessage" attribute="image" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMsg:mnMsgUI.FlyOutStyle" attribute="value" />
+<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="FlyOutMessage" attribute="style" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.TextOutMachineState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="txtOutMachineState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.TextOutAddState" attribute="value" />
+<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="txtMachineStateAddInfo" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.ShowStopService" attribute="value" />
+<Target xsi:type="brease" contentRefId="StateContent" widgetRefId="imgListStopService" attribute="selectedIndex" />
+</Binding>
+	</Bindings>
+</BindingsSet>

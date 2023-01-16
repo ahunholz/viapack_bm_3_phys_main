@@ -1,0 +1,46 @@
+<!--xml version= "1.0" encoding="utf-8"-->
+<!--IOMapping Version="4.0"-->
+<IOOffsets SIBytes="2048" SOBytes="2048" NSIBytes="1024" NSOBytes="1024" ConnectionsValidOffset="24" EMOsOffset="62" EMOsSize="8" >
+		<Module Name="SL1.SM1" Hardware="X20SLX910" SafeLogicID="1" SafeModuleID="1" SISize="8" SOSize="2" NSISize="20" NSOSize="20" SIOffset="16" SOOffset="12" NSIOffset="0" NSOOffset="0" HWTypeCode="31" >
+			<Channel Name="SafeDigitalInput01" Mapping="SIX16.0" Variable="IN_REQ_SERVICE" Address="Safety:safetyIO.IN.RequestService" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput02" Mapping="SIX16.1" Variable="IN_NH_OK_37S1" Address="Safety:safetyIO.IN.ESTOP_OK_37S1" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput03" Mapping="SIX16.2" Variable="IN_Fehler_Servo_15F1" Address="Safety:safetyIO.IN.ACOPOS_OK_15F1" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput04" Mapping="SIX16.3" Variable="IN_NH_OK_37S4" Address="Safety:safetyIO.IN.ESTOP_OK_37S4" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput05" Mapping="SIX16.4" Variable="IN_NH_OK_X29" Address="Safety:safetyIO.IN.ESTOP_OK_X29" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput06" Mapping="SIX16.5" Variable="IN_NH_OK_X25" Address="Safety:safetyIO.IN.ESTOP_OK_X25" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput07" Mapping="SIX16.6" Variable="IN_NH_OK_38S1_1" Address="Safety:safetyIO.IN.ESTOP_OK_38S1_1" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput08" Mapping="SIX16.7" Variable="IN_NH_OK_38S1_2" Address="Safety:safetyIO.IN.ESTOP_OK_38S1_2" SODIndex="0x9999" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalInput09" Mapping="SIX17.0" Variable="IN_NH_OK_38S5_1" Address="Safety:safetyIO.IN.ESTOP_OK_38S5_1" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput10" Mapping="SIX17.1" Variable="IN_NH_OK_38S5_2" Address="Safety:safetyIO.IN.ESTOP_OK_38S5_2" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput11" Mapping="SIX17.2" Variable="IN_TNG_39B1" Address="Safety:safetyIO.IN.PartFallen_39B1" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput12" Mapping="SIX17.3" Variable="IN_TNG_39B2" Address="Safety:safetyIO.IN.PartFallen_39B2" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput13" Mapping="SIX17.4" Variable="IN_TNG_39B3" Address="Safety:safetyIO.IN.PartFallen_39B3" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput14" Mapping="SIX17.5" Variable="IN_TNG_39B4" Address="Safety:safetyIO.IN.PartFallen_39B4" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput15" Mapping="SIX17.6" Variable="IN_TNG_39B5" Address="Safety:safetyIO.IN.PartFallen_39B5" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput16" Mapping="SIX17.7" Variable="IN_NH_OK_X15" Address="Safety:safetyIO.IN.ESTOP_OK_X15" SODIndex="0x9999" SODSubIndex="0x2" />
+			<Channel Name="SafeDigitalInput17" Mapping="SIX18.0" Variable="IN_NH_OK_X22" Address="Safety:safetyIO.IN.ESTOP_OK_X22" SODIndex="0x9999" SODSubIndex="0x3" />
+			<Channel Name="ExternalMachineOption000" Mapping="SIX62.0" Variable="S_OhneStation2" />
+			<Channel Name="BOOL001" Mapping="NSQX0.0" Variable="OUT_Kein_Teil_gefallen" Address="Safety:safetyIO.COM.NoPartFallen" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL002" Mapping="NSQX0.1" Variable="TeilGefallenB1" Address="Safety:safetyIO.COM.PartFallenMachineInput" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL003" Mapping="NSQX0.2" Variable="TeilGefallenB2" Address="Safety:safetyIO.COM.PartFallenInFrontStation1" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL004" Mapping="NSQX0.3" Variable="TeilGefallenB3" Address="Safety:safetyIO.COM.PartFallenBehindStation1" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL005" Mapping="NSQX0.4" Variable="TeilGefallenB4" Address="Safety:safetyIO.COM.PartFallenInFrontStation2" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL006" Mapping="NSQX0.5" Variable="TeilGefallenB5" Address="Safety:safetyIO.COM.PartFallenBehindStation2" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL007" Mapping="NSQX0.6" Variable="IsServicebetrieb" Address="Safety:safetyIO.COM.IsService" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL008" Mapping="NSQX0.7" Variable="OUT_Sperre" Address="Safety:safetyIO.COM.SwitchOnIsLocked" SODIndex="0x2580" SODSubIndex="0x1" />
+			<Channel Name="BOOL009" Mapping="NSQX1.0" Variable="Lifesign" Address="Safety:safetyIO.COM.Lifesign" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL010" Mapping="NSQX1.1" Variable="OhneStation2" Address="Safety:safetyIO.COM.OptionStation2Disabled" SODIndex="0x2580" SODSubIndex="0x2" />
+			<Channel Name="BOOL101" Mapping="NSIX0.0" Variable="IN_ResetNOTHALT" Address="Safety:safetyIO.COM.ButtonOnPushed" SODIndex="0x2500" SODSubIndex="0x2" />
+			<Channel Name="BOOL102" Mapping="NSIX0.1" Variable="S_AUS" Address="Safety:safetyIO.COM.ButtonOffPushed" SODIndex="0x2500" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM2" Hardware="X20SP1130" SafeLogicID="1" SafeModuleID="2" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="60" SOOffset="14" NSIOffset="20" NSOOffset="20" ConnectionValidBitNumber="0" HWTypeCode="107" >
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX14.0" Variable="S_NOTHALT_OK" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput01" Mapping="NSQX20.0" Variable="R_NOTHALT_OK" SODIndex="0x6200" SODSubIndex="0x2" />
+		</Module>
+		<Module Name="SL1.SM3" Hardware="X20SO2110" SafeLogicID="1" SafeModuleID="3" SISize="1" SOSize="1" NSISize="1" NSOSize="1" SIOffset="61" SOOffset="15" NSIOffset="21" NSOOffset="21" ConnectionValidBitNumber="1" HWTypeCode="43" >
+			<Channel Name="SafeDigitalOutput01" Mapping="SQX15.0" Variable="S_WAGEN_OK" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="SafeDigitalOutput02" Mapping="SQX15.1" Variable="S_WAGEN2_OK" SODIndex="0x6200" SODSubIndex="0x1" />
+			<Channel Name="ReleaseOutput01" Mapping="NSQX21.0" Variable="R_WAGEN_OK" SODIndex="0x6200" SODSubIndex="0x2" />
+			<Channel Name="ReleaseOutput02" Mapping="NSQX21.1" Variable="R_WAGEN2_OK" SODIndex="0x6200" SODSubIndex="0x2" />
+		</Module>
+</IOOffsets>

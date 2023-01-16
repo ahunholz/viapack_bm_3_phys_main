@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="PageOverviewBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+  
+		<!-- Commands -->
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionFixlength" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="fbiFixlength" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionWithoutPacking" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="fbiWithoutBagging" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionUZ" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="fbiSealLowerEdge" attribute="visible" />
+		</Binding>
+
+		
+		<!-- Programmanwahl -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.SelectedProgramIndex" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ddbSelectProgram" attribute="selectedIndex" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.ProgramList" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ddbSelectProgram" attribute="dataProvider" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Machine.OpcUA_ProgramSelectionType" attribute="value" />
+			<Target xsi:type="expression" refId="EnableOverviewProgramSelection" attribute="inRemoteSelectionType" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="expression" refId="EnableOverviewProgramSelection" attribute="inEnableOPCUA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Factory.EnableProgramSelectionRemote" attribute="value" />
+			<Target xsi:type="expression" refId="EnableOverviewProgramSelection" attribute="inEnableRemoteProgramSelection" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="EnableOverviewProgramSelection" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ddbSelectProgram" attribute="enable" />
+		</Binding>
+
+		<!-- Move Slow freigeben -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandMoveSlowOverview" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandMoveSlowOverview" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandMoveSlowOverview" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="fbiMoveSlow" attribute="visible" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ReleaseUnload" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilReleaseOutput" attribute="selectedIndex" />
+		</Binding>
+
+
+
+
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ResetCounterPT[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="progBarResetCounter" attribute="maxValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ResetCounterET[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="progBarResetCounter" attribute="value" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.ResetCounter[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="progBarResetCounter" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ProtFeedOK" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilProtectionFeeding" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ProtectOutOK" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilProtectionOutput" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Safety:safetyUI.ProtSwitchServoOK" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilProtectionServoDrive" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewFDC" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="grpProtOutput" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Sealing:sealingUI.State.protSwitchUpperEdgeOK" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilProtectionSealingUpperEdge" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Sealing:sealingUI.State.viewProtSwitchLowerEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="grpProtSealLowerEdge" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Sealing:sealingUI.State.protSwitchLowerEdgeOK" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilProtectionSealingLowerEdge" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[0].PiecesInput" attribute="value" samplingRate="slow" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="numOutPieceCounter" attribute="value" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.ResetCounter[0]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="btnResetCounterUser" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varEnableResetCounterUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="btnResetCounterUser" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ViewFDC" attribute="value" samplingRate="slow" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ccFeedingOff" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ViewFDC" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="grpProtFeeding" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.OccupiedDischrg_1" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilOccupiedDischrg_1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.OcuupiedDischrg_2" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ilOccupiedDischrg_2" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:stateLight.UIvisible" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ccWorkLight" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[0].MachineTimePowerOn" attribute="node" samplingRate="slow" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="numOutOperatingHours" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[0].FilmConsumtion" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="numOutFilmConsumption" attribute="node" />
+</Binding>
+</Bindings>
+</BindingsSet>

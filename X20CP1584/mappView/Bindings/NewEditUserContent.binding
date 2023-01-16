@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="binding_NewEditUserContent" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+  <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.Commands.NewLanguage" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="ddbDefaultLanguage" attribute="selectedValue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.Commands.NewUserFullname" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="txtInputUserFullName" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.Commands.NewUsername" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="txtInputUserName" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varEnableNewUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="txtInputUserName" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.Commands.NewPassword" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="pwdUser" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.UserTypeList" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="ddbUserType" attribute="dataProvider" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varEnableNewUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="ddbUserType" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varEnableNewUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="LbRole" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.Commands.NewUserType" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_NewEditUser" widgetRefId="ddbUserType" attribute="selectedValue" />
+</Binding>
+</Bindings>
+</BindingsSet>

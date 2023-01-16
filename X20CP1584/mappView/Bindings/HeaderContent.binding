@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="HeaderContentBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserInfo" attribute="value" />
+			<Target xsi:type="brease" contentRefId="HeaderContent" widgetRefId="txtOutUserInfo" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varViewNavBack" attribute="value" />
+			<Target xsi:type="brease" contentRefId="startPageContent" widgetRefId="btnNavBack" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varViewNavOverview" attribute="value" />
+			<Target xsi:type="brease" contentRefId="startPageContent" widgetRefId="navOverview" attribute="visible" />
+		</Binding>
+
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelayCarriageUp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_50" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelayDynCarriageUp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_51" attribute="node" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.Program.DelayHangOutBack" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_02" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.Program.DelayHangOut" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_01" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.Program.DelayTransfer" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_03" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.State.ShowHangOutTransfer" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar56_04_and_05" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.Program.DelayTransferBack" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_05" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.Program.DelayTransferForward" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_04" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ReleaseEditProgram" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpProgramHangOut" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ReleaseEditProgram" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpProgramStation1" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ReleaseEditProgram" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpProgramHangIn" attribute="enable" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ReleaseEditProgram" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpProgramGeneral" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.MachineType" attribute="value" />
+<Target xsi:type="brease" contentRefId="HeaderContent" widgetRefId="txtOutMachineType" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="EnableEditProgramNo" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="btnCopy" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varBreaseCopyProgNo" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogCopyProgramContent" widgetRefId="numInputCopyProgramNo" attribute="value" />
+</Binding>
+
+
+
+
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.IdxSymbol" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetSiteManagerState" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetSiteManagerState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="HeaderContent" widgetRefId="imgSitemanager" attribute="image" />
+		</Binding>
+		
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.State.ShowHangOutStopper" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar56_03" attribute="visible" />
+</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.Visible" attribute="value" />
+<Target xsi:type="brease" contentRefId="HeaderContent" widgetRefId="lbSitemanager" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.Visible" attribute="value" />
+<Target xsi:type="brease" contentRefId="HeaderContent" widgetRefId="imgSitemanager" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.Visible" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="TabItemSiteManager" attribute="visible" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_IPAddress" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="IPaddress" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_IPGateway" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="IPgateway" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_IPMask" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="IPnetmask" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_IPMode" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="IPstatic" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_ProxyIPAddress" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="ProxyAddress" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_ProxyPassword" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="ProxyPassword" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_ProxyUsername" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="ProxyUsername" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varSMedit_ProxyOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" attribute="ProxyYes" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewSignalAlarmOffButton" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ccAlarmSignalOff" attribute="visible" />
+</Binding>
+
+</Bindings>
+</BindingsSet>

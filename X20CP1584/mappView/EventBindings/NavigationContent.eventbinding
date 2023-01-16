@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="NavigationContent_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<EventBinding>
+			<Source xsi:type="widgets.brease.NavigationButton.Event" contentRefId="NavigationContent" widgetRefId="NavBtnMachineRtoL" event="VisibleChanged" />
+			<EventHandler condition="value">
+				<Action>
+					<Target xsi:type="widgets.brease.NavigationButton.Action" 
+						widgetRefId="NavBtnMachineLtoR" 
+						contentRefId="NavigationContent">
+						<Method xsi:type="widgets.brease.NavigationButton.Action.SetVisible" value="false"/>
+					</Target>
+				</Action>
+			</EventHandler>	
+			<EventHandler condition="NOT value">
+				<Action>
+					<Target xsi:type="widgets.brease.NavigationButton.Action" 
+						widgetRefId="NavBtnMachineLtoR" 
+						contentRefId="NavigationContent">
+						<Method xsi:type="widgets.brease.NavigationButton.Action.SetVisible" value="true"/>
+					</Target>
+				</Action>
+			</EventHandler>	
+		</EventBinding>
+
+		
+		<EventBinding>
+			<Source xsi:type="session.Event" refId="varBackToNavigateMachinePage" event="ValueChanged" />
+			<Operand name="ShowRightToLeft" datatype="BOOL">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::AsGlobalPV:OperateParameter.Machine.ShowRightToLeft">
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="ShowRightToLeft">
+				<Sequence>
+					<Step order="0">
+						<Parallel>
+							<Action>
+								<Target xsi:type="opcUa.NodeAction" refId="::AxisCtrlm:axisUI.ControlActive">
+									<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="opcUa.NodeAction" refId="::AxisCtrl2:axisUI.ControlActive">
+									<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varOpenBrake">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varManualMoveUp">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varManualMoveDown">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+						</Parallel>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachineInvPage" />
+							</Target> 
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+			<EventHandler condition="NOT ShowRightToLeft">
+				<Sequence>
+					<Step order="0">
+						<Parallel>
+							<Action>
+								<Target xsi:type="opcUa.NodeAction" refId="::AxisCtrlm:axisUI.ControlActive">
+									<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="opcUa.NodeAction" refId="::AxisCtrl2:axisUI.ControlActive">
+									<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varOpenBrake">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varManualMoveUp">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varManualMoveDown">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+						</Parallel>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="MachinePage" />
+							</Target> 
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
+</EventBindingSet>

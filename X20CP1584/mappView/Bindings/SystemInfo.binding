@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="SystemInfoBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<Bindings>
+		
+		<!--system variables must be assigned to an existing mainpage-->
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.SlotId" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.SlotId" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.SlotId" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />		
+		</Binding>
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.UserId" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.UserId" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.UserId" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.userId" attribute="value" />		
+		</Binding>
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.IpAddress" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.IpAddress" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.IpAddress" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.ipAddress" attribute="value" />		
+		</Binding>
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.ActivityCount" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.ActivityCount" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.ActivityCount" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.activityCount" attribute="value" />		
+		</Binding>
+					
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.LanguageId" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.LanguageId" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.LanguageId" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.languageId" attribute="value" />		
+		</Binding>		
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.MeasurementSystemId" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.MeasurementSystemId" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.MeasurementSystemId" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.measurementSystemId" attribute="value" />		
+		</Binding>		
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.ConnectionDateTime" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.ConnectionDateTime" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.ConnectionDateTime" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.connectionDateTime" attribute="value" />		
+		</Binding>		
+				
+			
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.ScreenResolution" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.ScreenResolution" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.ScreenResolution" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.screenResolution" attribute="value" />		
+		</Binding>	
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.BrowserResolution" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.BrowserResolution" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.BrowserResolution" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.browserResolution" attribute="value" />		
+		</Binding>	
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.UserAgent" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.UserAgent" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.UserAgent" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.userAgent" attribute="value" />		
+		</Binding>	
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.CookieEnabled" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.CookieEnabled" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.CookieEnabled" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.cookieEnabled" attribute="value" />		
+		</Binding>	
+
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.IsValid" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.IsValid" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.IsValid" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.isValid" attribute="value" />		
+		</Binding>	
+
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.isMultiTouch" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.isMultiTouch" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.isMultiTouch" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.isMultiTouch" attribute="value" />		
+		</Binding>	
+		
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.currentPageId" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.currentPageId" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.currentPageId" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="::SYSTEM:clientInfo.currentPageId" attribute="value" />		
+		</Binding>	
+
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.ReadLogInInfo" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.ReadLogInInfo" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.ReadLogInInfo" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varReadLoginInfo" attribute="value" />		
+		</Binding>	
+
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.LogInPassword" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.LogInPassword" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.LogInPassword" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varLogInPassword" attribute="value" />		
+		</Binding>	
+
+		<Binding mode="oneWayToSource">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].FromClient.LogInName" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].FromClient.LogInName" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].FromClient.LogInName" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varLogInUserName" attribute="value" />		
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].ToClient.UserInfo" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].ToClient.UserInfo" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].ToClient.UserInfo" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserInfo" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].ToClient.UserName" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].ToClient.UserName" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].ToClient.UserName" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserName" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].ToClient.UserLevel" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].ToClient.UserLevel" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].ToClient.UserLevel" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserLevel" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].ToClient.IsOperator" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].ToClient.IsOperator" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].ToClient.IsOperator" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserIsOperator" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].ToClient.ReadLogInInfoDone" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].ToClient.ReadLogInInfoDone" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].ToClient.ReadLogInInfoDone" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varReadLoginInfoDone" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:enableResetCounterUser[0]" />
+					<bt:Element index="1" refId="::mvClient:enableResetCounterUser[1]" />
+					<bt:Element index="2" refId="::mvClient:enableResetCounterUser[2]" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varEnableResetCounterUser" attribute="value" />
+		</Binding>	
+
+		<!-- User-Manager -->
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].LogoffButton.Pressed" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].LogoffButton.Pressed" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].LogoffButton.Pressed" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrLogoff" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].LogoffButton.Enable" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].LogoffButton.Enable" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].LogoffButton.Enable" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrEnableLogoff" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].LoginButton.Enable" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].LoginButton.Enable" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].LoginButton.Enable" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrEnableLogin" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].LoginDialog.Active" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].LoginDialog.Active" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].LoginDialog.Active" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrLoginActive" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].RequestLogIn" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].RequestLogIn" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].RequestLogIn" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrReqLogin" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].LoginDialog.UserName" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].LoginDialog.UserName" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].LoginDialog.UserName" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrLoginUserName" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].LoginDialog.Password" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].LoginDialog.Password" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].LoginDialog.Password" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrLoginPassword" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].ShowManager" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[1].ShowManager" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[2].ShowManager" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varUserMgrShowContent" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:ClientInfo[0].ToClient.SetLanguage" />
+					<bt:Element index="1" refId="::mvClient:ClientInfo[1].ToClient.SetLanguage" />
+					<bt:Element index="2" refId="::mvClient:ClientInfo[2].ToClient.SetLanguage" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varSetLanguageId" attribute="value" />
+		</Binding>	
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:mvClientUserMgrClientUI[0].IP_SDM" />
+					<bt:Element index="1" refId="::mvClient:mvClientUserMgrClientUI[0].IP_SDM" />
+					<bt:Element index="2" refId="::mvClient:mvClientUserMgrClientUI[0].IP_SDM" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varIP_SDM" attribute="value" />		
+		</Binding>
+	
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.StartUpWarningFactory.Active" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="hasStartUpWarning" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.StartUpWarningFactory.Active" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cw_MacStartUpWarning" attribute="visible" />
+</Binding>
+	</Bindings>
+
+</BindingsSet>

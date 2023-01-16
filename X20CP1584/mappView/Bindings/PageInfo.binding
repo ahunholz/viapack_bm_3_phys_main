@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="PageInfoBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutSlot" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="::SYSTEM:clientInfo.ipAddress" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutIP" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="::SYSTEM:clientInfo.userId" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutUser" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="::SYSTEM:clientInfo.languageId" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutLanguage" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.ModeName" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutCurrentMode" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.StateName" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutCurrentState" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.TimeStampState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="dtOutStateTimeStamp" attribute="value" />
+		</Binding>
+
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[0]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys00" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[1]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys01" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[2]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys02" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[3]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys03" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[4]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys04" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[5]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys05" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[6]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys06" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[7]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys07" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[8]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys08" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[9]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys09" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[10]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys10" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[11]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys11" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[12]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys12" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFName[13]" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbSubSys13" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[0]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys00" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[1]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys01" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[2]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys02" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[3]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys03" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[4]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys04" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[5]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys05" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[6]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys06" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[7]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys07" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[8]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys08" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[9]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys09" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[10]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys10" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[11]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys11" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[12]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys12" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SubSysFinishedOrDis[13]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListFinishedSubSys13" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[0]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState00" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[1]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState01" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[2]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState02" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[3]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState03" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[4]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState04" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[5]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState05" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[6]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState06" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[7]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState07" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[8]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState08" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[9]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState09" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[10]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState10" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[11]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState11" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[12]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState12" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.SSFAddState[13]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="lbAddState13" attribute="value" />
+		</Binding>
+	
+		<Binding mode="twoWay">
+			<Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="alrmHistory" attribute="mpLink" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:BM_2_Version.SW_VersionComment" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutSWComment" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:BM_2_Version.SW_Version" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutSWVersion" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:BM_2_Version.CFG_Version" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutCfgVersion" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:BM_2_Version.CFG_Id" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutCfgID" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:BM_2_CPU_Info.TemperatureCPU" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutCPUTemperature" attribute="node" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:BM_2_CPU_Info.TemperatureENV" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutENVTemperature" attribute="node" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:BM_2_CPU_Info.BatteryOK" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetPLCinfoBattery" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetPLCinfoBattery" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="txtOutBattery" attribute="value" />
+		</Binding>
+	
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[1].PiecesInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutPieceCounter" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[1].MachineTimePowerOn" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutOperatingHours" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[1].FilmConsumtion" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutFilmConsumption" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.ResetCounter[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="progBarResetCounter" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.ResetCounter[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="btnResetCounterUser" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ResetCounterPT[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="progBarResetCounter" attribute="maxValue" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ResetCounterET[1]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="progBarResetCounter" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].MachineTimePowerOn" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutOperatingHoursVP" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].PiecesInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutPieceCounterVP" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].FilmConsumtion" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutFilmConsumptionVP" attribute="node" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.ResetCounter[2]" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="btnResetCounterUserVP" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.ResetCounter[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="progBarResetCounterVP" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ResetCounterET[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="progBarResetCounterVP" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ResetCounterPT[2]" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="progBarResetCounterVP" attribute="maxValue" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].PiecesOutput" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutPieceCounterOutVP" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].MachineTimeProcessing" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutProcessingHoursVP" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].MachineTimeRunning" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutExecutingHoursVP" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].MachineTimeFault" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutFaultHoursVP" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineCounter.CounterSets[2].MachineTimeHolding" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutStandByHoursVP" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineStatistic.PeriodOutToOut" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutPeriodPieceOutToOutVP" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineStatistic.PeriodThrougMachine" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numOutPeriodPieceThroughMachineVP" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.SelTestMode" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="tgSwTestMode" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.IsTestMode" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="imgListIsTestmode" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.Test.Length" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="numInputTestLength" attribute="node" />
+</Binding>
+</Bindings>
+</BindingsSet>

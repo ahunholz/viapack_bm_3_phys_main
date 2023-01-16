@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreAxis" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="Mapping">
+        <Group ID="[0]">
+          <Property ID="Alarm" Value="AlmMissingSetupMain" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Alarm" Value="AlmMissingSetup2nd" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Alarm" Value="AlmHandleConfigurationMain" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Alarm" Value="AlmHandleConfigurationMain" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[4]">
+          <Property ID="Alarm" Value="AlmAxisMain" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="STOP" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[5]">
+          <Property ID="Alarm" Value="AlmAxis2nd" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="STOP" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="AlmHandleConfigurationMain" />
+        <Property ID="Message" Value="{$AxisCtrl/txtMainAxis}{$AxisCtrl/txtAlmHandleConfiguration} ErrorCode = {&amp;ErrorIDaxisProcessParMainCode} / {&amp;ErrorIDaxisProcessParMainIntCode}" />
+        <Property ID="Code" Value="3300" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="AlmHandleConfiguration2nd" />
+        <Property ID="Message" Value="{$AxisCtrl/txt2ndAxis}{$AxisCtrl/txtAlmHandleConfiguration} ErrorCode = {&amp;ErrorIDaxisProcessPar2ndCode} / {&amp;ErrorIDaxisProcessPar2ndIntCode}" />
+        <Property ID="Code" Value="3310" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="AlmMissingSetupMain" />
+        <Property ID="Message" Value="{$AxisCtrl/txtMainAxis}{$AxisCtrl/txtAlmMissingSetup}" />
+        <Property ID="Code" Value="3301" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="AlmMissingSetup2nd" />
+        <Property ID="Message" Value="{$AxisCtrl/txt2ndAxis}{$AxisCtrl/txtAlmMissingSetup}" />
+        <Property ID="Code" Value="3311" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="AlmAxisMain" />
+        <Property ID="Message" Value="{$AxisCtrl/txtMainAxis}{$AxisCtrl/txtAlmAxis} StatusID = {&amp;ErrorIDaxisProcessMainCode}/{&amp;ErrorIDaxisProcessMainCode2}" />
+        <Property ID="Code" Value="3302" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="AlmAxis2nd" />
+        <Property ID="Message" Value="{$AxisCtrl/txt2ndAxis}{$AxisCtrl/txtAlmAxis} StatusID = {&amp;ErrorIDaxisProcess2ndCode}/{&amp;ErrorIDaxisProcess2ndCode2}" />
+        <Property ID="Code" Value="3312" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Snippets">
+      <Group ID="[0]">
+        <Property ID="Key" Value="ErrorIDaxisProcessMainCode" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrlm:axisBasic.StatusID" />
+        </Selector>
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Key" Value="ErrorIDaxisProcessMainCode2" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrlm:axisBasic.Info.Diag.StatusID.ID" />
+        </Selector>
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Key" Value="ErrorIDaxisProcess2ndCode" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrl2:axisBasic.StatusID" />
+        </Selector>
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Key" Value="ErrorIDaxisProcess2ndCode2" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrl2:axisBasic.Info.Diag.StatusID.ID" />
+        </Selector>
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Key" Value="ErrorIDaxisProcessParMain" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrlm:axisProcessPar.ErrorID" />
+        </Selector>
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Key" Value="ErrorIDaxisProcessPar2nd" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrl2:axisProcessPar.ErrorID" />
+        </Selector>
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Key" Value="ErrorIDaxisProcessParMainIntCode" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrlm:axisBasic.Info.Diag.Internal.Code" />
+        </Selector>
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Key" Value="ErrorIDaxisProcessPar2ndIntCode" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::AxisCtrl2:axisBasic.Info.Diag.Internal.Code" />
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

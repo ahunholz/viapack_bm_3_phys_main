@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="DialogStarting_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    
+		<EventBinding>
+			<Source xsi:type="opcUa.Event" refId="::Machine:machineUI.StartProcedure.RequestMove" event="ValueChanged" />
+			<Operand name="IsOperator" datatype="BOOL">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varUserIsOperator">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="newValue = 1 AND IsOperator">
+				<Parallel>
+					<Action>
+						<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.StartProcedure.AcknowledgeMove" >
+							<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="clientSystem.Action">
+							<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="dialog_Start" headerText="$IAT/DialogStarting/MessageHeaderAskMoveDown" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+			<EventHandler condition="newValue = 2 AND IsOperator">
+				<Parallel>
+					<Action>
+						<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.StartProcedure.AcknowledgeMove" >
+							<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="clientSystem.Action">
+							<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="dialog_Start"  headerText="$IAT/DialogStarting/MessageHeaderAskStart" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+			<EventHandler condition="newValue = 0">
+				<Parallel>
+					<Action>
+						<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.StartProcedure.AcknowledgeMove" >
+							<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="clientSystem.Action">
+							<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialog_Start"  />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="content_StartDialog.btnOK.Click">
+			<Source contentRefId="content_StartDialog" widgetRefId="btnOK" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<Operand name="IsOperator" datatype="BOOL">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varUserIsOperator">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="IsOperator">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.StartProcedure.AcknowledgeMove" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

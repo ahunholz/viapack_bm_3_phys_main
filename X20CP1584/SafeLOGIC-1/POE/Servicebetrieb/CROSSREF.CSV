@@ -1,0 +1,7 @@
+NOTHALT_OK,POE\Servicebetrieb\Servicebetrieb.GB,1,IN,13,0,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,
+OUT_Servicebetrieb,POE\Servicebetrieb\Servicebetrieb.GB,2,OUT,32,37,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,
+REQ_SERVICE,POE\Servicebetrieb\Servicebetrieb.GB,1,IN,36,0,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,
+REQ_SERVICE,POE\Servicebetrieb\Servicebetrieb.GB,2,IN,40,0,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,
+RS_S_1,POE\Servicebetrieb\Servicebetrieb.GB,0,,3,22,,,,,,VAR,FB,,
+S_Servicebetrieb,POE\Servicebetrieb\Servicebetrieb.GB,2,IN,31,0,Read,,SAFEBOOL,,,VAR_OUTPUT,LOCAL,,
+S_Servicebetrieb,POE\Servicebetrieb\Servicebetrieb.GB,2,OUT,5,41,Write,,SAFEBOOL,,,VAR_OUTPUT,LOCAL,,

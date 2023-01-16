@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="4" ArVersion="B4.45">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleId="9" RoleName="RlOPCUA" Access="0x005F" />
+      </ACL>
+      <ACL Id="2">
+        <ACE RoleId="9" RoleName="RlOPCUA" Access="0x007F" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases>
+      <EURangeViolation Id="1" Mode="1" />
+    </EURangeViolationAliases>
+    <EURangesAliases>
+      <EURanges Id="1">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">10</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView AclId="1">
+    <Module Name="&lt;Default&gt;">
+      <Task Name="vpOPCUA">
+        <Variable Name="vpOPCUA_IF">
+          <Variable Name="Command" AutomaticEnable="True">
+            <Variable AclId="2" AclInherit="2" Name="Request" />
+            <Variable AclId="2" AclInherit="2" Name="RequestParamSetNo" EURangeViolationId="1" EURangesId="1" />
+          </Variable>
+          <Variable Name="State" AutomaticEnable="True">
+            <Variable Name="AlarmList" EnableArrayElements="True" />
+          </Variable>
+        </Variable>
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

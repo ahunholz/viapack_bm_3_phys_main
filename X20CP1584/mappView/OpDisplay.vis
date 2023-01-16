@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vdef:Visualization id="visOpDisplay" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+	<StartPage pageRefId="StartPage" />
+	<Pages>
+		<Page refId="StartPage"/>
+		<Page refId="OverviewPage"/>
+		<Page refId="MachinePage"/>
+		<Page refId="MachineInvPage"/>
+		<Page refId="InfoPage"/>
+		<Page refId="SettingPage"/>
+		<Page refId="MachineStationDrivePage"/>
+		<Page refId="MachineTransferInputPage"/>
+		<Page refId="MachineCollectorPage"/>
+		<Page refId="MachineHangInPage"/>
+		<Page refId="MachineStation1Page"/>
+		<Page refId="MachineHangOutPage"/>
+		<Page refId="page_MachineStation2"/>
+		<Page refId="page_MachineTransferOutput"/>
+		<Page refId="EditProgramPage" />
+		<Page refId="page_Machine" />
+	</Pages>
+  	<Navigations>
+    	<Navigation refId="NavOpDisplay" />
+  	</Navigations>  
+	<BindingsSets>
+		<BindingsSet refId="SystemInfoBinding" />
+		<BindingsSet refId="PageOverviewBinding" />
+		<BindingsSet refId="PageInfoBinding" />
+		<BindingsSet refId="HeaderContentBinding" />
+		<BindingsSet refId="LoginEasyBinding" />
+		<BindingsSet refId="LoginListBinding" />
+		<BindingsSet refId="NavigationContentBinding" />
+		<BindingsSet refId="StateContentBinding" />
+		<BindingsSet refId="MachineBinding" />
+		<BindingsSet refId="MachineInputContentBinding" />
+		<BindingsSet refId="MachineCollectorContentBinding" />
+		<BindingsSet refId="MachineHangInContentBinding" />
+		<BindingsSet refId="MachineStation1ContentBinding" />
+		<BindingsSet refId="MachineStationDriveBinding" />
+		<BindingsSet refId="MachineHangOutContentBinding" />
+		<BindingsSet refId="binding_MachineStation2" />
+		<BindingsSet refId="binding_MachineTransferOutput" />
+		<BindingsSet refId="DialogBinding" />
+		<BindingsSet refId="SettingBinding" />
+		<BindingsSet refId="EditProgramBinding" />
+		<BindingsSet refId="CommandButtonContentBinding" />
+		<BindingsSet refId="binding_Machine_IO_Parameter" />
+		<BindingsSet refId="binding_NewEditUserContent" />
+		<BindingsSet refId="binding_cylServiceUI" />
+		<BindingsSet refId="binding_GetFilm" />
+	</BindingsSets>
+	<EventBindingsSets>
+		<EventBindingsSet refId="HeaderContent_eventbinding" />
+		<EventBindingsSet refId="DialogLoginEasyContent_eventbinding" />
+		<EventBindingsSet refId="DialogLoginListContent_eventbinding" />
+		<EventBindingsSet refId="StateContent_eventbinding" />
+		<EventBindingsSet refId="NavigationContent_eventbinding" />
+		<EventBindingsSet refId="NavigationMachineContent_eventbinding"/>
+		<EventBindingsSet refId="StartPage_eventbinding" />
+		<EventBindingsSet refId="System_eventbinding" />
+		<EventBindingsSet refId="PageMachineContent_eventbinding"/>
+		<EventBindingsSet refId="MachineInputContent_eventbinding" />
+		<EventBindingsSet refId="MachineCollectorContent_eventbinding" />
+		<EventBindingsSet refId="MachineHangInContent_eventbinding" />
+		<EventBindingsSet refId="MachineStation1Content_eventbinding" />
+		<EventBindingsSet refId="StationDrive_eventbinding"/>
+		<EventBindingsSet refId="MachineHangOutContent_eventbinding" />
+		<EventBindingsSet refId="eventbinding_MachineStation2" />
+		<EventBindingsSet refId="eventbinding_MachineTransferOutput" />
+		<EventBindingsSet refId="Safety_eventbinding"/>
+		<EventBindingsSet refId="Setting_eventbinding"/>
+		<EventBindingsSet refId="EditProgram_eventbinding" />
+		<EventBindingsSet refId="CommandButtonContent_eventbinding" />
+		<EventBindingsSet refId="DialogStarting_eventbinding" />
+		<EventBindingsSet refId="eventbinding_Machine_IO_Parameter" />
+		<EventBindingsSet refId="eventbinding_NewEditUserContent" />
+		<EventBindingsSet refId="eventbinding_ParameterHelp" />
+		<EventBindingsSet refId="content_SMedit_eventbinding" />
+		<EventBindingsSet refId="eventbinding_GetFilm" />
+	</EventBindingsSets>
+	<Dialogs>
+    	<Dialog refId="LoginEasyDialog" />
+		<Dialog refId="LoginListDialog" />
+		<Dialog refId="UsrMgrLoginListDialog" />
+		<Dialog refId="LockedDialog" />
+		<Dialog refId="DetectLimitDialog" />
+		<Dialog refId="SetDateTimeDialog" />
+		<Dialog refId="CopyProgramDialog" />
+		<Dialog refId="EditFacMachineDialog" />
+		<Dialog refId="EditFacMachineOptionsDialog" />
+		<Dialog refId="EditFacInputDialog" />
+		<Dialog refId="EditFacCollectorDialog" />
+		<Dialog refId="EditFacStation1Dialog" />
+		<Dialog refId="dialog_NewEditUser" />
+		<Dialog refId="dialog_Start" />
+		<Dialog refId="dialog_ParameterHelp" />
+		<Dialog refId="CylServiceSeparatorUIDialog" />
+		<Dialog refId="CylServiceHangInUIDialog" />
+		<Dialog refId="CylServiceHangInPusherUIDialog" />
+		<Dialog refId="CylServiceStat1SUE_UIDialog" />
+		<Dialog refId="CylServiceStat1SLE_UIDialog" />
+		<Dialog refId="CylServiceStat1CutterUIDialog" />
+		<Dialog refId="CylServiceStat1FilmStopperUIDialog" />
+		<Dialog refId="CylServiceStat1GripperUIDialog" />
+		<Dialog refId="CylServiceStat1SlitterUIDialog" />
+		<Dialog refId="CylServiceStat1SpreaderUIDialog" />
+		<Dialog refId="CylServiceHangOutUIDialog" />
+		<Dialog refId="CylServiceHangOutTransferUIDialog" />
+		<Dialog refId="CylServiceHangOutStopperUIDialog" />
+		<Dialog refId="CylServiceStat2SLE_UIDialog" />
+		<Dialog refId="CylServiceOutputTrPusherUIDialog" />
+		<Dialog refId="dialog_SelectRestore" />
+		<Dialog refId="dialogSMedit" />
+		<Dialog refId="dialog_GetFilm" />
+	</Dialogs>
+	<Contents>
+    	<Content refId="InputContent" />
+		<Content refId="CollectorContent" />
+		<Content refId="HangInContent" preCache="true" />
+		<Content refId="Station1Content" />
+		<Content refId="HangOutContent" preCache="true" />
+		<Content refId="Station2Content" />
+		<Content refId="OutputContent" />
+		<Content refId="ButtonFeedingOffContent" />
+		<Content refId="ButtonSelectFixlengthContent"/>
+		<Content refId="ButtonSelectSealingContent"/>
+		<Content refId="ButtonSelectMoveSlowContent"/>
+		<Content refId="ButtonSelectSealLowerEdgeContent"/>
+		<Content refId="ButtonSelectWithoutBaggingContent"/>
+		<Content refId="ButtonPauseContent" />
+		<Content refId="ButtonWorkLightContent" />
+		<Content refId="ButtonOutputOffContent" />
+		<Content refId="ButtonAlarmSignalOffContent" />
+		<Content refId="InputTypeHandshakeContent"/>
+		<Content refId="InputTypeSeparatorContent"/>
+		<Content refId="InputTypeHandshakeParameterContent"/>
+		<Content refId="InputTypeSeparatorParameterContent"/>
+		<Content refId="PageEditProgramContent" preCache="true" />
+		<Content refId="PageSettingContent" preCache="true" />
+		<Content refId="PageInfoContent" preCache="true" />
+		<Content refId="content_SMedit" preCache="true" />
+		<Content refId="content_GetFilmMain" preCache="true" />
+		<Content refId="content_GetFilmMessage" preCache="true" />
+		<Content refId="content_GetFilmProcess" preCache="true" />
+	</Contents>
+	<SnippetsSets>
+    	<SnippetsSet refId="TextgroupSnippets"/>
+  </SnippetsSets>
+  <ExpressionsSets>
+    <ExpressionsSet refId="expression_PageSettingContent"/>
+  </ExpressionsSets>
+  <VariablesSets>
+		<VariablesSet refId="LoginSvar" />
+		<VariablesSet refId="MessageSvar" />
+		<VariablesSet refId="MachineDriveSvar" />
+		<VariablesSet refId="NavigateSvar" />
+		<VariablesSet refId="SettingSvar" />
+		<VariablesSet refId="EditProgramSvar" />
+		<VariablesSet refId="ServiceSvar" />
+		<VariablesSet refId="MachineCollectorSvar" />
+		<VariablesSet refId="svar_SMedit" />
+		<VariablesSet refId="svar_GetFilm" />
+  </VariablesSets>
+  <StartTheme themeRefId="ViapackTheme" />
+  <Themes>
+    <Theme refId="ViapackTheme"/>
+  </Themes>
+  <Configurations>
+	    <Configuration key="activityCount" value="false" />
+		<Configuration key="bootLogo" value="Media/BLconnect.bmp" />
+		<Configuration key="bootColor" value="#FFFFFF" />
+		<Configuration key="zoom" value="true" />
+	</Configurations>
+</vdef:Visualization>

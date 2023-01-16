@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreHangIn" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="Mapping">
+        <Group ID="[0]">
+          <Property ID="Alarm" Value="MsgTimeout*" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="STOP" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Alarm" Value="MsgSens*" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Alarm" Value="MsgHangInInvalidParameter" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="MsgTimeoutHangInForw" />
+        <Property ID="Message" Value="{$HangIn/txtMsgTimeoutHangInForw}" />
+        <Property ID="Code" Value="3800" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="MsgTimeoutHangInBack" />
+        <Property ID="Message" Value="{$HangIn/txtMsgTimeoutHangInBack}" />
+        <Property ID="Code" Value="3801" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="MsgSensHangIn" />
+        <Property ID="Message" Value="{$HangIn/txtMsgSensHangIn}" />
+        <Property ID="Code" Value="3802" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="MsgTimeoutHangInPushForw" />
+        <Property ID="Message" Value="{$HangIn/txtMsgTimeoutHangInPushForw}" />
+        <Property ID="Code" Value="3803" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="MsgTimeoutHangInPushBack" />
+        <Property ID="Message" Value="{$HangIn/txtMsgTimeoutHangInPushBack}" />
+        <Property ID="Code" Value="3804" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="MsgSensHangInPush" />
+        <Property ID="Message" Value="{$HangIn/txtMsgSensHangInPush}" />
+        <Property ID="Code" Value="3805" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="MsgHangInInvalidParameter" />
+        <Property ID="Message" Value="{$HangIn/txtMsgHangInInvalidParameter}" />
+        <Property ID="Code" Value="3806" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

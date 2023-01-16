@@ -1,0 +1,6 @@
+PROGRAM	Main			PT=1	Main
+FUNCTION_BLOCK	TeilGefallen			PT=1	TeilGefallen
+FUNCTION_BLOCK	ReleaseOutput			PT=1	ReleaseOutput
+FUNCTION_BLOCK	NOTHALTKette			PT=1	NOTHALTKette
+FUNCTION_BLOCK	Servicebetrieb			PT=1	Servicebetrieb
+FUNCTION_BLOCK	SP1130Sperre			PT=1	SP1130Sperre

@@ -1,0 +1,46 @@
+(*
+T: FUNCTION_BLOCK NOTHALTKette
+FW: NO
+CI#: 83
+QSL: 6
+QVE: 6
+QVPC: 6
+QPar: 3
+QFBI: 0
+*)
+@V 1 3 0
+Einrichtbetrieb	1	VAR_INPUT	@TYP:43
+		     
+
+;
+
+@V 1 7 0
+KeinTeilGefallen	2	VAR_INPUT	@TYP:43
+		     
+
+;
+
+@V 1 6 0
+NH_KETTE_OK	3	VAR_OUTPUT	@TYP:43
+		     
+
+;
+
+@V 1 2 0
+NH_KETTE_TRITTMATTEN_OK	4	VAR	@TYP:43
+		     
+
+;
+
+@V 1 4 0
+WagenUZ_OK	5	VAR	@TYP:43
+		     
+
+;
+
+@V 1 5 0
+WagenGreifer_OK	6	VAR	@TYP:43
+		     
+
+;
+

@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MachineInputContentBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<!-- Input Content Maschinenübersicht -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.PieceAtInput" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputContent" widgetRefId="imgPieceBeforeMachine" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.TransferIsActive" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputContent" widgetRefId="imgTransfer" attribute="visible" />
+		</Binding>
+
+		<!-- Übersichtsseite -->
+		<!-- Input Content -->
+		
+		<!-- Save Button -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.MachineIsDirty" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+
+		<!-- Ermittlung, ob die Service-Taster angezeigt werden dürfen -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandTransferInputMachine" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.ViewService" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandTransferInputMachine" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandTransferInputMachine" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandTransferInput" attribute="value" />
+		</Binding>
+
+		<!-- Ermittlung, ob der Service-Taster für MFO angezeigt werden darf -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewCommandTransferInput" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandTransferInputMachineMFO" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandTransferInputMachineMFO" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandTransferInputMachineMFO" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandTransferInputMFO" attribute="value" />
+		</Binding>
+
+		<!-- Signal FDC -->
+		<!-- FlexBoxItem -->		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ViewSignalFDC" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="grpSignalFeedingControl" attribute="visible" />
+		</Binding>
+
+		<!-- LED -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.FDC_On" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="imgListSignalFDC" attribute="selectedIndex" />
+		</Binding>
+
+		<!-- Button -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.SetSignalFeedingOn" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnSetSignalFDC" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewCommandTransferInput" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnSetSignalFDC" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnSetSignalFDC" attribute="enable" />
+		</Binding>
+		
+		<!-- Einlaufförderer -->
+		<!-- grpParameterFeedingConveyor -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ViewInputConveyor" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="grpParameterFeedingConveyor" attribute="visible" />
+		</Binding>
+		
+
+		<!-- LED -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.InputConveyorOn" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="imgListFeedingConveyorOn" attribute="selectedIndex" />
+		</Binding>
+		
+		<!-- Button -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnSetFeedingConveyor" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewCommandTransferInput" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnSetFeedingConveyor" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.RunInputConveyor" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnSetFeedingConveyor" attribute="value" />
+		</Binding>
+		
+		<!-- Parameter 1.2 -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.DelayInputConveyorOff" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="numInpParameter_01_02" attribute="node" />
+		</Binding>
+		
+		<!-- Externer Stopper -->
+
+		<!-- LED -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ExtStopperIsOpen" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="imgListExtStopperOn" attribute="selectedIndex" />
+		</Binding>
+		
+		<!-- Button -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.OpenExtStopper" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnOpenExtStopper" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnOpenExtStopper" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewCommandTransferInput" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="btnOpenExtStopper" attribute="visible" />
+		</Binding>
+		
+		<!-- Parameter 1.1 -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.DelayExtStopperClose" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="numInpParameter_01_01" attribute="node" />
+		</Binding>
+		
+		
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.PartBeforeInputNC" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="cbParameter_2_3" attribute="value" />
+		</Binding>
+		
+		<!-- InputType HandShake -->
+		
+		<!-- Freigabe Beladung -->
+		<!-- LED -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.HSReleaseFeeding" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="imgListHSReleaseFeeding" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="imgListHSReleaseFeeding" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="lbHSReleaseFeeding" attribute="visible" />
+		</Binding>
+
+		<!-- Button -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.SetHSReleaseFeeding" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="btnSetSignalHSRelease" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewCommandTransferInputMFO" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="btnSetSignalHSRelease" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Service.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="btnSetSignalHSRelease" attribute="enable" />
+		</Binding>
+
+		<!-- Parameter 2.21 -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.MFO_ReleaseInput" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="ddbInputMFO_HSReleaseFeeding" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="ddbInputMFO_HSReleaseFeeding" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="lbParameter_02_21" attribute="visible" />
+		</Binding>
+
+		<!-- Mit Verpackung -->
+		<!-- LED -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.HSWithBagging" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="imgListHSWithBagging" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="imgListHSWithBagging" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="lbHSWithBagging" attribute="visible" />
+		</Binding>
+
+		<!-- Parameter 2.22 -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.MFI_Transfer_WithFilm" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="ddbInputMFI_HSWithBagging" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="ddbInputMFI_HSWithBagging" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="lbParameter_2_22" attribute="visible" />
+		</Binding>
+
+		<!-- Ohne Verpackung -->
+		<!-- LED -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.HSWithoutBagging" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="imgListHSWithoutBagging" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="imgListHSWithoutBagging" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeContent" widgetRefId="lbHSWithoutBagging" attribute="visible" />
+		</Binding>
+
+		<!-- Parameter 2.23 -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.MFI_Transfer_WithoutFilm" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="ddbInputMFI_HSWithoutBagging" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="ddbInputMFI_HSWithoutBagging" attribute="visible" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeHandshakeParameterContent" widgetRefId="lbParameter_2_23" attribute="visible" />
+		</Binding>
+
+		<!-- InputType Separator -->
+
+		<!-- Separator -->
+		<!-- LED -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.SeperatoreIsOn" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeSeparatorContent" widgetRefId="imgListSeparator" attribute="selectedIndex" />
+		</Binding>
+
+		<!-- Parameter 2.1 -->
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.TimeOutPieceDetected" attribute="node" />
+			<Target xsi:type="brease" contentRefId="InputTypeSeparatorParameterContent" widgetRefId="numInpParameter_02_01" attribute="node" />
+		</Binding>
+		
+		<!-- Parameter 2.2 -->
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.TimeSeparatorCycle" attribute="node" />
+			<Target xsi:type="brease" contentRefId="InputTypeSeparatorParameterContent" widgetRefId="numInpParameter_2_2" attribute="node" />
+		</Binding>
+
+		<!-- Parameter 2.40 -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.OpcUA_ProgramSelectionType" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ddbTypeRemoteProgramSelection" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ddbTypeRemoteProgramSelection" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="lbParameter_2_40" attribute="visible" />
+		</Binding>
+
+		<!-- Programmanwahl -->		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Machine.OpcUA_ProgramSelectionType" attribute="value" />
+			<Target xsi:type="expression" refId="EnableInputProgramSelection" attribute="inRemoteSelectionType" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="expression" refId="EnableInputProgramSelection" attribute="inEnableOPCUA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Factory.EnableProgramSelectionRemote" attribute="value" />
+			<Target xsi:type="expression" refId="EnableInputProgramSelection" attribute="inEnableRemoteProgramSelection" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="EnableInputProgramSelection" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ddbSelectProgram" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.SelectedProgramIndex" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ddbSelectProgram" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.ProgramList" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ddbSelectProgram" attribute="dataProvider" />
+		</Binding>
+
+		<!-- Select Buttons -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ViewFDC" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ccFeedingOff" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionUZ" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ccSealLowerEdge" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionFixlength" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ccFixlength" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionWithoutPacking" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ccWithoutBagging" attribute="visible" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.PieceThroughInput" attribute="value" />
+			<Target xsi:type="brease" contentRefId="InputTypeSeparatorContent" widgetRefId="imgListPieceThroughSeparator" attribute="selectedIndex" />
+		</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Machine.DelayPartBeforeInput" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="numInpParameter_02_06" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ViewFDC" attribute="value" samplingRate="slow" />
+<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="grpSignalFeedingConveyor" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.PieceAtInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="imgListPieceBeforeMachine" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.FeedingOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="InputContent" widgetRefId="imgFeedingStop" attribute="visible" />
+		</Binding>
+		
+		<!-- Move Slow freigeben -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandMoveSlowInput" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandMoveSlowInput" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandMoveSlowInput" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageMachineTransferInputContent" widgetRefId="ccMoveSlow" attribute="visible" />
+		</Binding>
+
+</Bindings>
+</BindingsSet>

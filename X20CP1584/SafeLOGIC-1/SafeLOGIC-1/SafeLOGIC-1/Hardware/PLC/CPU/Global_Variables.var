@@ -1,0 +1,76 @@
+﻿{GroupDefinition(0,'NewGroup')}
+
+VAR_GLOBAL {Group(0)}
+    {LINE(1)}
+    IN_NH_OK_38S5_2 AT %IX17.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput10')}; (*Trittmatte hinten rechts*)
+    {LINE(2)}
+    IN_NH_OK_X15 AT %IX17.7 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput16')}; (*Zuführung*)
+    {LINE(3)}
+    IN_NH_OK_X22 AT %IX18.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput17')}; (*Abführung*)
+    {LINE(4)}
+    IN_NH_OK_38S1_1 AT %IX16.6 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput07')}; (*Trittmatte vorne links*)
+    {LINE(5)}
+    IN_NH_OK_X25 AT %IX16.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput06')}; (*Wagen UZ*)
+    {LINE(6)}
+    IN_NH_OK_38S1_2 AT %IX16.7 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput08')}; (*Trittmatte vorn rechts*)
+    {LINE(7)}
+    IN_NH_OK_37S1 AT %IX16.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput02')}; (*Schaltschrank*)
+    {LINE(8)}
+    IN_NH_OK_38S5_1 AT %IX17.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput09')}; (*Trittmatte hinten links*)
+    {LINE(9)}
+    IN_NH_OK_37S4 AT %IX16.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput04')}; (*Maschinenkopf*)
+    {LINE(10)}
+    IN_NH_OK_X29 AT %IX16.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput05')}; (*Wagen Greifer*)
+    {LINE(11)}
+    IN_TNG_39B1 AT %IX17.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput11')}; (*Teil gefallen Maschineneingang*)
+    {LINE(12)}
+    IN_TNG_39B2 AT %IX17.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput12')}; (*Teil gefallen vor Greiferwagen*)
+    {LINE(13)}
+    IN_TNG_39B3 AT %IX17.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput13')}; (*Teil gefallen hinter Greiferwagen*)
+    {LINE(14)}
+    IN_TNG_39B4 AT %IX17.5 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput14')}; (*Teil gefallen vor UZ*)
+    {LINE(15)}
+    IN_TNG_39B5 AT %IX17.6 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput15')}; (*Teil gefallen hinter UZ*)
+    {LINE(16)}
+    IN_Fehler_Servo_15F1 AT %IX16.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput03')}; (*Überstromschutzschalter Servo*)
+    {LINE(17)}
+    IN_REQ_SERVICE AT %IX16.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.SafeDigitalInput01')}; (*Schlüsselschalter*)
+    {LINE(18)}
+    OUT_Kein_Teil_gefallen AT %QX0.0 : BOOL {Custom('SL1.SM1.BOOL001')};
+    {LINE(19)}
+    S_NOTHALT_OK AT %QX14.0 : SAFEBOOL := SAFEFALSE {SafeAdr(true),Custom('SL1.SM2.SafeDigitalOutput01')};
+    {LINE(20)}
+    S_WAGEN_OK AT %QX15.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM3.SafeDigitalOutput01')};
+    {LINE(21)}
+    S_WAGEN2_OK AT %QX15.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM3.SafeDigitalOutput02')};
+    {LINE(22)}
+    TeilGefallenB1 AT %QX0.1 : BOOL {Custom('SL1.SM1.BOOL002')};
+    {LINE(23)}
+    TeilGefallenB2 AT %QX0.2 : BOOL {Custom('SL1.SM1.BOOL003')};
+    {LINE(24)}
+    TeilGefallenB3 AT %QX0.3 : BOOL {Custom('SL1.SM1.BOOL004')};
+    {LINE(25)}
+    TeilGefallenB4 AT %QX0.4 : BOOL {Custom('SL1.SM1.BOOL005')};
+    {LINE(26)}
+    TeilGefallenB5 AT %QX0.5 : BOOL {Custom('SL1.SM1.BOOL006')};
+    {LINE(27)}
+    IsServicebetrieb AT %QX0.6 : BOOL {Custom('SL1.SM1.BOOL007')};
+    {LINE(28)}
+    IN_ResetNOTHALT AT %IX0.0 : BOOL {Custom('SL1.SM1.BOOL101')}; (*Interner NOT-HALT-Reset/EIN*)
+    {LINE(29)}
+    S_AUS AT %IX0.1 : BOOL {Custom('SL1.SM1.BOOL102')}; (*AUS*)
+    {LINE(30)}
+    R_NOTHALT_OK AT %QX20.0 : BOOL {Custom('SL1.SM2.ReleaseOutput01')};
+    {LINE(31)}
+    R_WAGEN_OK AT %QX21.0 : BOOL {Custom('SL1.SM3.ReleaseOutput01')};
+    {LINE(32)}
+    R_WAGEN2_OK AT %QX21.1 : BOOL {Custom('SL1.SM3.ReleaseOutput02')};
+    {LINE(33)}
+    OUT_Sperre AT %QX0.7 : BOOL {Custom('SL1.SM1.BOOL008')};
+    {LINE(34)}
+    Lifesign AT %QX1.0 : BOOL {Custom('SL1.SM1.BOOL009')};
+    {LINE(35)}
+    S_OhneStation2 AT %IX62.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM1.ExternalMachineOption000')}; (*TRUE - Überbrückt Abfragen für die 2. Achse*)
+    {LINE(36)}
+    OhneStation2 AT %QX1.1 : BOOL := FALSE {Custom('SL1.SM1.BOOL010')}; (*TRUE - Abfragen für Station 2 sind überbrückt*)
+END_VAR

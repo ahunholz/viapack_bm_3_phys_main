@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="StartPage_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    
+		<EventBinding id="startPageContent.btnLoginUser.Click">
+			<Source contentRefId="startPageContent" widgetRefId="btnLoginUser" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varPreDefUserName">
+							<Method xsi:type="session.VariableAction.SetValueString" value="User" />
+						</Target>
+					</Action>
+					<!--<Action>
+						<Target xsi:type="session.VariableAction" refId="varLogInUserName">
+							<Method xsi:type="session.VariableAction.SetValueString" value="User" />
+						</Target>
+					</Action>-->
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varLogInUserNameList">
+							<Method xsi:type="session.VariableAction.SetValueString" value="User" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="clientSystem.Action">
+							<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="LoginEasyDialog"
+							mode="modal" horizontalPos="center" verticalPos="middle" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="startPageContent.btnLoginService.Click">
+			<Source contentRefId="startPageContent" widgetRefId="btnLoginService" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varPreDefUserName">
+							<Method xsi:type="session.VariableAction.SetValueString" value="Service" />
+						</Target>
+					</Action>
+					<!--<Action>
+						<Target xsi:type="session.VariableAction" refId="varLogInUserName">
+							<Method xsi:type="session.VariableAction.SetValueString" value="Service" />
+						</Target>
+					</Action>-->
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varLogInUserNameList">
+							<Method xsi:type="session.VariableAction.SetValueString" value="Service" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="clientSystem.Action">
+							<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="LoginEasyDialog"
+							mode="modal" horizontalPos="center" verticalPos="middle" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="startPageContent.btnLogin.Click">
+			<Source contentRefId="startPageContent" widgetRefId="btnLogin" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="LoginListDialog"
+						mode="modal" horizontalPos="center" verticalPos="middle" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="startPageContent.btnLogout.Click">
+			<Source contentRefId="startPageContent" widgetRefId="btnLogout" xsi:type="widgets.brease.LogoutButton.Event" event="Click" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varReadLoginInfo">
+							<Method xsi:type="session.VariableAction.SetValueNumber" value="2" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varUserIsLoggedIn">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="startPageContent.btnBack.Click">
+			<Source contentRefId="startPageContent" widgetRefId="btnNavBack" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<Operand name="OldPageId" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varNavigationBackPageId" >
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.Navigate" pageId="=OldPageId" />
+					</Target>
+				</Action>
+			</EventHandler>
+		
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

@@ -1,0 +1,13 @@
+VAR_CONFIG
+	Cyclic#2.::SealingIF.FBsealUpperEdge.Close AT %QX."X20DO9322_23C1".DigitalOutput10;
+	Cyclic#2.::SealingIF.FBsealLowerEdge.Close AT %QX."X20DO9322_23C5".DigitalOutput01;
+	Cyclic#2.::SealingIF.FBsealUpperEdge.Heat AT %QW."X20CM8281_24C1".AnalogOutput01;
+	Cyclic#2.::SealingIF.FBsealLowerEdge.Heat AT %QW."X20CM8281_24C5".AnalogOutput01;
+	Cyclic#2.::SealingIF.FBsealUpperEdge.PositionOpened AT %IX."X20DI9371_21C5".DigitalInput05;
+	Cyclic#2.::SealingIF.FBsealUpperEdge.PositionClosed AT %IX."X20DI9371_21C5".DigitalInput06;
+	Cyclic#2.::SealingIF.FBsealLowerEdge.PositionClosed AT %IX."X20DI9371_21C5".DigitalInput07;
+	Cyclic#2.::SealingIF.FBsealLowerEdge.PositionOpened AT %IX."X20DI9371_21C1".DigitalInput02;
+	::Sealing:sealingIO.IN.protSwitchUpperEdgeTripped AT %IX."X20DI9371_22C1".DigitalInput03;
+	::Sealing:sealingIO.IN.protSwitchLowerEdgeTripped AT %IX."X20DI9371_22C1".DigitalInput04;
+	Cyclic#2.::SealingIF.FBsealUpperEdge.Open AT %QX."X20DO9322_23C5".DigitalOutput08;
+END_VAR

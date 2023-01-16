@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="DialogBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.RemainTimeLocked" attribute="node" />
+			<Target xsi:type="brease" contentRefId="dlgLockedContent" widgetRefId="numOutRemainTime" attribute="node" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varHelpParameterno" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetHelpParameter" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetHelpParameter" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_ParameterHelpDialog" widgetRefId="txtOut_ParameterName" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varHelpParameterno" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetHelpParameterHelp" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetHelpParameterHelp" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_ParameterHelpDialog" widgetRefId="txtOut_Helptext" attribute="value" />
+		</Binding>
+		
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.StartProcedure.Message" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_StartDialog" widgetRefId="txtOutMessage" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

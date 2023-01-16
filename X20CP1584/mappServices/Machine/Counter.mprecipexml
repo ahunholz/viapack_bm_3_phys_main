@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gRecipeCounterXml" Type="mprecipexml">
+    <Group ID="mapp.Recipe.Xml">
+      <Selector ID="AutoSave" Value="Time">
+        <Property ID="Interval" Value="600" />
+        <Property ID="StartImmediately" Value="FALSE" />
+      </Selector>
+      <Selector ID="Signature" Value="Required">
+        <Property ID="PassPhrase" Value="kc@p@iV" />
+      </Selector>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX">
+      <Group ID="mapp.AlarmX.Core.Configuration">
+        <Group ID="[0]">
+          <Property ID="Code" Value="6030" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Code" Value="6031" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Code" Value="6032" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Code" Value="6033" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

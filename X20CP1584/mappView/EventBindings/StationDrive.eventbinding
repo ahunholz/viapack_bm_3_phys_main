@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="StationDrive_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    
+		<!-- Ueberschrift anzeigen -->
+		<EventBinding id="event_varMD_Index_ValueChanged">
+			<Source xsi:type="session.Event" refId="varMD_Index" event="ValueChanged" />
+			<EventHandler condition="newValue = 0">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varMD_Header" >
+						<Method xsi:type="session.VariableAction.SetValueString" value="$IAT/MachineDrive/HeaderStation1" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="newValue = 1">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varMD_Header" >
+						<Method xsi:type="session.VariableAction.SetValueString" value="$IAT/MachineDrive/HeaderStation2" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Bremse bedienen -->
+		<EventBinding id="event_btnToggleBrake_Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="btnToggleBrake" event="Click" />
+			<Operand name="BrakeIsOpen" datatype="BOOL">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varOpenBrake">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="NOT BrakeIsOpen">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.ShowMessageBox" type="YesNo" icon="Warning" header="$IAT/MachineDrive/HeaderOpenBrake" message="$IAT/MachineDrive/QuestionOpenBrake" />
+					</Target>
+					<Result>
+						<ResultHandler condition="result = 1">
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varOpenBrake">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+								</Target>
+							</Action>
+						</ResultHandler>
+					</Result>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="BrakeIsOpen">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varOpenBrake">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		
+		<!-- Parameter sichern -->
+		<EventBinding id="event_MSDContent_btnSave_Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSave" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varParamDriveSave">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Parameter verwerfen -->
+		<EventBinding id="event_MSDContent_btnReset_Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="btnReset" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varParamDriveReset">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Parameter oberer Anschlag -->
+		<EventBinding id="event_MSDContent_numInputUpperStop_ValueChanged">
+			<Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputUpperLimit" event="ValueChanged" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varParamDriveIsDirty">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varChangedReferenceUpperLimit">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Parameter unterer Anschlag -->
+		<EventBinding id="event_MSDContent_numInputLowerStop_ValueChanged">
+			<Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputLowerLimit" event="ValueChanged" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varParamDriveIsDirty">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varChangedReferenceLowerLimit">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Parameter Wagen oben -->
+		<EventBinding id="event_MSDContent_numInputCarriageUp_ValueChanged">
+			<Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputOffsetULtoZero" event="ValueChanged" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varParamDriveIsDirty">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varChangedOffsetULtoZero">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Parameter Maximalweg -->
+		<EventBinding id="event_MSDContent_numInputMaximumDistance_ValueChanged">
+			<Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputWorkRange" event="ValueChanged" />
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varParamDriveIsDirty">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varChangedWorkRange">
+							<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Parameter Maximalgeschwindigkeit hoch -->
+		<EventBinding id="event_MSDContent_numInputMaximumSpeedUp_ValueChanged">
+			<Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputMaximumSpeedUp" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varParamDriveIsDirty">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Parameter Maximalgeschwindigkeit runter -->
+		<EventBinding id="event_MSDContent_numInputMaximumSpeedDown_ValueChanged">
+			<Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputMaximumSpeedDown" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varParamDriveIsDirty">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Button Save Reference Zero -->
+		<EventBinding id="event_MSDContent_btnSaveOffsetULtoZero_Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveOffsetULtoZero" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varSaveOffsetULtoZero">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Button Save Reference Down -->
+		<EventBinding id="event_MSDContent_btnSaveWorkRange_Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveWorkRange" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varSaveWorkRange">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Button Save Reference Zero -->
+		<EventBinding id="event_MSDContent_btnSaveReferenceUpperLimit_Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveReferenceUpperLimit" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varSaveReferenceUpperLimit">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Button Save Reference Down -->
+		<EventBinding id="event_MSDContent_btnSaveReferenceLowerLimit_Click">
+			<Source xsi:type="widgets.brease.Button.Event" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveReferenceLowerLimit" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varSaveReferenceLowerLimit">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- DETECT LIMIT -->
+		
+		<EventBinding id="PageMachineStationDriveContent.btnOpenDetectUpperLimit.Click">
+			<Source contentRefId="PageMachineStationDriveContent" widgetRefId="btnOpenDetectUpperLimit" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varLimitType">
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="DetectLimitDialog" headerText="$IAT/MachineDrive/OpenDetectUpperLimit"/>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStationDriveContent.btnOpenDetectLowerLimit.Click">
+			<Source contentRefId="PageMachineStationDriveContent" widgetRefId="btnOpenDetectLowerLimit" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varLimitType">
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="1" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="DetectLimitDialog" headerText="$IAT/MachineDrive/OpenDetectLowerLimit" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Dialog für das Erkennen der Endlage vorbereiten -->
+		<EventBinding id="ContentLoaded_DialogDetectLimitContent">
+			<Source xsi:type="clientSystem.Event" event="ContentLoaded" />
+			<Operand name="LimitType" datatype="ANY_INT">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varLimitType">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="contentId=&quot;DialogDetectLimitContent&quot; AND LimitType=0">
+				<Parallel>
+					<Action>
+						<Target xsi:type="widgets.brease.Label.Action" contentRefId="DialogDetectLimitContent" widgetRefId="lblMaximumTorque">
+							<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/Parameter/06_01_MaximumTorqueAdjustUp" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varDetectLimitState">
+							<Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+			<EventHandler condition="contentId=&quot;DialogDetectLimitContent&quot; AND LimitType=1">
+				<Parallel>
+				<Action>
+					<Target xsi:type="widgets.brease.Label.Action" contentRefId="DialogDetectLimitContent" widgetRefId="lblMaximumTorque">
+						<Method xsi:type="widgets.brease.Label.Action.SetText" text="$IAT/Parameter/06_02_MaximumTorqueAdjustDown" />
+					</Target>
+				</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varDetectLimitState">
+							<Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="DialogDetectLimitContent.numInputTorqueLimit.ValueChanged">
+			<Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="DialogDetectLimitContent" widgetRefId="numInputTorqueLimit" event="ValueChanged"/>
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varParamDriveIsDirty">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true"/>
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="DialogDetectLimitContent.btnCancel.Click">
+			<Source contentRefId="DialogDetectLimitContent" widgetRefId="btnCancel" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="widgets.brease.ToggleButton.Action" contentRefId="DialogDetectLimitContent" widgetRefId="btnStartDetect">
+								<Method xsi:type="widgets.brease.ToggleButton.Action.SetValue" value="0"/>
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="DetectLimitDialog"/>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<!-- Status Detect Limit anzeigen -->
+		<EventBinding id="event_varDetectLimitState_ValueChanged">
+			<Source xsi:type="session.Event" refId="varDetectLimitState" event="ValueChanged" />
+			<EventHandler condition="newValue = 0">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varDetectLimitStateText" >
+						<Method xsi:type="session.VariableAction.SetValueString" value="" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="newValue = 1">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varDetectLimitStateText" >
+						<Method xsi:type="session.VariableAction.SetValueString" value="$IAT/MachineDrive/DetectLimitState1" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="newValue = 2">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varDetectLimitStateText" >
+						<Method xsi:type="session.VariableAction.SetValueString" value="$IAT/MachineDrive/DetectLimitState2" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

@@ -1,0 +1,11 @@
+VAR_CONFIG
+	::HangOut:cylHangOut.Position0 AT %IX."X20DI9371_21C1".DigitalInput11;
+	::HangOut:hangOutIO.IN.HangOutForward AT %IX."X20DI9371_21C1".DigitalInput12;
+	::HangOut:cylHangOut.Activate1 AT %QX."X20DO9322_23C1".DigitalOutput07;
+	::HangOut:cylHangOutTransfer.Position0 AT %IX."X20DI9371_21C5".DigitalInput01;
+	::HangOut:cylHangOutTransfer.Position1 AT %IX."X20DI9371_21C5".DigitalInput02;
+	::HangOut:hangOutIO.OUT.ResetPieceOnHangOutLatch AT %QX."X20CM8281_24C1".DigitalInput02LatchQuit;
+	::HangOut:hangOutIO.IN.PieceOnHangOutLatched AT %IX."X20CM8281_24C1".DigitalInput02Latch;
+	::HangOut:hangOutIO.IN.PieceOnHangOut AT %IX."X20CM8281_24C1".DigitalInput02;
+	::HangOut:hangOutIO.OUT.TransferForwOrStopperOpen AT %QX."X20DO9322_23C1".DigitalOutput08;
+END_VAR

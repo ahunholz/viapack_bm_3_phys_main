@@ -1,0 +1,36 @@
+********************************************************************
+* KONFIGURATIONSHISTORIE
+*
+* Projekt: BM_2 - Physical/Master für Automation-Studio 4.6
+*
+* Die Konfigurationshistorie soll den Werdegang der Konfiguration dokumentieren
+* Neue Einträge in die Historie werden immer nach oben gestellt.
+* Es gibt zwei Eintragstypen für die Historie:
+* 1. Änderung: Mit Angabe von Datum, Author, Überschrift sowie Verweis
+*    auf geänderte Pakete. (Pakete mit Version 0.00.0 werdn nicht
+*    dokumentiert. Änderungen werden erst nach der ersten Freigabe /
+*    Version eingetragen.
+* 2. Freigabe: Mit Angabe von Datum, Version
+********************************************************************
+
+Version 2.06.0
+==============
+
+NEW		05.02.2020 A. Hunholz
+VPBM2-68: Haulbautomatische Folienholfunktion
+VPBM2-76: Sicherheitsabfragen für das Hochfahren ergänzen
+
+FIX		29.10.2019 A. Hunholz
+Fehler 3302 und 3402 verweisen auf den falschen Error-Code (StatusId)
+NEW
+Einbindung des SDM
+
+NEW		08.10.2019 A. Hunholz
+VPMB2-57: Die Ausgänge der CM-Karten werden MFO 11..14
+
+NEW		10.07.2019 A. Hunholz
+VPBM2-21	Änderung von mappMotion (Legacy) auf mappMotion
+		Anpassung der Meldungen für die Achsen
+
+CHANGE	01.07.2019 A. Hunholz		Version 2.04.0 RC
+		Umstellung auf mapp 5.6.x

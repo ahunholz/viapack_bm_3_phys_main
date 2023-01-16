@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">SystemInfo.binding</Object>
+    <Object Type="File">HeaderContent.binding</Object>
+    <Object Type="File">NavigationContent.binding</Object>
+    <Object Type="File">StateContent.binding</Object>
+    <Object Type="File">LoginEasy.binding</Object>
+    <Object Type="File">LoginList.binding</Object>
+    <Object Type="File">PageInfo.binding</Object>
+    <Object Type="File">Machine_IO_Parameter.binding</Object>
+    <Object Type="File">MachineInputContent.binding</Object>
+    <Object Type="File">MachineCollectorContent.binding</Object>
+    <Object Type="File">MachineHangInContent.binding</Object>
+    <Object Type="File">MachineStation1Content.binding</Object>
+    <Object Type="File">MachineStationDrive.binding</Object>
+    <Object Type="File">MachineHangOut.binding</Object>
+    <Object Type="File">MachineStation2.binding</Object>
+    <Object Type="File">MachineOutput.binding</Object>
+    <Object Type="File">Machine.binding</Object>
+    <Object Type="File">Dialog.binding</Object>
+    <Object Type="File">Setting.binding</Object>
+    <Object Type="File">EditProgram.binding</Object>
+    <Object Type="File">CommandButtonContent.binding</Object>
+    <Object Type="File">PageOverview.binding</Object>
+    <Object Type="File">NewEditUserContent.binding</Object>
+    <Object Type="File">CylServiceUI.binding</Object>
+    <Object Type="File">GetFilm.binding</Object>
+  </Objects>
+</Package>

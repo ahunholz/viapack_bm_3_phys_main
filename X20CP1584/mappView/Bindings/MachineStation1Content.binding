@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MachineStation1ContentBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<!-- Ermittlung, ob die Service-Taster angezeigt werden dürfen -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandStation1Machine" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ViewService" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandStation1Machine" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandStation1Machine" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandStation1" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealUpperEdgeIsClosed" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealUpperEdgeClosed" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealUpperEdgeIsOpen" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealUpperEdgeOpened" attribute="selectedIndex" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.Service.TempSealUpperEdge" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpSealUpperEdgeHeatTemp" attribute="node" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpSealUpperEdgeHeatTemp" attribute="enable" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="btnSealUpperEdgeSwitchStraight" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.HeatSealUpperEdge" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numOutSealUpperEdgeTemperature" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.MaxLength" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpParameter_06_08" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.MinDistanceForSealingTop" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpParameter_06_07" attribute="node" />
+		</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.MachineIsDirty" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="btnSave" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.PredictionTimeCloseGripper" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpParameter_5_1" attribute="node" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.Service.SealStraight" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="btnSealUpperEdgeSwitchStraight" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ActivateCutter" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListFilmCutter" attribute="selectedIndex" />
+</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.CloseGripper" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListFilmGripper" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.FilmStopper" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListFilmStopper" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.FilmSensor" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListFilmMonitorSensor" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.EnableService" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpSealLowerEdgeHeatTemp" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.Service.TempSealLowerEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpSealLowerEdgeHeatTemp" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.HeatSealLowerEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numOutSealLowerEdgeTemperature" attribute="value" />
+</Binding>
+
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealLowerEdgeDoClose" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealLowerEdgeClose" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealLowerEdgeIsClosed" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealLowerEdgeClosed" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealStraight" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealUpperEdgeShape" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SlitterOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListOutputSlitter" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ViewSlitter" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="grpIOSlitter" attribute="visible" />
+</Binding>
+
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="btnOutputSuction" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.Service.EnableSuction" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="btnOutputSuction" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SuctionOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListOutputSuction" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ViewSuction" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="grpIOSuction" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ViewSpreader" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="grpIOSpreader" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SpreaderOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListOutputSpreader" attribute="selectedIndex" />
+</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSlitter" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="grpParameterSlitter" attribute="visible" />
+		</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.IndexMFO_EnableSlitter" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Slitter" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.IndexMFO_EnableSpreader" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Spreader" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSpreader" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="grpParameterSpreader" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.IndexMFO_EnableSuction" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Suction" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSuction" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="grpParameterSuction" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ProgramNo" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="numOutCurrentCount1" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.PieceInStation1" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="imgPieceInCollector" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Dynamic.HasSealLowerEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="grpIOLowerSealing" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewCommandStation1Machine" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpSealUpperEdgeHeatTemp" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewCommandStation1Machine" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="btnSealUpperEdgeSwitchStraight" attribute="visible" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandStation1Machine" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numInpSealLowerEdgeHeatTemp" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandStation1Machine" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="btnOutputSuction" attribute="visible" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealUpperEdgeDoClose" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealUpperEdgeClose" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.UseTranslucientCell" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="cbParameter_5_2" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.MonitoringCarriage" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListCarriageMonitor" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.State.TranslucentCell" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListTranslucientCell" attribute="selectedIndex" />
+		</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.IndexMFO_EnableSuction2" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Suction2" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.MeasuredLength" attribute="node" />
+<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="numOutMeasuredLength" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.PieceInStation1" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="numOutMeasuredLength" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.VoltageSealUpperEdge" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numOutSealUpperEdgeTemperature1" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.VoltageSealLowerEdge" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="numOutSealUpperEdgeTemperature2" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealLowerEdgeIsOpened" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealLowerEdgeOpened" attribute="selectedIndex" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.SealUpperEdgeDoOpen" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealUpperEdgeOpen" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.ModeSealingUpperEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="imgListSealUpperEdgeOpen" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.ModeSealingUpperEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="lbSealUpperEdgeOpen" attribute="visible" />
+		</Binding>
+		
+	</Bindings>
+</BindingsSet>

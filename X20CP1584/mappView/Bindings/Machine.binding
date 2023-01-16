@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MachineBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AxisCtrl2:axisUI.CurrentPosition" attribute="node" samplingRate="fast" />
+			<Target xsi:type="brease" contentRefId="Station2Content" widgetRefId="numOutPostionAxis2" attribute="node" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AxisCtrlm:axisUI.CurrentPosition" attribute="node" samplingRate="fast" />
+			<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="numOutPostionAxis1" attribute="node" />
+		</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.ViewStation2Content" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineContent" widgetRefId="cCtrl5" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.ViewStation2" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineContent" widgetRefId="fbi5" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.ViewTransfer" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineContent" widgetRefId="fbi6" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.ViewStation2Content" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineInvContent" widgetRefId="cCtrl1" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.ViewStation2" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineInvContent" widgetRefId="fbi1" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.ViewTransfer" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineInvContent" widgetRefId="fbi0" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.State.TransferIsActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="HangOutContent" widgetRefId="imgTransfer" attribute="visible" />
+</Binding>
+		
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.TransferIsActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="OutputContent" widgetRefId="imgTransfer" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewSignalAutomatic" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpIOCharge" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewGettingFilm" attribute="value" />
+			<Target xsi:type="expression" refId="ViewToggleSwitchGettingFilm" attribute="inA" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewToggleSwitchGettingFilm" attribute="inB" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewToggleSwitchGettingFilm" attribute="result" />
+			<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="lbGettingFilm" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewToggleSwitchGettingFilm" attribute="result" />
+			<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="togSwGettingFilm" attribute="visible" />
+		</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.SelectGettingFilm" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station1Content" widgetRefId="togSwGettingFilm" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

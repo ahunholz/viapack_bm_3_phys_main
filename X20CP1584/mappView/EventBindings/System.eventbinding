@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="System_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+		<EventBinding>
+
+			<Source xsi:type="clientSystem.Event" event="ContentLoaded" />
+
+			<Operand name="MD_Index" datatype="ANY_INT">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varMD_Index">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="IsOperator" datatype="BOOL">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varUserIsOperator">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+
+			<EventHandler condition="contentId=&quot;DialogLoginEasyContent&quot;">
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varLbInformationLogin"> 
+							<Method xsi:type="session.VariableAction.SetValueString" value="" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varPasswordLogin">
+							<Method xsi:type="session.VariableAction.SetValueString" value="" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+			<EventHandler condition="contentId=&quot;DialogLoginListContent&quot;">
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varLbInformationLogin"> 
+							<Method xsi:type="session.VariableAction.SetValueString" value="" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varPasswordLogin">
+							<Method xsi:type="session.VariableAction.SetValueString" value="" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler>
+
+			<EventHandler condition="contentId=&quot;content_PageMachine&quot;">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.EditMachineParameter.IsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="contentId=&quot;InputTypeHandshakeParameterContent&quot;">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::InputTr:inputTrUI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="contentId=&quot;PageMachineHangInContent&quot;">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::HangIn:hangInUI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="contentId=&quot;PageMachineStation1Content&quot;">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="contentId=&quot;PageMachineHangOutContent&quot;">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::HangOut:hangOutUI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+
+			<EventHandler condition="contentId=&quot;PageMachineStationDriveContent&quot; AND MD_Index=0 AND IsOperator">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AxisCtrlm:axisUI.ControlActive">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+			<EventHandler condition="contentId=&quot;PageMachineStationDriveContent&quot; AND MD_Index=1 AND IsOperator">
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::AxisCtrl2:axisUI.ControlActive">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+
+		</EventBinding>
+		
+		<EventBinding id="eventBindingReadLoginInfoDoneChanged">
+			<Source xsi:type="session.Event" refId="varReadLoginInfoDone" event="ValueChanged"/>
+			<EventHandler>
+				<Parallel>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varReadLoginInfo">
+							<Method xsi:type="session.VariableAction.SetValueNumber" value="0" />
+						</Target>
+					</Action>
+					<Action>
+						<Target xsi:type="session.VariableAction" refId="varLogInPassword">
+							<Method xsi:type="session.VariableAction.SetValueString" value="" />
+						</Target>
+					</Action>
+				</Parallel>
+			</EventHandler> 
+		</EventBinding>
+
+		<EventBinding id="eventBindingUserLevelChanged">
+			<Source xsi:type="session.Event" refId="varUserLevel" event="ValueChanged"/>
+			<EventHandler condition="newValue&gt;0">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varMessageAllowToAck">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler> 
+			<EventHandler condition="newValue=0">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varMessageAllowToAck">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler> 
+		</EventBinding>
+
+		<EventBinding>
+			<Source xsi:type="session.Event" refId="::SYSTEM:clientInfo.currentPageId" event="ValueChanged" />
+			<EventHandler condition="oldValue &lt;&gt; &quot;&quot;">
+				<Sequence>
+					<Step order="0">
+						<Parallel>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varViewNavOverview" >
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varViewNavBack" >
+									<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+								</Target>
+							</Action>
+						</Parallel>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varNavigationBackPageId" >
+								<Method xsi:type="session.VariableAction.SetValueString" value="=oldValue" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding>
+			<Source xsi:type="session.Event" refId="varSetLanguageId" event="ValueChanged" />
+			<Operand name="currentLanguage" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="::SYSTEM:clientInfo.languageId" >
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="newValue &lt;&gt; currentLanguage">
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.SetLanguage" value="=newValue" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

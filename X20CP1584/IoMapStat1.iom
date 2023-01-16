@@ -1,0 +1,10 @@
+VAR_CONFIG
+	::Station1:cylCutter.Activate1 AT %QX."X20DO9322_23C1".DigitalOutput11;
+	::Station1:station1IO.IN.TranslucentCell AT %IX."X20DI9371_21C5".DigitalInput10;
+	::Station1:station1IO.IN.MonitoringCarriage AT %IX."X20DI9371_21C5".DigitalInput11;
+	::HangOut:hangOutIO.OUT.Blow AT %QX."X20DO9322_23C5".DigitalOutput03;
+	::Station1:station1IO.OUT.SealStraight AT %QX."X20DO9322_23C5".DigitalOutput04;
+	::Station1:station1IO.MonitoringFilm.Sensor AT %IX."X20DI9371_21C5".DigitalInput09;
+	::Station1:cylFilmStopper.Activate1 AT %QX."X20DO9322_23C5".DigitalOutput02;
+	::Station1:cylGripper.Activate1 AT %QX."X20DO9322_23C1".DigitalOutput12;
+END_VAR

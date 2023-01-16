@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gRcpFacPar" Type="mprecipexml">
+    <Group ID="mapp.Recipe.Xml">
+      <Selector ID="Signature" Value="Required">
+        <Property ID="PassPhrase" Value="kc@p@iV" />
+      </Selector>
+    </Group>
+    <Selector ID="Alarms" Value="MpAlarmX">
+      <Group ID="mapp.AlarmX.Core.Configuration">
+        <Group ID="[0]">
+          <Property ID="Code" Value="6000" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Code" Value="6001" />
+          <Property ID="Severity" Value="10" />
+          <Property ID="Disable" Value="TRUE" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Code" Value="6002" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Code" Value="6003" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="gRcpMacPar" Type="mprecipexml">
+    <Selector ID="Alarms" Value="MpAlarmX">
+      <Group ID="mapp.AlarmX.Core.Configuration">
+        <Group ID="[0]">
+          <Property ID="Code" Value="6010" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Code" Value="6011" />
+          <Property ID="Severity" Value="10" />
+          <Property ID="Disable" Value="TRUE" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Code" Value="6012" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Code" Value="6013" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="gRcpProgPar" Type="mprecipexml">
+    <Selector ID="Alarms" Value="MpAlarmX">
+      <Group ID="mapp.AlarmX.Core.Configuration">
+        <Group ID="[0]">
+          <Property ID="Code" Value="6020" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Code" Value="6021" />
+          <Property ID="Severity" Value="10" />
+          <Property ID="Disable" Value="TRUE" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Code" Value="6022" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Code" Value="6023" />
+          <Property ID="Severity" Value="10" />
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

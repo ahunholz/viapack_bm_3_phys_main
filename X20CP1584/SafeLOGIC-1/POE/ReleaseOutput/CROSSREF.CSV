@@ -1,0 +1,3 @@
+ReleaseOut,POE\ReleaseOutput\ReleaseOutput.GB,1,OUT,12,1,Write,,BOOL,,,VAR_OUTPUT,LOCAL,,
+Safe_In,POE\ReleaseOutput\ReleaseOutput.GB,1,IN,6,27,Read,,SAFEBOOL,,,VAR_INPUT,LOCAL,,
+TONrelease,POE\ReleaseOutput\ReleaseOutput.GB,0,,4,39,,,,,,VAR,FB,,

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreMachine" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="msgMachineProtSwitchOutputTripped" />
+        <Property ID="Message" Value="{$Machine/msgProtSwitchOutputTripped}" />
+        <Property ID="Code" Value="3111" />
+        <Property ID="Severity" Value="20" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="ConfigFaultStartUpWarning" />
+        <Property ID="Message" Value="{$User/EventLog/1610612744} [{&amp;ConfigFaultStartUpWarningErrorID}]" />
+        <Property ID="Code" Value="3101" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Snippets">
+      <Group ID="[0]">
+        <Property ID="Key" Value="ConfigFaultStartUpWarningErrorID" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::Machine:StartUpWarning.ErrorID" />
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

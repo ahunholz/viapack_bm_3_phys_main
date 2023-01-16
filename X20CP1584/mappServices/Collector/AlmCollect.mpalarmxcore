@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreCollector" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="Mapping">
+        <Group ID="[0]">
+          <Property ID="Alarm" Value="MsgCollectorFaultLVE" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Alarm" Value="MsgCollectorTimeoutReceive" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="STOP" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Alarm" Value="MsgCollectorNoData" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="STOP" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Alarm" Value="MsgCollectorTimeoutReceive" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="STOP" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="MsgCollectorFaultLVE" />
+        <Property ID="Message" Value="{$Collector/txtMsgFaultLVE}" />
+        <Property ID="Code" Value="3000" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="MsgCollectorFaultLVEwarn" />
+        <Property ID="Message" Value="{$Collector/txtMsgFaultLVE}" />
+        <Property ID="Code" Value="3001" />
+        <Property ID="Severity" Value="20" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="MsgCollectorLVEoccupied" />
+        <Property ID="Message" Value="{$Collector/txtMsgLVEoccupied}" />
+        <Property ID="Code" Value="3002" />
+        <Property ID="Severity" Value="20" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="MsgCollectorTimeoutReceive" />
+        <Property ID="Message" Value="{$Collector/txtMsgCollectorTimeoutReceive}" />
+        <Property ID="Code" Value="3003" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="MsgCollectorNoData" />
+        <Property ID="Message" Value="{$Collector/txtMsgNoData}" />
+        <Property ID="Code" Value="3004" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

@@ -1,0 +1,6 @@
+(*Programmanwahl*)
+VAR_CONFIG
+	::vpOPCUA:vpOPCUA_IF.Command.Request AT %Q.::InputTr:opcUAcmd.Request; (*Kommando*)
+	::vpOPCUA:vpOPCUA_IF.Command.RequestParamSetNo AT %Q.::InputTr:opcUAcmd.RequestParamSetNo; (*Gefordertes Programm*)
+	::InputTr:opcUAcmd.Response AT %Q.::vpOPCUA:vpOPCUA_IF.Command.Response; (*Kommando Antwort*)
+END_VAR

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="CommandButtonContentBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.State.ViewFDC" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonFeedingOffContent" widgetRefId="togBtnStopFeeding" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.FeedingOff" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonFeedingOffContent" widgetRefId="togBtnStopFeeding" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.OverWriteFixlength" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectFixlengthContent" widgetRefId="recDifference" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.Fixlength" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectFixlengthContent" widgetRefId="btnBar" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.SealLowerEdge" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectSealLowerEdgeContent" widgetRefId="btnBar" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.OverWriteSealLowerEdge" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectSealLowerEdgeContent" widgetRefId="recDifference" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.OverWriteMoveSlow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectMoveSlowContent" widgetRefId="recDifference" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.MoveSlow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectMoveSlowContent" widgetRefId="btnBar" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.WithoutBagging" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectWithoutBaggingContent" widgetRefId="btnBar" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.OverWriteWithoutBagging" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectWithoutBaggingContent" widgetRefId="recDifference" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.EnableWithoutBagging" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectWithoutBaggingContent" widgetRefId="btnBar" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.SealSlanted" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectSealingContent" widgetRefId="btnBar" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.Command.OverWriteSealSlanted" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonSelectSealingContent" widgetRefId="recDifference" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.RequestPause" attribute="value" />
+			<Target xsi:type="brease" contentRefId="ButtonPauseContent" widgetRefId="togBtnStopFeeding" attribute="value" />
+		</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Command.OutputOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ButtonOutputOffContent" widgetRefId="togBtnStopFeeding" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Collector:parameter.Factory.EnableMultiParts" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="lbParameter_02_04" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Collector:parameter.Factory.EnableMultiParts" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineCollectorContent" widgetRefId="numInpParameter_02_04" attribute="visible" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Collector:parameter.Factory.EnableMultiParts" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_04" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Collector:parameter.Factory.EnableMultiParts" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="lbParameter55_04" attribute="visible" />
+</Binding>
+
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionWithoutPacking" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar55_01" attribute="visible" />
+</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.ProgramList" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="ddbSelectProgram" attribute="dataProvider" />
+		</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewFDC" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="ccOutputOff" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varIP_SDM" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageInfoContent" widgetRefId="wvSDM" attribute="host" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+<Target xsi:type="brease" contentRefId="ButtonPauseContent" widgetRefId="togBtnStopFeeding" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.VelocityInit" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="cw_MacVelocityInit1" attribute="VelocityParameterNode" />
+</Binding>
+</Bindings>
+</BindingsSet>

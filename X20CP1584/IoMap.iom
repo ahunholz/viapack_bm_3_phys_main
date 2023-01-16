@@ -1,0 +1,5 @@
+VAR_CONFIG
+	::BM_2_Info:bm2CPU_InfoIO.BatteryOK AT %IB."X20CP1584".BatteryStatusCPU;
+	::BM_2_Info:bm2CPU_InfoIO.TemperatureCPU AT %IW."X20CP1584".TemperatureCPU;
+	::BM_2_Info:bm2CPU_InfoIO.TemperatureENV AT %IW."X20CP1584".TemperatureENV;
+END_VAR

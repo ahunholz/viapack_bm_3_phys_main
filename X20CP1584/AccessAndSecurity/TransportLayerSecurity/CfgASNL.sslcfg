@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="SSLConfigurationANSL" Type="SSLCFG">
+    <Selector ID="SSLCfgType" Value="CommonSslCfg">
+      <Group ID="OwnCertificate">
+        <Property ID="OwnCertificate" Value="MyCert.cer" />
+        <Property ID="OwnCertificatePrivateKey" Value="MyKey.key" />
+        <Property ID="OwnCertificatePassword" Value="vi@p@ck" />
+      </Group>
+      <Selector ID="SSLCipherSuite" Value="TLS_1_0">
+        <Property ID="ADH-AES128-SHA" Value="on" />
+        <Property ID="ADH-AES256-SHA" Value="on" />
+        <Property ID="ADH-CAMELLIA128-SHA" Value="on" />
+        <Property ID="ADH-CAMELLIA256-SHA" Value="on" />
+        <Property ID="ADH-SEED-SHA" Value="on" />
+        <Property ID="AECDH-AES128-SHA" Value="on" />
+        <Property ID="AECDH-AES256-SHA" Value="on" />
+        <Property ID="AECDH-DES-CBC3-SHA" Value="on" />
+        <Property ID="AECDH-NULL-SHA" Value="on" />
+        <Property ID="AECDH-RC4-SHA" Value="on" />
+        <Property ID="AES128-SHA" Value="on" />
+        <Property ID="AES256-SHA" Value="on" />
+        <Property ID="CAMELLIA128-SHA" Value="on" />
+        <Property ID="CAMELLIA256-SHA" Value="on" />
+        <Property ID="DH-DSS-AES128-SHA" Value="on" />
+        <Property ID="DH-DSS-AES256-SHA" Value="on" />
+        <Property ID="DH-DSS-CAMELLIA128-SHA" Value="on" />
+        <Property ID="DH-DSS-CAMELLIA256-SHA" Value="on" />
+        <Property ID="DH-DSS-SEED-SHA" Value="on" />
+        <Property ID="DH-RSA-AES128-SHA" Value="on" />
+        <Property ID="DH-RSA-AES256-SHA" Value="on" />
+        <Property ID="DH-RSA-CAMELLIA128-SHA" Value="on" />
+        <Property ID="DH-RSA-CAMELLIA256-SHA" Value="on" />
+        <Property ID="DH-RSA-SEED-SHA" Value="on" />
+        <Property ID="DHE-DSS-AES128-SHA" Value="on" />
+        <Property ID="DHE-DSS-AES256-SHA" Value="on" />
+        <Property ID="DHE-DSS-CAMELLIA128-SHA" Value="on" />
+        <Property ID="DHE-DSS-CAMELLIA256-SHA" Value="on" />
+        <Property ID="DHE-DSS-RC4-SHA" Value="on" />
+        <Property ID="DHE-DSS-SEED-SHA" Value="on" />
+        <Property ID="DHE-RSA-AES128-SHA" Value="on" />
+        <Property ID="DHE-RSA-AES256-SHA" Value="on" />
+        <Property ID="DHE-RSA-CAMELLIA128-SHA" Value="on" />
+        <Property ID="DHE-RSA-CAMELLIA256-SHA" Value="on" />
+        <Property ID="DHE-RSA-SEED-SHA" Value="on" />
+        <Property ID="ECDH-ECDSA-AES128-SHA" Value="on" />
+        <Property ID="ECDH-ECDSA-AES256-SHA" Value="on" />
+        <Property ID="ECDH-ECDSA-DES-CBC3-SHA" Value="on" />
+        <Property ID="ECDH-ECDSA-NULL-SHA" Value="on" />
+        <Property ID="ECDH-ECDSA-RC4-SHA" Value="on" />
+        <Property ID="ECDH-RSA-AES128-SHA" Value="on" />
+        <Property ID="ECDH-RSA-AES256-SHA" Value="on" />
+        <Property ID="ECDH-RSA-DES-CBC3-SHA" Value="on" />
+        <Property ID="ECDH-RSA-NULL-SHA" Value="on" />
+        <Property ID="ECDH-RSA-RC4-SHA" Value="on" />
+        <Property ID="ECDHE-ECDSA-AES128-SHA" Value="on" />
+        <Property ID="ECDHE-ECDSA-AES256-SHA" Value="on" />
+        <Property ID="ECDHE-ECDSA-DES-CBC3-SHA" Value="on" />
+        <Property ID="ECDHE-ECDSA-NULL-SHA" Value="on" />
+        <Property ID="ECDHE-ECDSA-RC4-SHA" Value="on" />
+        <Property ID="ECDHE-RSA-AES128-SHA" Value="on" />
+        <Property ID="ECDHE-RSA-AES256-SHA" Value="on" />
+        <Property ID="ECDHE-RSA-DES-CBC3-SHA" Value="on" />
+        <Property ID="ECDHE-RSA-NULL-SHA" Value="on" />
+        <Property ID="ECDHE-RSA-RC4-SHA" Value="on" />
+        <Property ID="EXP1024-DES-CBC-SHA" Value="on" />
+        <Property ID="EXP1024-DHE-DSS-DES-CBC-SHA   " Value="on" />
+        <Property ID="EXP1024-DHE-DSS-RC4-SHA" Value="on" />
+        <Property ID="EXP1024-RC2-CBC-MD5" Value="on" />
+        <Property ID="EXP1024-RC4-MD5" Value="on" />
+        <Property ID="EXP1024-RC4-SHA" Value="on" />
+        <Property ID="SEED-SHA" Value="on" />
+      </Selector>
+      <Selector ID="ValidateCommBuddy" Value="off" />
+    </Selector>
+  </Element>
+</Configuration>

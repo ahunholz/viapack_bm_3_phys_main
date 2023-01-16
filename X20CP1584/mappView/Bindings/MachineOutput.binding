@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="binding_MachineTransferOutput" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<!-- Ermittlung, ob die Service-Taster angezeigt werden dürfen -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandTransferOutputMachine" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.ViewService" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandTransferOutputMachine" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandTransferOutputMachine" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandTransferOutput" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.PusherBackward" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MachineTransferOutput" widgetRefId="imgListSignalPusherBackward" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.PusherIsBackward" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MachineTransferOutput" widgetRefId="imgListSignalPusherIsBackward" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.PusherIsForward" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MachineTransferOutput" widgetRefId="imgListSignalPusherIsForward" attribute="selectedIndex" />
+</Binding>
+	</Bindings>
+</BindingsSet>

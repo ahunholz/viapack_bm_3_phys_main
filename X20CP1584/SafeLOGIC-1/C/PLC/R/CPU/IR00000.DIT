@@ -1,0 +1,226 @@
+(*
+T: RESOURCE CPU
+FW: NO
+CI#: 0
+QSL: 36
+QVE: 36
+QVPC: 36
+QPar: 0
+QFBI: 0
+*)
+@V 1 2 0
+IN_NH_OK_38S5_2	1	VAR_GLOBAL	@TYP:43
+%SIX 17.1		     
+
+;
+
+@V 1 3 0
+IN_NH_OK_X15	2	VAR_GLOBAL	@TYP:43
+%SIX 17.7		     
+
+;
+
+@V 1 4 0
+IN_NH_OK_X22	3	VAR_GLOBAL	@TYP:43
+%SIX 18.0		     
+
+;
+
+@V 1 5 0
+IN_NH_OK_38S1_1	4	VAR_GLOBAL	@TYP:43
+%SIX 16.6		     
+
+;
+
+@V 1 6 0
+IN_NH_OK_X25	5	VAR_GLOBAL	@TYP:43
+%SIX 16.5		     
+
+;
+
+@V 1 7 0
+IN_NH_OK_38S1_2	6	VAR_GLOBAL	@TYP:43
+%SIX 16.7		     
+
+;
+
+@V 1 8 0
+IN_NH_OK_37S1	7	VAR_GLOBAL	@TYP:43
+%SIX 16.1		     
+
+;
+
+@V 1 9 0
+IN_NH_OK_38S5_1	8	VAR_GLOBAL	@TYP:43
+%SIX 17.0		     
+
+;
+
+@V 1 10 0
+IN_NH_OK_37S4	9	VAR_GLOBAL	@TYP:43
+%SIX 16.3		     
+
+;
+
+@V 1 11 0
+IN_NH_OK_X29	10	VAR_GLOBAL	@TYP:43
+%SIX 16.4		     
+
+;
+
+@V 1 12 0
+IN_TNG_39B1	11	VAR_GLOBAL	@TYP:43
+%SIX 17.2		     
+
+;
+
+@V 1 13 0
+IN_TNG_39B2	12	VAR_GLOBAL	@TYP:43
+%SIX 17.3		     
+
+;
+
+@V 1 14 0
+IN_TNG_39B3	13	VAR_GLOBAL	@TYP:43
+%SIX 17.4		     
+
+;
+
+@V 1 15 0
+IN_TNG_39B4	14	VAR_GLOBAL	@TYP:43
+%SIX 17.5		     
+
+;
+
+@V 1 16 0
+IN_TNG_39B5	15	VAR_GLOBAL	@TYP:43
+%SIX 17.6		     
+
+;
+
+@V 1 17 0
+IN_Fehler_Servo_15F1	16	VAR_GLOBAL	@TYP:43
+%SIX 16.2		     
+
+;
+
+@V 1 18 0
+IN_REQ_SERVICE	17	VAR_GLOBAL	@TYP:43
+%SIX 16.0		     
+
+;
+
+@V 1 19 0
+OUT_Kein_Teil_gefallen	18	VAR_GLOBAL	@TYP:1
+%NSQX 0.0		     
+
+;
+
+@V 1 20 0
+S_NOTHALT_OK	19	VAR_GLOBAL	@TYP:43
+%SQX 14.0		     
+@TYP:43# 0
+;
+
+@V 1 21 0
+S_WAGEN_OK	20	VAR_GLOBAL	@TYP:43
+%SQX 15.0		     
+
+;
+
+@V 1 22 0
+S_WAGEN2_OK	21	VAR_GLOBAL	@TYP:43
+%SQX 15.1		     
+
+;
+
+@V 1 23 0
+TeilGefallenB1	22	VAR_GLOBAL	@TYP:1
+%NSQX 0.1		     
+
+;
+
+@V 1 24 0
+TeilGefallenB2	23	VAR_GLOBAL	@TYP:1
+%NSQX 0.2		     
+
+;
+
+@V 1 25 0
+TeilGefallenB3	24	VAR_GLOBAL	@TYP:1
+%NSQX 0.3		     
+
+;
+
+@V 1 26 0
+TeilGefallenB4	25	VAR_GLOBAL	@TYP:1
+%NSQX 0.4		     
+
+;
+
+@V 1 27 0
+TeilGefallenB5	26	VAR_GLOBAL	@TYP:1
+%NSQX 0.5		     
+
+;
+
+@V 1 28 0
+IsServicebetrieb	27	VAR_GLOBAL	@TYP:1
+%NSQX 0.6		     
+
+;
+
+@V 1 29 0
+IN_ResetNOTHALT	28	VAR_GLOBAL	@TYP:1
+%NSIX 0.0		     
+
+;
+
+@V 1 30 0
+S_AUS	29	VAR_GLOBAL	@TYP:1
+%NSIX 0.1		     
+
+;
+
+@V 1 31 0
+R_NOTHALT_OK	30	VAR_GLOBAL	@TYP:1
+%NSQX 20.0		     
+
+;
+
+@V 1 32 0
+R_WAGEN_OK	31	VAR_GLOBAL	@TYP:1
+%NSQX 21.0		     
+
+;
+
+@V 1 33 0
+R_WAGEN2_OK	32	VAR_GLOBAL	@TYP:1
+%NSQX 21.1		     
+
+;
+
+@V 1 34 0
+OUT_Sperre	33	VAR_GLOBAL	@TYP:1
+%NSQX 0.7		     
+
+;
+
+@V 1 35 0
+Lifesign	34	VAR_GLOBAL	@TYP:1
+%NSQX 1.0		     
+
+;
+
+@V 1 36 0
+S_OhneStation2	35	VAR_GLOBAL	@TYP:43
+%SIX 62.0		     
+
+;
+
+@V 1 37 0
+OhneStation2	36	VAR_GLOBAL	@TYP:1
+%NSQX 1.1		     
+@TYP:1# 0
+;
+

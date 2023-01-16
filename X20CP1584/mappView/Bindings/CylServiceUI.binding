@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="binding_cylServiceUI" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<Bindings>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::InputTr:cylSeparatorServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceSeparatorUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::HangIn:cylHangInServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceHangInUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::HangIn:cylHangInPusherServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceHangInPusherUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station1:cylSUE_ServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat1SUE_UI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station1:cylSLE_ServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat1SLE_UI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station1:cylCutterServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat1CutterUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station1:cylFilmStopperServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat1FilmStopperUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station1:cylGripperServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat1GripperUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station1:cylSlitterServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat1SlitterUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station1:cylSpreaderServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat1SpreaderUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::HangOut:cylHangOutServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceHangOutUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::HangOut:cylHangOutTransferServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceHangOutTransferUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::HangOut:cylHangOutStopperServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceHangOutStopperUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Station2:cylSLE_ServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceStat2SLE_UI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::OutputTr:cylPusherServiceUI" />
+			<Target xsi:type="brease" contentRefId="content_CylServiceOutputTrPusherUI" widgetRefId="vpCylServiceUI" attribute="value" />
+		</Binding>
+
+	</Bindings>
+</BindingsSet>

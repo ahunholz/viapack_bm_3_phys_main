@@ -1,0 +1,8 @@
+VAR_CONFIG
+	::Collector:lve.LVE_Out4_Counter AT %IW."X20CM8281_24C5".Counter01;
+	::Collector:lve.ResetCounter AT %QX."X20CM8281_24C5".ResetCounter01;
+	::Collector:collectorIO.IN.LVE_Out2_Occupied AT %IX."X20DI9371_21C1".DigitalInput08;
+	::Collector:lve.LVE_Out3_OK AT %IX."X20DI9371_21C1".DigitalInput10;
+	::Collector:lve.LVE_In1_Release AT %QX."X20DO9322_23C1".DigitalOutput06;
+	::Collector:collectorIO.IN.SigPieceInStation AT %IX."X20DI9371_21C1".DigitalInput03;
+END_VAR

@@ -1,0 +1,10 @@
+VAR_CONFIG
+	::InputTr:inputTrIO.In.ProtectInputConvTripped AT %IX."X20DI9371_22C1".DigitalInput01;
+	::InputTr:inputTrIO.In.SignalPieceAtInput AT %IX."X20DI9371_21C1".DigitalInput01;
+	::InputTr:inputTrIO.In.PieceThroughInput AT %IX."X20CM8281_24C1".DigitalInput01;
+	::InputTr:inputTrIO.In.PieceThroughInputL AT %IX."X20CM8281_24C1".DigitalInput01Latch;
+	::InputTr:cylSeparator.Activate1 AT %QX."X20DO9322_23C1".DigitalOutput02;
+	::InputTr:inputTrIO.Out.InputConveyorOn AT %QX."X20DO9322_23C5".DigitalOutput05;
+	::InputTr:inputTrIO.Out.ExtStopperOpen AT %QX."X20DO9322_23C5".DigitalOutput07;
+	::InputTr:inputTrIO.Out.AckPieceThroughInputL AT %QX."X20CM8281_24C1".DigitalInput01LatchQuit;
+END_VAR

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MachineHangInContentBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<!-- Ermittlung, ob die Service-Taster angezeigt werden dürfen -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandHangInMachine" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.Service.ViewService" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandHangInMachine" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandHangInMachine" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandHangIn" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="expression" refId="ViewHangInBtnSlow" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewCommandHangIn" attribute="value" />
+			<Target xsi:type="expression" refId="ViewHangInBtnSlow" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewHangInBtnSlow" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnSlow" attribute="visible" />
+		</Binding>
+
+		<!-- Einhänger -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.HangInForward" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalHangInForward" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.HangInIsForward" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalHangInIsForward" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.HangInIsBackward" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalHangInIsBackward" attribute="selectedIndex" />
+		</Binding>
+	
+		<!-- Pusher -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowHangInPusher" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="grpIOPusher" attribute="visible" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.HangInPusherBackward" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalPusherBackward" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.HangInPusherIsForward" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalPusherIsForward" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.HangInPusherIsBackward" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalPusherIsBackward" attribute="selectedIndex" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.Slow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalSlow" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="lbSlow" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalSlow" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.Service.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnSlow" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.Service.Slow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnSlow" attribute="value" />
+		</Binding>
+
+		<!-- Stopper -->
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowHangInStopper" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="grpStopper" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.StopperActive" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="imgListSignalStopperActive" attribute="selectedIndex" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.Service.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnStopperActivate" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.Service.StopperActive" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnStopperActivate" attribute="value" />
+		</Binding>
+		
+		<!-- Parameter -->
+	
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.EditParameter.Machine.MFO_Index_PusherSlow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="ddbMFO_Slow" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.EditParameter.MachineIsDirty" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+	
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.TransferIsActive" attribute="value" />
+			<Target xsi:type="brease" contentRefId="HangInContent" widgetRefId="imgTransfer" attribute="visible" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandHangInMachine" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnStopperActivate" attribute="visible" />
+		</Binding>
+	
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowParameter" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="grpParameter" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowParameter" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="grpParameterPusher" attribute="visible" />
+		</Binding>
+		
+
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowHangInPusher" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageMachineHangInContent" widgetRefId="btnShowHangInPusherServiceUI" attribute="visible" />
+</Binding>
+</Bindings>
+</BindingsSet>

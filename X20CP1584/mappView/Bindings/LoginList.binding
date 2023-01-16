@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="LoginListBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="pswdListLoginPassword" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="lginBtnLogin" attribute="password" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varPasswordLogin" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="pswdListLoginPassword" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="pswdListLoginPassword" attribute="value" />
+			<Target xsi:type="session" refId="varCurrentListPassword" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="ddbUsers" attribute="selectedValue" />
+			<Target xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="lginBtnLogin" attribute="userName" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="ddbUsers" attribute="selectedValue" />
+			<Target xsi:type="session" refId="varLogInUserNameList" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mvClient:UserList" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="ddbUsers" attribute="dataProvider" />
+		</Binding>
+		
+	<Binding mode="twoWay">
+<Source xsi:type="session" refId="varUserMgrLoginPassword" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogUsrMgrLoginListContent" widgetRefId="pswdListLoginPassword" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mvClient:UserList" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogUsrMgrLoginListContent" widgetRefId="ddbUsers" attribute="dataProvider" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varUserMgrLoginUserName" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogUsrMgrLoginListContent" widgetRefId="ddbUsers" attribute="selectedValue" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varLbInformationLogin" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogLoginListContent" widgetRefId="lbInformation" attribute="value" />
+</Binding>
+	</Bindings>
+</BindingsSet>

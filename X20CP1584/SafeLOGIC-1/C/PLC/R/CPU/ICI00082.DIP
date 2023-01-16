@@ -1,0 +1,13 @@
+(*
+T: FUNCTION_BLOCK TeilGefallen
+FW: NO
+CI#: 82
+QSL: 13
+QVE: 13
+QVPC: 13
+QPar: 3
+QFBI: 5
+*)
+Kein_Teil_gefallen	@IV 3	@TYP:1	VAR_OUTPUT
+S_Kein_Teil_gefallen	@IV 2	@TYP:43	VAR_OUTPUT
+S_ResetNothalt	@IV 1	@TYP:43	VAR_INPUT

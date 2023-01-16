@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreStation1" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="BySeverity">
+        <Group ID="[0]">
+          <Property ID="Severity" Value="100" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="MsgStation1HangOut" />
+        <Property ID="Message" Value="{$Station1/txtStationName} : {$Station1/txtMsgHangOut}{$Station1/txtCanceledMovingUp}" />
+        <Property ID="Code" Value="4000" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="MsgStation1CarriageMonitor" />
+        <Property ID="Message" Value="{$Station1/txtStationName} : {$Station1/txtMsgCarriageMonitor}{$Station1/txtCanceledMovingUp}" />
+        <Property ID="Code" Value="4001" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Name" Value="MsgStation1SealUpperEdgeNotOpen" />
+        <Property ID="Message" Value="{$Station1/txtStationName} : {$Station1/txtMsgSealUpperEdgeNotOpen}{$Station1/txtCanceledMovingUp}" />
+        <Property ID="Code" Value="4002" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Name" Value="MsgStation1TimeoutSealUpperEdge" />
+        <Property ID="Message" Value="{$Station1/txtMsgTimeoutSealUpperEdge}" />
+        <Property ID="Code" Value="4003" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Name" Value="MsgStation1FaultSealUpperEdge" />
+        <Property ID="Message" Value="{$Station1/txtMsgFaultSealUpperEdge}" />
+        <Property ID="Code" Value="4004" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Name" Value="MsgStation1TimeoutSealLowerEdge" />
+        <Property ID="Message" Value="{$Station1/txtMsgTimeoutSealLowerEdge}" />
+        <Property ID="Code" Value="4005" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="MsgStation1FaultSealLowerEdge" />
+        <Property ID="Message" Value="{$Station1/txtMsgFaultSealLowerEdge}" />
+        <Property ID="Code" Value="4006" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[7]">
+        <Property ID="Name" Value="MsgStation1TranslucientCell" />
+        <Property ID="Message" Value="{$Station1/txtMsgTranslucientCell}" />
+        <Property ID="Code" Value="4007" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[8]">
+        <Property ID="Name" Value="MsgStation1NoFilm" />
+        <Property ID="Message" Value="{$Station1/txtMsgNoFilm}" />
+        <Property ID="Code" Value="4008" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+      <Group ID="[9]">
+        <Property ID="Name" Value="MsgStation1HangIn" />
+        <Property ID="Message" Value="{$Station1/txtStationName} : {$Station1/txtMsgHangIn}{$Station1/txtCanceledMovingUp}" />
+        <Property ID="Code" Value="4009" />
+        <Property ID="Severity" Value="100" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

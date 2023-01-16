@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="DialogLoginEasyContent_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<EventBinding id="DialogLoginEasyContent.lginBtnLogin.LoginSuccess">
+			<Source contentRefId="DialogLoginEasyContent" widgetRefId="lginBtnLogin" xsi:type="widgets.brease.LoginButton.Event" event="LoginSuccess" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varReadLoginInfo">
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="1" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Parallel>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varLbInformationLogin"> 
+									<Method xsi:type="session.VariableAction.SetValueString" value="" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varUserIsLoggedIn">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varLoginIsVisible">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+						</Parallel>
+					</Step>
+					<Step order="2">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.Navigate" pageId="OverviewPage" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="3">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="LoginEasyDialog" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="DialogLoginEasyContent.lginBtnLogin.AuthentificationFailed">
+			<Source contentRefId="DialogLoginEasyContent" widgetRefId="lginBtnLogin" xsi:type="widgets.brease.LoginButton.Event" event="AuthentificationFailed" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varLbInformationLogin"> 
+						<Method xsi:type="session.VariableAction.SetValueString" value="$IAT/Login.Failed" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="Session.varCurrentEasyPasswordChanged">
+			<Source xsi:type="session.Event" refId="varCurrentEasyPassword" event="ValueChanged" />
+			<Operand name="newPassword" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varCurrentEasyPassword">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="newValue &lt;&gt; &quot;&quot;">
+				<Action>
+					<Target xsi:type="session.VariableAction" 
+						refId="varLogInPassword">
+						<Method xsi:type="session.VariableAction.SetValueString" value="=newPassword" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

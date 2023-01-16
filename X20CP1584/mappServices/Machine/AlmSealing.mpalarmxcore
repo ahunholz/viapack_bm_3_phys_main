@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreSealing" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="BySeverity">
+        <Group ID="[0]">
+          <Property ID="Severity" Value="100" />
+          <Selector ID="[0]" Value="EscalateReaction">
+            <Property ID="Reaction" Value="STOP" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]">
+        <Property ID="Name" Value="msgSealingProtSwitchUpper" />
+        <Property ID="Message" Value="{$Sealing/txtProtSwitchUpper}" />
+        <Property ID="Code" Value="3190" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Name" Value="msgSealingProtSwitchLower" />
+        <Property ID="Message" Value="{$Sealing/txtProtSwitchLower}" />
+        <Property ID="Code" Value="3191" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm" />
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

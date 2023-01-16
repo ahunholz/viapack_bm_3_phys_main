@@ -1,0 +1,908 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="EditProgramBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="brease" widgetRefId="ddbSelectProgram" contentRefId="PageEditProgramContent" attribute="selectedIndex" />
+			<Target xsi:type="expression" refId="ProgramindexToProgramno" attribute="inIdx" />
+		</Binding>
+	
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ProgramindexToProgramno" attribute="result" />
+			<Target xsi:type="session" refId="varSelectedProgramNo" attribute="value" />
+		</Binding>
+
+		<!-- Kopierziel für Programm. -->
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:reqCopyProgNo[0]" />
+					<bt:Element index="1" refId="::mvClient:reqCopyProgNo[1]" />
+					<bt:Element index="2" refId="::mvClient:reqCopyProgNo[2]" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varCopyProgNo" attribute="value" />		
+		</Binding>
+
+		<!-- Antwort Programmnummer. 255 - Programmbearbeitung ist gesperrt. -->
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:editProgNo[0]" />
+					<bt:Element index="1" refId="::mvClient:editProgNo[1]" />
+					<bt:Element index="2" refId="::mvClient:editProgNo[2]" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varResponseEditProgNo" attribute="value" />		
+		</Binding>
+
+		<!-- Status, wenn Programmbearbeitung gesperrt ist. -->
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="::SYSTEM:clientInfo.slotId" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::mvClient:editProgState[0]" />
+					<bt:Element index="1" refId="::mvClient:editProgState[1]" />
+					<bt:Element index="2" refId="::mvClient:editProgState[2]" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="txtOutState" contentRefId="PageEditProgramContent" attribute="value" />		
+		</Binding>
+
+		<!-- Die Kommandos für die Programmbearbeitung dürfen nur angezeigt werden, wenn die geforderte Programmnummer gleich der rückgemeldeten Programmnummer ist. -->		
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varResponseEditProgNo" attribute="value" />
+			<Target xsi:type="expression" refId="ReleaseEditProgram" attribute="inA" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varSelectedProgramNo" attribute="value" />
+			<Target xsi:type="expression" refId="ReleaseEditProgram" attribute="inB" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ReleaseEditProgram" attribute="result" />
+			<Target xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+		</Binding>
+					
+		<!-- Sind Programmdaten geändert worden -->
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditProgramParameter.IsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsDirty" attribute="inMachine" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.ProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsDirty" attribute="inCollector" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.EditParameter.ProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsDirty" attribute="inHangIn" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.ProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsDirty" attribute="inStation1" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.ProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsDirty" attribute="inHangOut" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.ProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsDirty" attribute="inStation2" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.EditParameter.ProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsDirty" attribute="inOutput" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ProgramIsDirty" attribute="result" />
+			<Target xsi:type="session" refId="varProgramIsDirty" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="ProgramIsNotDirty" attribute="inA" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ProgramIsNotDirty" attribute="result" />
+			<Target xsi:type="session" refId="varProgramIsNotDirty" attribute="value" />
+		</Binding>
+		
+		<!-- Enable EditProgramNo -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varProgramIsNotDirty" attribute="value" />
+			<Target xsi:type="expression" refId="EnableEditProgramNo" attribute="inA" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+			<Target xsi:type="expression" refId="EnableEditProgramNo" attribute="inB" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="EnableEditProgramNo" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="ddbSelectProgram" attribute="enable" />
+		</Binding>
+
+		<!-- Enable Save / Abort -->		
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varProgramIsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="EnableAbortSaveProgram" attribute="inA" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+			<Target xsi:type="expression" refId="EnableAbortSaveProgram" attribute="inB" />
+		</Binding>
+	
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="EnableAbortSaveProgram" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="EnableAbortSaveProgram" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="btnCancel" attribute="enable" />
+		</Binding>
+	
+		<!-- PARAMETER -->
+		
+		<!-- Allgemein -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditProgramParameter.Parameter.Name" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="txtInpParameter51_01" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionUZ" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar51_03" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditProgramParameter.Parameter.DoSealLowerEdge" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter51_03" attribute="value" />
+		</Binding>
+		
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditProgramParameter.Parameter.MoveSlow" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter51_04" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="expression" refId="ViewParameter51_04" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.State.ShowOutputSlow" attribute="value" />
+			<Target xsi:type="expression" refId="ViewParameter51_04" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewParameter51_04" attribute="result" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar51_04" attribute="visible" />
+		</Binding>
+
+		<!-- Sammelstation -->
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Program.CountParts" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter53_01" attribute="node" />
+		</Binding>
+	
+		<!-- Einhänger -->
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.EditParameter.Program.DelayPusherBack" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_01" attribute="node" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowHangInPusher" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar54_01" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.EditParameter.Program.MinimumTimeHangIn" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_02" attribute="node" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.EditParameter.Program.DelayPusherForward" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_03" attribute="node" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.State.ShowHangInPusher" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar54_03" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::HangIn:hangInUI.EditParameter.Program.DelayHangInBack" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_04" attribute="node" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.SpeedDown" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_10" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.AccelerationPullFilm" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_11" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.CarriageDownIfHangInOk" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_12" attribute="value" />
+		</Binding>
+	
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelayFilmStopperOn" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_15" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.UseFilmMonitoring" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_14" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DistanceSlit" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_18" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.PositionStartSlit" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_17" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.Heating.SealTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_22" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.Heating.HeatOnTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_21" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.Heating.HeatOnTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_20" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.Heating.SealTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_23" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.Heating.CoolingTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_24" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingSlanted.CoolingTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_29" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingSlanted.SealTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_28" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingSlanted.SealTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_27" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingSlanted.HeatOnTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_26" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingSlanted.HeatOnTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_25" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelayCloseSealUpperEdge" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_30" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DistanceOpenGripperSlanted" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_32" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DistanceOpenGripper" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_31" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DistanceStop" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_33" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ViewSlitter" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar55_17_and_18" attribute="visible" />
+</Binding>
+		<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.UseSuction" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_37" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingLowerEdge.SealTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_43" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingLowerEdge.SealTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_42" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingLowerEdge.HeatOnTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_41" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingLowerEdge.HeatOnTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_40" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Dynamic.HasSealLowerEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpSealLowerEdge" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingLowerEdge.CoolingTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_44" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.UseSpreader" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_46" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelayFilmStopperOnSlanted" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_16" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DurationSuction" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_39" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelaySuction" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_38" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.StartTimeStop" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_34" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DistanceSealLowerEdge" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_45" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.WithoutBagging" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_01" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.UseFixLength" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_02" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.AddLength" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_03" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.AddLengthPerPart" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_04" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.FixLength" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_05" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelayCarriageDown" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_13" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionFixlength" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpOptFixlength" attribute="visible" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSuction" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpOptionSuction" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSpreader" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpOptionSpreader" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DelaySpreader" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_47" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSlitter" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpOptionSlit" attribute="visible" />
+</Binding>
+
+	
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditProgramParameter.par51_02" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="btnBarParameter51_02" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.UseSlit" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_19" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_01" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_02" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_03" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter54_04" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter53_01" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter51_03" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter51_04" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_30" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_13" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_31" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_14" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_12" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_50" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_51" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_03" attribute="enable" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_01" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_04" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_11" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_16" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_33" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_10" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_15" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_32" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_28" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_27" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_26" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_25" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_29" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_23" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_22" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_21" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_20" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_24" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_40" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_45" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_44" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_43" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_42" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_41" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_37" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_05" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_02" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_18" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_17" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_34" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_39" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_19" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_38" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter55_46" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_47" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="TabCtrlProgram" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_05" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_04" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_03" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_02" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_01" attribute="enable" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.Program.LengthBlow" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_07" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::HangOut:hangOutUI.EditParameter.Program.DelayBlow" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter56_06" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_60" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.DistancePull" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_60" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.State.ViewPar55_12" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar55_12" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Collector:parameter.Factory.EnableMultiParts" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar53_01" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Program.Compensation" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter53_02" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter53_02" attribute="enable" />
+</Binding>
+
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter58_02" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.EditParameter.Program.DelayPusherBack" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter58_01" attribute="node" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter58_01" attribute="enable" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.Heating.HeatOnTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_07" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_06" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_07" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.Heating.SealTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_08" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_08" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.Heating.SealTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_09" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_09" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.Heating.CoolingTime" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_10" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_10" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.AddLength" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_03" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_03" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.AddLengthSlanted" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_04" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_04" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.State.ViewTransfer" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="tabItemProgramOutput" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.ViewStation2" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="tabItemProgramStation2" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.SpeedDown" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_01" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_01" attribute="enable" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_05" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.PredTimeCloseLowerSeal" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_05" attribute="node" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter57_11" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.CarriageDownIfSealLowerOk" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="cbParameter57_11" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_12" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.DistanceStop" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_12" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_20" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.SpeedUp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_20" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_21" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.DelayCarriageUp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_21" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_22" attribute="enable" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_23" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.PredTimeLowerSealIsUp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_23" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_02" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.DelayCarriageDown" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_02" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.Heating.HeatOnTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_06" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::OutputTr:tranOutpUI.EditParameter.Program.DelayPusherForward" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter58_02" attribute="node" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingSlanted.BoostTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_70" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.Heating.BoostTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_71" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Program.Heating.BoostTemp" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_30" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter57_30" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_72" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_71" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_70" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_73" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingSlanted.DelayStopOpen" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_73" attribute="node" />
+</Binding>
+
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_75" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.Heating.DelayStopOpen" attribute="node" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_75" attribute="node" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.ModeSealingUpperEdge" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar55_75" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Program.HeatingLowerEdge.BoostTemp" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="numInpParameter55_72" attribute="node" />
+		</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mnMS:stateLight.CmdWhiteOn" attribute="value" />
+<Target xsi:type="brease" contentRefId="ButtonWorkLightContent" widgetRefId="togBtnWorkLight" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:stateLight.UIenableCmdWhiteOnVisible" attribute="value" />
+<Target xsi:type="brease" contentRefId="ButtonWorkLightContent" widgetRefId="togBtnWorkLight" attribute="enable" />
+</Binding>
+</Bindings>
+</BindingsSet>

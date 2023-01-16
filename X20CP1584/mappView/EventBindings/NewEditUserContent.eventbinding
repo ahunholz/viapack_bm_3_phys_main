@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="eventbinding_NewEditUserContent" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+
+		<EventBinding id="PageSettingContent.btnEditUser.Click">
+			<Source contentRefId="PageSettingContent" widgetRefId="btnEditUser" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varEnableNewUser">
+								<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="dialog_NewEditUser" headerText="$IAT/Settings/txtEditUser"/>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="content_NewEditUser.btnOK.Click">
+			<Source contentRefId="content_NewEditUser" widgetRefId="btnOK" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<Operand name="isNewUser" datatype="BOOL">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varEnableNewUser" >
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="NOT isNewUser">
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mvClient:mvClientUserMgrUI.Commands.EditUser" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialog_NewEditUser"/>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+			<EventHandler condition="isNewUser">
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mvClient:mvClientUserMgrUI.Commands.NewUser" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialog_NewEditUser"/>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="content_NewEditUser.btnCancel.Click">
+			<Source contentRefId="content_NewEditUser" widgetRefId="btnCancel" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mvClient:mvClientUserMgrUI.Commands.Reset" >
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialog_NewEditUser"/>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="PageSettingContent.btnAddUser.Click">
+			<Source contentRefId="PageSettingContent" widgetRefId="btnAddUser" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varEnableNewUser">
+								<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mvClient:mvClientUserMgrUI.Commands.NewUsername" >
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="newUser" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="2">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mvClient:mvClientUserMgrUI.Commands.NewUserFullname" >
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="New User" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="3">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mvClient:mvClientUserMgrUI.Commands.NewLanguage" >
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="en" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="4">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::mvClient:mvClientUserMgrUI.Commands.NewUserType" >
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="10" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="5">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="dialog_NewEditUser" headerText="$IAT/Settings/txtNewUser"/>
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

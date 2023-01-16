@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="content_SMedit_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<EventBinding>
+			<Source xsi:type="clientSystem.Event" event="DialogOpened" />
+			<Operand name="opModeIP" datatype="ANY_INT">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Static" > 
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opProxyOn" datatype="ANY_INT">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.PROX_Yes" > 
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opIPAddress" datatype="ANY_STRING">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Address" > 
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opIPMask" datatype="ANY_STRING">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Mask" > 
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opIPGateway" datatype="ANY_STRING">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Gateway" > 
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opProxyIPAddress" datatype="ANY_STRING">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.PROX_Address" > 
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opProxyUsername" datatype="ANY_STRING">
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.PROX_User" > 
+					<Method xsi:type="opcUa.NodeAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="dialogId=&quot;dialogSMedit&quot;">
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetIPMode" index="=opModeIP" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetProxyOn" index="=opProxyOn" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="2">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetIPAddress" value="=opIPAddress" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="3">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetIPMask" value="=opIPMask" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="4">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetIPGateway" value="=opIPGateway" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="5">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetProxyIPAddress" value="=opProxyIPAddress" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="6">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetProxyUsername" value="=opProxyUsername" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="7">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetProxyPassword" value="" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="8">
+						<Action>
+							<Target xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action" contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit">
+								<Method xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Action.SetIsDirty" isDirty="false" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="content_SMedit.SitemanagerCfgEdit.CancelClick">
+			<Source contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Event" event="CancelClick" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="clientSystem.Action">
+						<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialogSMedit" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		
+		
+		<EventBinding id="content_SMedit.SitemanagerCfgEdit.SaveClick">
+			<Source contentRefId="content_SMedit" widgetRefId="SitemanagerCfgEdit" xsi:type="widgets.hasWidgetLib.cwSitemanagerCfgEdit.Event" event="SaveClick" />
+			<Operand name="opModeIP" datatype="ANY_INT">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_IPMode" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opProxyOn" datatype="ANY_INT">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_ProxyOn" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opIPAddress" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_IPAddress" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opIPMask" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_IPMask" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opIPGateway" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_IPGateway" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opProxyIPAddress" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_ProxyIPAddress" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opProxyUsername" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_ProxyUsername" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<Operand name="opProxyPassword" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varSMedit_ProxyPassword" > 
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Static">
+								<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=opModeIP" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_Yes">
+								<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=opProxyOn" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="2">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Address">
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opIPAddress" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="3">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Mask">
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opIPMask" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="4">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Gateway">
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opIPGateway" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="5">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_Address">
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opProxyIPAddress" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="6">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_User">
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opProxyUsername" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="7">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_Password">
+								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opProxyPassword" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="8">
+						<Action>
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.CmdSave">
+								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="9">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="dialogSMedit" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+	</Bindings>
+</EventBindingSet>

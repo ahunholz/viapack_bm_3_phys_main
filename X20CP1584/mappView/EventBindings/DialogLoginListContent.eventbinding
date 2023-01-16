@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="DialogLoginListContent_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<EventBinding id="DialogLoginListContent.lginBtnLogin.LoginSuccess">
+			<Source contentRefId="DialogLoginListContent" widgetRefId="lginBtnLogin" xsi:type="widgets.brease.LoginButton.Event" event="LoginSuccess" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varReadLoginInfo">
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="1" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Parallel>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varLbInformationLogin"> 
+									<Method xsi:type="session.VariableAction.SetValueString" value="" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="clientSystem.Action">
+									<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="LoginListDialog" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varUserIsLoggedIn">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+								</Target>
+							</Action>
+							<Action>
+								<Target xsi:type="session.VariableAction" refId="varLoginIsVisible">
+									<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+								</Target>
+							</Action>
+						</Parallel>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="DialogLoginListContent.lginBtnLogin.AuthentificationFailed">
+			<Source contentRefId="DialogLoginListContent" widgetRefId="lginBtnLogin" xsi:type="widgets.brease.LoginButton.Event" event="AuthentificationFailed" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varLbInformationLogin"> 
+						<Method xsi:type="session.VariableAction.SetValueString" value="$IAT/Login.Failed" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="Session.varCurrentListPasswordChanged">
+			<Source xsi:type="session.Event" refId="varCurrentListPassword" event="ValueChanged" />
+			<Operand name="newPassword" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varCurrentListPassword">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="newValue &lt;&gt; &quot;&quot;">
+				<Action>
+					<Target xsi:type="session.VariableAction" 
+						refId="varLogInPassword">
+						<Method xsi:type="session.VariableAction.SetValueString" value="=newPassword" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="varLogInUserNameListValueChanged">
+			<Source xsi:type="session.Event" refId="varLogInUserNameList" event="ValueChanged" />
+			<Operand name="newUserName" datatype="ANY_STRING">
+				<ReadTarget xsi:type="session.VariableAction.Read" refId="varLogInUserNameList">
+					<Method xsi:type="session.VariableAction.GetValue" />
+				</ReadTarget>
+			</Operand>
+			<EventHandler condition="newValue &lt;&gt; &quot;&quot;">
+				<Action>
+					<Target xsi:type="session.VariableAction" 
+						refId="varLogInUserName">
+						<Method xsi:type="session.VariableAction.SetValueString" value="=newUserName" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="DialogUsrMgrLoginListContent.btnLogin.Click">
+			<Source contentRefId="DialogUsrMgrLoginListContent" widgetRefId="btnLogin" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varUserMgrReqLogin">
+								<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.CloseDialog" dialogId="UsrMgrLoginListDialog" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>		
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="PageSettingContent.btnUsrMgrLogin.Click">
+			<Source contentRefId="PageSettingContent" widgetRefId="btnUsrMgrLogin" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varUserMgrLoginActive">
+								<Method xsi:type="session.VariableAction.SetValueBool" value="true" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="UsrMgrLoginListDialog" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>					
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding>
+			<Source xsi:type="clientSystem.Event" event="DialogClosed" />
+			<EventHandler condition="dialogId=&quot;UsrMgrLoginListDialog&quot;">
+				<Action>
+					<Target xsi:type="session.VariableAction" refId="varUserMgrLoginActive">
+						<Method xsi:type="session.VariableAction.SetValueBool" value="false" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

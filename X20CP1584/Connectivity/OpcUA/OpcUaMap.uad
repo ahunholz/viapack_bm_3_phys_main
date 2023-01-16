@@ -1,0 +1,1171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.63">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
+        <ACE RoleId="1" RoleName="Everyone" Access="0x005F" />
+      </ACL>
+      <ACL Id="11">
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0000" />
+      </ACL>
+      <ACL Id="12">
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0057" />
+      </ACL>
+      <ACL Id="13">
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleId="1" RoleName="Everyone" Access="0x007F" />
+      </ACL>
+      <ACL Id="14">
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0008" />
+      </ACL>
+      <ACL Id="15">
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0008" />
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+      </ACL>
+      <ACL Id="16">
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0000" />
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+      </ACL>
+      <ACL Id="19">
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0008" />
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
+      </ACL>
+      <ACL Id="20">
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0057" />
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+      </ACL>
+      <ACL Id="21">
+        <ACE RoleId="1" RoleName="Everyone" Access="0x005F" />
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x0017" />
+      </ACL>
+      <ACL Id="22">
+        <ACE RoleId="1" RoleName="Everyone" Access="0x0017" />
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+      </ACL>
+      <ACL Id="23">
+        <ACE RoleId="1" RoleName="Everyone" Access="0x005F" />
+        <ACE RoleId="2" RoleName="RlOperator" Access="0x0037" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases>
+      <EURangeViolation Id="2" Mode="1" />
+      <EURangeViolation Id="3" Mode="2" />
+    </EURangeViolationAliases>
+    <EURangesAliases>
+      <EURanges Id="6">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">10.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="26">
+        <EURange>
+          <Low ValueProvider="Const">-8388608.0</Low>
+          <High ValueProvider="PV">::AxisCtrl2:axisUI.Parameter.Factory.ReferenceLowerLimit</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="27">
+        <EURange>
+          <Low ValueProvider="PV">::AxisCtrl2:axisUI.Parameter.Factory.ReferenceUpperLimit</Low>
+          <High ValueProvider="Const">8388607.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="28">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::AxisCtrl2:axisUI.Parameter.AbsuluteRange</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="29">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::AxisCtrl2:axisUI.Parameter.MaxWorkRange</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="30">
+        <EURange>
+          <Low ValueProvider="Const">-8388608.0</Low>
+          <High ValueProvider="PV">::AxisCtrlm:axisUI.Parameter.Factory.ReferenceLowerLimit</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="31">
+        <EURange>
+          <Low ValueProvider="PV">::AxisCtrlm:axisUI.Parameter.Factory.ReferenceUpperLimit</Low>
+          <High ValueProvider="Const">8388607.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="32">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::AxisCtrlm:axisUI.Parameter.AbsuluteRange</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="33">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="PV">::AxisCtrlm:axisUI.Parameter.MaxWorkRange</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="35">
+        <EURange>
+          <Low ValueProvider="Const">100.0</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[0].Dynamic.VelocityUpMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="40">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">1</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="41">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">30000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="42">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">10000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="44">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">10</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="45">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">60</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="46">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">2</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="47">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="Const">10000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="48">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="PV">::Collector:parameter.Machine.MaxNumberOfParts</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="52">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">6</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="53">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="Const">2000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="55">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="Const">9</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="56">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">1000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="57">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="Const">3000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="58">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">300</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="59">
+        <EURange>
+          <Low ValueProvider="PV">::Station1:station1UI.EditParameter.Machine.MinDistanceForSealingTop</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[0].Factory.WorkRange</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="61">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">500</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="62">
+        <EURange>
+          <Low ValueProvider="Const">100.0</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[0].Dynamic.VelocityDownMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="63">
+        <EURange>
+          <Low ValueProvider="Const">100.0</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[1].Dynamic.VelocityUpMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="64">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[1].Dynamic.VelocityDownMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="65">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[0].Machine.VelocityDownMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="68">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="PV">::Station1:parameter.Machine.MaxLength</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="69">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="Const">10000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="70">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="Const">2000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="71">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">5000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="72">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">100.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="73">
+        <EURange>
+          <Low ValueProvider="PV">::Station1:parameter.Dynamic.MinDistanceAllowSUE</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[0].Factory.WorkRange</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="75">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="Const">30000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="76">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="Const">5000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="78">
+        <EURange>
+          <Low ValueProvider="PV">::Station1:parameter.Machine.MinDistanceForSealingTop</Low>
+          <High ValueProvider="PV">::Station1:parameter.Machine.MaxLength</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="79">
+        <EURange>
+          <Low ValueProvider="Const">-10000</Low>
+          <High ValueProvider="Const">10000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="80">
+        <EURange>
+          <Low ValueProvider="Const">-1000</Low>
+          <High ValueProvider="Const">2000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="81">
+        <EURange>
+          <Low ValueProvider="Const">-100</Low>
+          <High ValueProvider="Const">100</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="82">
+        <EURange>
+          <Low ValueProvider="Const" />
+          <High ValueProvider="Const">500</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="84">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[1].Factory.WorkRange</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="87">
+        <EURange>
+          <Low ValueProvider="Const">-1000</Low>
+          <High ValueProvider="Const">1000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="88">
+        <EURange>
+          <Low ValueProvider="Const">-5000</Low>
+          <High ValueProvider="Const">5000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="89">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[1].Machine.VelocityDownMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="90">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[1].Machine.VelocityUpMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="91">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">50.0</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="92">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="Const">15000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="93">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="PV">::Station1:parameter.Machine.MaxLength</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="94">
+        <EURange>
+          <Low ValueProvider="Const">1000</Low>
+          <High ValueProvider="Const">10000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="95">
+        <EURange>
+          <Low ValueProvider="Const">-200</Low>
+          <High ValueProvider="Const">1000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="96">
+        <EURange>
+          <Low ValueProvider="Const">0.5</Low>
+          <High ValueProvider="Const">1.5</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="97">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="PV">::Station1:parameter.Machine.MaxLength</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="98">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">60000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="99">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">14</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="101">
+        <EURange>
+          <Low ValueProvider="Const">100</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[0].Dynamic.VelocityDownMax</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="102">
+        <EURange>
+          <Low ValueProvider="Const">1000</Low>
+          <High ValueProvider="Const">60000</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="103">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="PV">::AxisCtrlParameter[0].Factory.WorkRange</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
+    <EngineeringUnitAliases>
+      <EngineeringUnit Id="1" UnitId="4403510" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre per second" Symbol="mm/s" />
+      <EngineeringUnit Id="2" UnitId="20053" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="newton metre" Symbol="N·m" />
+      <EngineeringUnit Id="3" UnitId="5066068" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre" Symbol="mm" />
+      <EngineeringUnit Id="4" UnitId="4408652" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="degree Celsius" Symbol="°C" />
+      <EngineeringUnit Id="5" UnitId="4403766" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millisecond" Symbol="ms" />
+      <EngineeringUnit Id="6" UnitId="5065038" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="minute [unit of time]" Symbol="min" />
+      <EngineeringUnit Id="7" UnitId="5457219" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="second [unit of time]" Symbol="s" />
+      <EngineeringUnit Id="8" UnitId="5059633" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre per second squared" Symbol="mm/s²" />
+      <EngineeringUnit Id="9" UnitId="12890" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millivolt" Symbol="mV" />
+    </EngineeringUnitAliases>
+  </Aliases>
+  <DefaultView AclId="21">
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Globale Variablen">
+        <Variable Name="OperateParameter">
+          <Variable Name="Machine">
+            <Variable Name="ShowRightToLeft" />
+          </Variable>
+        </Variable>
+        <Variable Name="AxisCtrlParameter" EnableArrayElements="True">
+          <Variable Name="AxisCtrlParameter[0]">
+            <Variable Name="Dynamic">
+              <Variable Name="AccelerationMax" EngineeringUnitId="8" />
+              <Variable Name="DecelerationMax" EngineeringUnitId="8" />
+              <Variable Name="VelocityDownMax" EngineeringUnitId="1" />
+              <Variable Name="VelocityUpMax" EngineeringUnitId="1" />
+              <Variable Name="CfgVelocityUpMax" EngineeringUnitId="1" />
+              <Variable Name="CfgVelocityDownMax" EngineeringUnitId="1" />
+            </Variable>
+          </Variable>
+          <Variable Name="AxisCtrlParameter[1]">
+            <Variable Name="Dynamic">
+              <Variable Name="AccelerationMax" EngineeringUnitId="8" />
+              <Variable Name="DecelerationMax" EngineeringUnitId="8" />
+              <Variable Name="VelocityUpMax" EngineeringUnitId="1" />
+              <Variable Name="VelocityDownMax" EngineeringUnitId="1" />
+              <Variable Name="CfgVelocityUpMax" EngineeringUnitId="1" />
+              <Variable Name="CfgVelocityDownMax" EngineeringUnitId="1" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="MachineParameter">
+          <Variable Name="Program" EnableArrayElements="True" />
+          <Variable Name="Factory">
+            <Variable Name="HasOptionSlowTransport" />
+            <Variable Name="HasOptionPrinter" />
+            <Variable Name="HasOptionFDC" />
+            <Variable Name="HasOptionMFI" />
+            <Variable Name="HasOptionMFO" />
+            <Variable Name="HasOptionOpcUA_Server" />
+            <Variable Name="HasOptionUZ" />
+            <Variable Name="Model" />
+            <Variable Name="HasBTBStopper" />
+            <Variable Name="HasOptionSignalAutomatic" />
+            <Variable Name="HasOptionSignalAlarm" />
+            <Variable Name="HasOptionGettingFilm" />
+          </Variable>
+          <Variable Name="Machine">
+            <Variable Name="DelayTimeDischrgFull_1" EngineeringUnitId="5" />
+            <Variable Name="DelayTimeDischrgFull_2" EngineeringUnitId="5" />
+          </Variable>
+          <Variable Name="StartUpWarningFactory" AutomaticEnable="True" />
+          <Variable Name="StartUpWarningMachine" AutomaticEnable="True" />
+        </Variable>
+        <Variable Name="PieceData">
+          <Variable Name="Data" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="CollectorParameter" AutomaticEnable="True">
+          <Variable Name="Program" EnableArrayElements="True" />
+        </Variable>
+        <Variable Name="MachineCounter">
+          <Variable Name="CounterSets" EnableArrayElements="True">
+            <Variable Name="CounterSets[0]">
+              <Variable Name="FilmConsumtion" EngineeringUnitId="3" />
+              <Variable Name="MachineTimePowerOn" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeRunning" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeProcessing" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeHolding" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeFault" EngineeringUnitId="7" />
+            </Variable>
+            <Variable Name="CounterSets[1]">
+              <Variable Name="FilmConsumtion" EngineeringUnitId="3" />
+              <Variable Name="MachineTimePowerOn" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeRunning" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeProcessing" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeHolding" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeFault" EngineeringUnitId="7" />
+            </Variable>
+            <Variable Name="CounterSets[2]">
+              <Variable Name="FilmConsumtion" EngineeringUnitId="3" />
+              <Variable Name="MachineTimePowerOn" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeRunning" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeProcessing" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeHolding" EngineeringUnitId="7" />
+              <Variable Name="MachineTimeFault" EngineeringUnitId="7" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="BM_2_CPU_Info" AutomaticEnable="True">
+          <Variable Name="TemperatureCPU" EngineeringUnitId="4" />
+          <Variable Name="TemperatureENV" EngineeringUnitId="4" />
+        </Variable>
+        <Variable Name="BM_2_Version" AutomaticEnable="True" />
+        <Variable Name="MachineStatistic" AutomaticEnable="True">
+          <Variable Name="PeriodOutToOut" EngineeringUnitId="5" />
+          <Variable Name="PeriodThrougMachine" EngineeringUnitId="5" />
+        </Variable>
+        <Variable Name="MSM_Parameter">
+          <Variable Name="StateLightFactory">
+            <Variable Name="Enable" />
+          </Variable>
+        </Variable>
+      </GlobalVariables>
+      <Task Name="mvClient">
+        <Variable Name="_MVCLIENT_MAX_IDX_CI" />
+        <Variable AclId="12" AclInherit="2" Name="UserList" EnableArrayElements="True" />
+        <Variable AclId="12" AclInherit="2" Name="ClientInfo" EnableArrayElements="True">
+          <Variable Name="ClientInfo[0]">
+            <Variable AclId="13" AclInherit="2" Name="FromClient" />
+          </Variable>
+          <Variable Name="ClientInfo[1]">
+            <Variable AclId="13" AclInherit="2" Name="FromClient" />
+          </Variable>
+          <Variable Name="ClientInfo[2]">
+            <Variable AclId="13" AclInherit="2" Name="FromClient" />
+          </Variable>
+        </Variable>
+        <Variable Name="editProgNo" EnableArrayElements="True" />
+        <Variable Name="editProgState" EnableArrayElements="True" />
+        <Variable AclId="14" AclInherit="2" Name="reqCopyProgNo" EnableArrayElements="True" />
+        <Variable AclId="14" AclInherit="2" Name="reqEditProgNo" EnableArrayElements="True" EURangeViolationId="2" EURangesId="44">
+          <Variable Name="reqEditProgNo[0]" EURangeViolationId="2" EURangesId="44" />
+          <Variable Name="reqEditProgNo[1]" EURangeViolationId="2" EURangesId="44" />
+          <Variable Name="reqEditProgNo[2]" EURangeViolationId="2" EURangesId="44" />
+        </Variable>
+        <Variable Name="enableResetCounterUser" EnableArrayElements="True" />
+        <Variable AclId="16" AclInherit="2" Name="reloadProgram" />
+        <Variable Name="mvClientUserMgrClientUI" EnableArrayElements="True">
+          <Variable Name="mvClientUserMgrClientUI[0]">
+            <Variable Name="LogoffButton">
+              <Variable AclId="16" AclInherit="2" Name="Pressed" />
+            </Variable>
+            <Variable AclId="16" AclInherit="2" Name="LoginDialog">
+              <Variable Name="Active" />
+            </Variable>
+            <Variable AclId="16" AclInherit="2" Name="RequestLogIn" />
+          </Variable>
+          <Variable Name="mvClientUserMgrClientUI[1]">
+            <Variable Name="LogoffButton">
+              <Variable AclId="16" AclInherit="2" Name="Pressed" />
+            </Variable>
+            <Variable AclId="16" AclInherit="2" Name="LoginDialog">
+              <Variable Name="Active" />
+              <Variable Name="UserName" />
+              <Variable Name="Password" />
+            </Variable>
+            <Variable AclId="16" AclInherit="2" Name="RequestLogIn" />
+          </Variable>
+          <Variable Name="mvClientUserMgrClientUI[2]">
+            <Variable Name="LogoffButton">
+              <Variable AclId="16" AclInherit="2" Name="Pressed" />
+            </Variable>
+            <Variable AclId="16" AclInherit="2" Name="LoginDialog" />
+            <Variable AclId="16" AclInherit="2" Name="RequestLogIn" />
+          </Variable>
+        </Variable>
+        <Variable Name="mvClientUserMgrUI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="Commands" />
+          <Variable Name="EditUserList" EnableArrayElements="True" />
+          <Variable Name="UserTypeList" EnableArrayElements="True" />
+        </Variable>
+      </Task>
+      <Task Name="AxisCtrlm">
+        <Variable Name="axisUI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="Parameter">
+            <Variable AclId="11" AclInherit="2" Name="AbsuluteRange" EngineeringUnitId="3" />
+            <Variable AclId="11" AclInherit="2" Name="MaxWorkRange" EngineeringUnitId="3" />
+            <Variable Name="Factory">
+              <Variable Name="ReferenceUpperLimit" EURangeViolationId="2" EURangesId="30" EngineeringUnitId="3" />
+              <Variable Name="ReferenceLowerLimit" EURangeViolationId="2" EURangesId="31" EngineeringUnitId="3" />
+              <Variable Name="OffsetULtoZero" EURangeViolationId="2" EURangesId="32" EngineeringUnitId="3" />
+              <Variable Name="WorkRange" EURangeViolationId="2" EURangesId="33" EngineeringUnitId="3" />
+            </Variable>
+            <Variable Name="SaveParameter" />
+            <Variable Name="ResetParameter" />
+            <Variable Name="Machine">
+              <Variable Name="VelocityUpMax" EURangeViolationId="2" EURangesId="35" EngineeringUnitId="1" />
+              <Variable Name="VelocityDownMax" EURangeViolationId="2" EURangesId="62" EngineeringUnitId="1" />
+              <Variable Name="JustageTorqueUp" EURangeViolationId="3" EURangesId="6" EngineeringUnitId="2" />
+              <Variable Name="JustageTorqueDown" EURangeViolationId="3" EURangesId="6" EngineeringUnitId="2" />
+            </Variable>
+            <Variable Name="IsDirty" />
+          </Variable>
+          <Variable AclId="14" AclInherit="2" Name="ControlActive" />
+          <Variable AclId="14" AclInherit="2" Name="PowerOn" />
+          <Variable AclId="14" AclInherit="2" Name="OpenBrake" />
+          <Variable AclId="14" AclInherit="2" Name="StartJustUpperLimit" />
+          <Variable AclId="14" AclInherit="2" Name="StartJustLowerLimit" />
+          <Variable AclId="14" AclInherit="2" Name="SaveRefUpperLimit" />
+          <Variable AclId="14" AclInherit="2" Name="SaveRefLowerLimit" />
+          <Variable AclId="14" AclInherit="2" Name="SaveOffsetULtoZero" />
+          <Variable AclId="14" AclInherit="2" Name="SaveWorkRange" />
+          <Variable AclId="14" AclInherit="2" Name="JogUp" />
+          <Variable AclId="14" AclInherit="2" Name="JogDown" />
+          <Variable AclId="14" AclInherit="2" Name="JogVelocity" EURangeViolationId="2" EURangesId="91" EngineeringUnitId="1" />
+          <Variable Name="CurrentPosition" EURangesId="103" EngineeringUnitId="3" />
+          <Variable Name="CurrentTorque" EngineeringUnitId="2" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedRefUpperLimit" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedRefLowerLimit" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedOffsetULtoZero" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedWorkRange" />
+        </Variable>
+      </Task>
+      <Task Name="AxisCtrl2">
+        <Variable Name="axisUI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="Parameter">
+            <Variable AclId="11" AclInherit="2" Name="AbsuluteRange" EngineeringUnitId="3" />
+            <Variable AclId="11" AclInherit="2" Name="MaxWorkRange" EngineeringUnitId="3" />
+            <Variable Name="Factory">
+              <Variable Name="ReferenceUpperLimit" EURangeViolationId="2" EURangesId="26" EngineeringUnitId="3" />
+              <Variable Name="ReferenceLowerLimit" EURangeViolationId="2" EURangesId="27" EngineeringUnitId="3" />
+              <Variable Name="OffsetULtoZero" EURangeViolationId="2" EURangesId="28" EngineeringUnitId="3" />
+              <Variable Name="WorkRange" EURangeViolationId="2" EURangesId="29" EngineeringUnitId="3" />
+            </Variable>
+            <Variable Name="SaveParameter" />
+            <Variable Name="ResetParameter" />
+            <Variable Name="Machine">
+              <Variable Name="VelocityUpMax" EURangeViolationId="2" EURangesId="63" EngineeringUnitId="1" />
+              <Variable Name="VelocityDownMax" EURangeViolationId="2" EURangesId="64" EngineeringUnitId="1" />
+              <Variable Name="JustageTorqueUp" EURangeViolationId="3" EURangesId="6" EngineeringUnitId="2" />
+              <Variable Name="JustageTorqueDown" EURangeViolationId="3" EURangesId="6" EngineeringUnitId="2" />
+            </Variable>
+            <Variable Name="IsDirty" />
+          </Variable>
+          <Variable AclId="14" AclInherit="2" Name="ControlActive" />
+          <Variable AclId="14" AclInherit="2" Name="PowerOn" />
+          <Variable AclId="14" AclInherit="2" Name="OpenBrake" />
+          <Variable AclId="14" AclInherit="2" Name="StartJustUpperLimit" />
+          <Variable AclId="14" AclInherit="2" Name="StartJustLowerLimit" />
+          <Variable AclId="14" AclInherit="2" Name="SaveRefUpperLimit" />
+          <Variable AclId="14" AclInherit="2" Name="SaveRefLowerLimit" />
+          <Variable AclId="14" AclInherit="2" Name="SaveOffsetULtoZero" />
+          <Variable AclId="14" AclInherit="2" Name="SaveWorkRange" />
+          <Variable AclId="14" AclInherit="2" Name="JogUp" />
+          <Variable AclId="14" AclInherit="2" Name="JogDown" />
+          <Variable AclId="14" AclInherit="2" Name="JogVelocity" EURangeViolationId="2" EURangesId="91" EngineeringUnitId="1" />
+          <Variable Name="CurrentPosition" EngineeringUnitId="3" />
+          <Variable Name="CurrentTorque" EngineeringUnitId="2" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedRefUpperLimit" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedRefLowerLimit" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedOffsetULtoZero" />
+          <Variable AclId="14" AclInherit="2" Name="ChangedWorkRange" />
+        </Variable>
+      </Task>
+      <Task Name="mnMS">
+        <Variable Name="MS_UI" AutomaticEnable="True">
+          <Variable Name="SSFName" EnableArrayElements="True" />
+          <Variable Name="SubSysFinishedOrDis" EnableArrayElements="True" />
+          <Variable Name="SSFAddState" EnableArrayElements="True" />
+        </Variable>
+        <Variable AclId="12" AclInherit="2" Name="mnMS_UI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="SelTestMode" />
+          <Variable Name="ServiceStateLight">
+            <Variable Name="White">
+              <Variable AclId="20" AclInherit="2" Name="ButtonTipPressed" />
+            </Variable>
+            <Variable Name="Blue">
+              <Variable AclId="20" AclInherit="2" Name="ButtonTipPressed" />
+            </Variable>
+            <Variable Name="Red">
+              <Variable AclId="20" AclInherit="2" Name="ButtonTipPressed" />
+            </Variable>
+            <Variable Name="Green">
+              <Variable AclId="20" AclInherit="2" Name="ButtonTipPressed" />
+            </Variable>
+          </Variable>
+          <Variable Name="Parameter">
+            <Variable Name="Factory">
+              <Variable Name="Parameter">
+                <Variable AclId="20" AclInherit="2" Name="Enable" />
+              </Variable>
+              <Variable AclId="20" AclInherit="2" Name="IsEdit" />
+            </Variable>
+            <Variable Name="Machine">
+              <Variable AclId="20" AclInherit="2" Name="IsEdit" />
+              <Variable AclId="20" AclInherit="2" Name="IsDirty" />
+              <Variable Name="Parameter">
+                <Variable AclId="20" AclInherit="2" Name="NoMFOwhite" EURangesId="99" />
+                <Variable AclId="20" AclInherit="2" Name="NoMFOblue" EURangeViolationId="2" EURangesId="99" />
+                <Variable AclId="20" AclInherit="2" Name="NoMFOred" EURangesId="99" />
+                <Variable AclId="20" AclInherit="2" Name="NoMFOgreen" EURangeViolationId="2" EURangesId="99" />
+              </Variable>
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="stateLight">
+          <Variable Name="UIvisible" />
+          <Variable AclId="22" AclInherit="2" Name="CmdWhiteOn" />
+          <Variable Name="UIenableCmdWhiteOnVisible" />
+        </Variable>
+      </Task>
+      <Task Name="Safety">
+        <Variable Name="safetyUI" AutomaticEnable="True">
+          <Variable AclId="12" AclInherit="2" Name="RemainTimeLocked" EngineeringUnitId="7" />
+          <Variable AclId="16" AclInherit="2" Name="SLX910_Cmd" />
+          <Variable AclId="12" AclInherit="2" Name="ShowMessageLogIn" />
+        </Variable>
+      </Task>
+      <Task Name="BackRest">
+        <Variable Name="backrestUI" AutomaticEnable="True">
+          <Variable AclId="14" AclInherit="2" Name="Command" />
+          <Variable AclId="14" AclInherit="2" Name="CommandBackup" />
+          <Variable AclId="22" AclInherit="2" Name="SelectFactoryParameter" />
+          <Variable AclId="22" AclInherit="2" Name="SelectMachineParameter" />
+          <Variable AclId="22" AclInherit="2" Name="SelectProgramParameter" />
+        </Variable>
+      </Task>
+      <Task Name="Machine">
+        <Variable Name="machineUI" AutomaticEnable="True">
+          <Variable AclId="14" AclInherit="2" Name="DateTimeCommand" EURangeViolationId="2" EURangesId="40" />
+          <Variable AclId="14" AclInherit="2" Name="SetSystemDateTime" />
+          <Variable AclId="14" AclInherit="2" Name="SetAutoDayTimeSaving" />
+          <Variable AclId="14" AclInherit="2" Name="SetTimeZone" />
+          <Variable AclId="16" AclInherit="2" Name="EditFactoryParameter">
+            <Variable Name="Parameter">
+              <Variable Name="Model" />
+              <Variable Name="Side" />
+              <Variable Name="HasOptionUZ" />
+              <Variable Name="HasOptionSlowTransport" />
+              <Variable Name="HasOptionPrinter" />
+              <Variable Name="HasOptionFDC" />
+              <Variable Name="HasOptionMFI" />
+              <Variable Name="HasOptionMFO" />
+              <Variable Name="HasOptionOpcUA_Server" />
+            </Variable>
+            <Variable Name="IsDirty" />
+            <Variable Name="EditActive" />
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="EditMachineParameter">
+            <Variable Name="Parameter">
+              <Variable Name="DelayTimeTillStandBy" EURangeViolationId="2" EURangesId="45" EngineeringUnitId="6" />
+              <Variable Name="AllowCounterReset" />
+              <Variable Name="IndexMFO_AutomaticRunInput" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="IndexMFO_AutomaticRunOutput" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="IndexMFO_Alarm" EURangesId="99" />
+              <Variable Name="DelayTimeDischrgFull_1" EURangesId="98" EngineeringUnitId="5" />
+              <Variable Name="DelayTimeDischrgFull_2" EURangesId="98" EngineeringUnitId="5" />
+              <Variable Name="TimeSignalAlarmOn" EURangeViolationId="2" EURangesId="102" EngineeringUnitId="5" />
+              <Variable Name="TimeSignalAlarmOff" EURangeViolationId="2" EURangesId="98" EngineeringUnitId="5" />
+            </Variable>
+            <Variable Name="IsDirty" />
+            <Variable Name="EditActive" />
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="EditProgramParameter">
+            <Variable Name="Parameter">
+              <Variable Name="Name" />
+              <Variable Name="ShapeIsSlanted" />
+              <Variable Name="DoSealLowerEdge" />
+            </Variable>
+            <Variable Name="IsDirty" />
+            <Variable AclId="11" AclInherit="2" Name="OldEditProgNo" />
+          </Variable>
+          <Variable Name="ProgramList" EnableArrayElements="True" />
+          <Variable Name="StartProcedure">
+            <Variable AclId="16" AclInherit="2" Name="AcknowledgeMove" />
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="Command">
+            <Variable Name="ResetCounter" EnableArrayElements="True" />
+          </Variable>
+          <Variable Name="State">
+            <Variable Name="ResetCounterET" EnableArrayElements="True" />
+            <Variable Name="ResetCounterPT" EnableArrayElements="True" />
+          </Variable>
+          <Variable AclId="12" AclInherit="2" Name="MachineType" />
+          <Variable AclId="22" AclInherit="2" Name="Service" />
+          <Variable Name="StartUpWarningFactory">
+            <Variable Name="Parameter">
+              <Variable AclId="22" AclInherit="2" Name="Active" />
+            </Variable>
+            <Variable AclId="22" AclInherit="2" Name="IsEdit" />
+          </Variable>
+          <Variable Name="StartUpWarningService">
+            <Variable AclId="22" AclInherit="2" Name="ButtonTipPressed" />
+          </Variable>
+          <Variable Name="StartUpWarningMachine">
+            <Variable AclId="22" AclInherit="2" Name="Parameter">
+              <Variable Name="NoMFO" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="TimeWarning" EURangeViolationId="2" EURangesId="44" EngineeringUnitId="7" />
+              <Variable Name="TimeRelease" EURangeViolationId="2" EURangesId="44" EngineeringUnitId="7" />
+            </Variable>
+            <Variable AclId="22" AclInherit="2" Name="IsEdit" />
+            <Variable AclId="22" AclInherit="2" Name="IsDirty" />
+          </Variable>
+        </Variable>
+      </Task>
+      <Task Name="InputTr">
+        <Variable Name="parameter">
+          <Variable Name="Factory">
+            <Variable Name="MFO_ReadyForInput" />
+            <Variable Name="TypeInputConveyor" />
+            <Variable Name="TypeInput" />
+            <Variable Name="EnableProgramSelectionRemote" />
+          </Variable>
+          <Variable Name="Machine">
+            <Variable Name="OpcUA_ProgramSelectionType" />
+          </Variable>
+        </Variable>
+        <Variable Name="inputTrUI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="EditParameter">
+            <Variable Name="Factory">
+              <Variable Name="TypeInputConveyor" EURangeViolationId="2" EURangesId="40" />
+              <Variable Name="TypeInput" EURangeViolationId="2" EURangesId="40" />
+              <Variable Name="MFO_ReadyForInput" EURangeViolationId="2" EURangesId="99" />
+            </Variable>
+            <Variable Name="Machine">
+              <Variable Name="MFO_ReleaseInput" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="MFI_Transfer_WithFilm" EURangeViolationId="2" EURangesId="52" />
+              <Variable Name="MFI_Transfer_WithoutFilm" EURangeViolationId="2" EURangesId="52" />
+              <Variable Name="TimeSeparatorCycle" EURangesId="53" EngineeringUnitId="5" />
+              <Variable Name="TimeOutPieceDetected" EURangesId="53" EngineeringUnitId="5" />
+              <Variable Name="DelayInputConveyorOff" EURangeViolationId="2" EURangesId="41" EngineeringUnitId="5" />
+              <Variable Name="DelayExtStopperClose" EURangeViolationId="2" EURangesId="41" EngineeringUnitId="5" />
+              <Variable Name="OpcUA_ProgramSelectionType" EURangeViolationId="2" EURangesId="46" />
+              <Variable Name="DelayPartBeforeInput" EURangeViolationId="2" EURangesId="41" />
+              <Variable Name="MFO_InputConveyorOn" EURangeViolationId="2" EURangesId="99" />
+            </Variable>
+            <Variable Name="EditFactoryActiv" />
+            <Variable Name="EditMachineActiv" />
+            <Variable Name="MachineIsDirty" />
+          </Variable>
+          <Variable AclId="15" AclInherit="2" Name="Command">
+            <Variable Name="SelectedProgramIndex" EURangesId="55" />
+            <Variable Name="SelectedProgram" EURangesId="44" />
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="Service">
+            <Variable Name="RunInputConveyor" />
+            <Variable Name="OpenExtStopper" />
+            <Variable Name="SetAckPieceThroughInputL" />
+            <Variable Name="SetHSReleaseFeeding" />
+            <Variable Name="SetSignalFeedingOn" />
+            <Variable AclInherit="1" Name="ViewService" />
+            <Variable AclInherit="1" Name="EnableService" />
+          </Variable>
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylSeparatorServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+      </Task>
+      <Task Name="Collector">
+        <Variable Name="collectorUI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="EditParameter">
+            <Variable Name="EditFactoryActiv" />
+            <Variable Name="EditMachineActiv" />
+            <Variable Name="FactoryIsDirty" />
+            <Variable Name="MachineIsDirty" />
+            <Variable Name="ProgramIsDirty" />
+            <Variable Name="Factory">
+              <Variable Name="EnableMultiParts" />
+              <Variable Name="OffsetLVE" EURangeViolationId="2" EURangesId="56" EngineeringUnitId="3" />
+            </Variable>
+            <Variable Name="Machine">
+              <Variable Name="MaxNumberOfParts" EURangeViolationId="2" EURangesId="44" />
+              <Variable Name="TimeoutPartReceived" EURangeViolationId="2" EURangesId="47" EngineeringUnitId="5" />
+              <Variable Name="DelayLVE_Occupied" EURangeViolationId="2" EURangesId="47" EngineeringUnitId="5" />
+              <Variable Name="DelayLVE_NotOccupied" EURangeViolationId="2" EURangesId="42" EngineeringUnitId="5" />
+            </Variable>
+            <Variable Name="Program">
+              <Variable Name="CountParts" EURangeViolationId="2" EURangesId="48" />
+              <Variable Name="Compensation" EURangeViolationId="2" EURangesId="96" />
+            </Variable>
+            <Variable AclId="11" AclInherit="2" Name="OldEditProgNo" />
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="Service" />
+          <Variable Name="State">
+            <Variable Name="LVElength" EngineeringUnitId="3" />
+          </Variable>
+        </Variable>
+        <Variable Name="parameter">
+          <Variable Name="Machine">
+            <Variable Name="MaxNumberOfParts" />
+          </Variable>
+          <Variable Name="Factory">
+            <Variable Name="EnableMultiParts" />
+            <Variable Name="OffsetLVE" EngineeringUnitId="3" />
+          </Variable>
+        </Variable>
+      </Task>
+      <Task Name="mnParam">
+        <Variable Name="mnParamUI" AutomaticEnable="True">
+          <Variable AclId="14" AclInherit="2" Name="SaveFactoryParameter" />
+          <Variable AclId="14" AclInherit="2" Name="SaveMachineParameter" />
+          <Variable AclId="14" AclInherit="2" Name="SaveProgramParameter" />
+        </Variable>
+      </Task>
+      <Task Name="Station1">
+        <Variable Name="parameter">
+          <Variable Name="Factory" AutomaticEnable="True" />
+          <Variable Name="Dynamic">
+            <Variable Name="HasSealLowerEdge" />
+            <Variable Name="MinDistanceAllowSUE" EngineeringUnitId="3" />
+          </Variable>
+          <Variable Name="Machine">
+            <Variable Name="MinDistanceForSealingTop" EngineeringUnitId="3" />
+          </Variable>
+        </Variable>
+        <Variable Name="station1UI">
+          <Variable AclId="15" AclInherit="2" Name="EditParameter">
+            <Variable Name="FactoryIsDirty" />
+            <Variable Name="MachineIsDirty" />
+            <Variable Name="ProgramIsDirty" />
+            <Variable Name="EditFactoryActiv" />
+            <Variable Name="EditMachineActiv" />
+            <Variable Name="Factory" AutomaticEnable="True">
+              <Variable Name="ModeSealingUpperEdge" EURangesId="40" />
+            </Variable>
+            <Variable Name="Machine" AutomaticEnable="True">
+              <Variable Name="PredictionTimeCloseGripper" EURangesId="61" EngineeringUnitId="5" />
+              <Variable Name="MaxLength" EURangesId="59" EngineeringUnitId="3" />
+              <Variable Name="MinDistanceForSealingTop" EURangeViolationId="2" EURangesId="73" EngineeringUnitId="3" />
+              <Variable Name="IndexMFO_EnableSuction" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="IndexMFO_EnableSuction2" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="IndexMFO_EnableSlitter" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="IndexMFO_EnableSpreader" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="VelocityInit" EURangeViolationId="2" EURangesId="101" EngineeringUnitId="1" />
+            </Variable>
+            <Variable Name="Program" AutomaticEnable="True">
+              <Variable Name="Heating">
+                <Variable Name="HeatOnTemp" EURangeViolationId="2" EURangesId="58" EngineeringUnitId="4" />
+                <Variable Name="HeatOnTime" EURangesId="41" EngineeringUnitId="5" />
+                <Variable Name="CoolingTime" EURangesId="71" EngineeringUnitId="5" />
+                <Variable Name="SealTime" EURangesId="71" EngineeringUnitId="5" />
+                <Variable Name="SealTemp" EURangeViolationId="2" EURangesId="58" EngineeringUnitId="4" />
+                <Variable Name="BoostTemp" EURangesId="58" EngineeringUnitId="4" />
+                <Variable Name="DelayStopOpen" EURangesId="61" EngineeringUnitId="5" />
+              </Variable>
+              <Variable Name="HeatingSlanted">
+                <Variable Name="HeatOnTime" EURangesId="75" EngineeringUnitId="5" />
+                <Variable Name="CoolingTime" EURangesId="76" EngineeringUnitId="5" />
+                <Variable Name="HeatOnTemp" EURangeViolationId="2" EURangesId="58" EngineeringUnitId="4" />
+                <Variable Name="SealTime" EURangesId="76" EngineeringUnitId="5" />
+                <Variable Name="SealTemp" EURangeViolationId="2" EURangesId="58" EngineeringUnitId="4" />
+                <Variable Name="BoostTemp" EURangesId="58" EngineeringUnitId="4" />
+                <Variable Name="DelayStopOpen" EURangesId="61" EngineeringUnitId="5" />
+              </Variable>
+              <Variable Name="SpeedDown" EURangeViolationId="2" EURangesId="65" EngineeringUnitId="1" />
+              <Variable Name="AddLengthPerPart" EURangesId="81" EngineeringUnitId="3" />
+              <Variable Name="FixLength" EURangesId="78" EngineeringUnitId="3" />
+              <Variable Name="AddLength" EURangesId="80" EngineeringUnitId="3" />
+              <Variable Name="DistanceOpenGripper" EURangeViolationId="2" EURangesId="82" EngineeringUnitId="3" />
+              <Variable Name="DistanceOpenGripperSlanted" EURangeViolationId="2" EURangesId="82" EngineeringUnitId="3" />
+              <Variable Name="DistanceStop" EURangeViolationId="2" EURangesId="56" EngineeringUnitId="3" />
+              <Variable Name="DelayCarriageDown" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DurationBlowImp" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayCarriageUp" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayDynCarriageUp" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayFilmStopperOn" EURangesId="79" EngineeringUnitId="5" />
+              <Variable Name="DelayFilmStopperOnSlanted" EURangesId="79" EngineeringUnitId="5" />
+              <Variable Name="HeatingLowerEdge">
+                <Variable Name="HeatOnTemp" EURangeViolationId="2" EURangesId="58" />
+                <Variable Name="SealTemp" EURangeViolationId="2" EURangesId="58" />
+                <Variable Name="HeatOnTime" EURangesId="75" EngineeringUnitId="5" />
+                <Variable Name="SealTime" EURangesId="76" EngineeringUnitId="5" />
+                <Variable Name="CoolingTime" EURangesId="76" EngineeringUnitId="5" />
+                <Variable Name="BoostTemp" EURangesId="58" EngineeringUnitId="4" />
+              </Variable>
+              <Variable Name="AccelerationPullFilm" EURangeViolationId="2" EURangesId="92" EngineeringUnitId="8" />
+              <Variable Name="DistanceSealLowerEdge" EURangesId="95" EngineeringUnitId="3" />
+              <Variable Name="PositionStartSlit" EURangeViolationId="2" EURangesId="97" EngineeringUnitId="3" />
+              <Variable Name="DistanceSlit" EURangeViolationId="2" EURangesId="68" EngineeringUnitId="3" />
+              <Variable Name="DelayCloseSealUpperEdge" EURangesId="79" EngineeringUnitId="5" />
+              <Variable Name="DelaySuction" EURangeViolationId="2" EURangesId="70" EngineeringUnitId="5" />
+              <Variable Name="DurationSuction" EURangeViolationId="2" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="StartTimeStop" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DistancePull" EURangeViolationId="2" EURangesId="72" EngineeringUnitId="3" />
+              <Variable Name="EarlySealLowerEdge" EURangesId="69" />
+              <Variable Name="DelaySpreader" EURangesId="69" />
+            </Variable>
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="Service" AutomaticEnable="True">
+            <Variable Name="TempSealUpperEdge" EURangeViolationId="2" EURangesId="58" />
+            <Variable Name="TempSealLowerEdge" EURangeViolationId="2" EURangesId="58" />
+          </Variable>
+          <Variable Name="State" AutomaticEnable="True">
+            <Variable Name="MeasuredLength" EngineeringUnitId="3" />
+            <Variable Name="VoltageSealUpperEdge" EngineeringUnitId="9" />
+            <Variable Name="VoltageSealLowerEdge" EngineeringUnitId="9" />
+          </Variable>
+          <Variable Name="Test" AutomaticEnable="True">
+            <Variable AclId="16" AclInherit="2" Name="Length" EURangeViolationId="3" EURangesId="93" EngineeringUnitId="3" />
+          </Variable>
+          <Variable AclId="23" AclInherit="2" Name="GetFilm" AutomaticEnable="True">
+            <Variable AclId="21" AclInherit="2" Name="EnableMoveUp" />
+          </Variable>
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylCutterServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylGripperServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylSLE_ServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylSlitterServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylSpreaderServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylSUE_ServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylFilmStopperServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+      </Task>
+      <Task Name="OutputTr">
+        <Variable Name="parameter" />
+        <Variable Name="tranOutpUI" AutomaticEnable="True">
+          <Variable AclId="14" AclInherit="2" Name="EditParameter">
+            <Variable Name="MachineIsDirty" />
+            <Variable Name="ProgramIsDirty" />
+            <Variable Name="EditMachineActiv" />
+            <Variable Name="Machine" AutomaticEnable="True">
+              <Variable Name="MFI_ReadyForUnload" EURangeViolationId="2" EURangesId="52" />
+            </Variable>
+            <Variable Name="Program" AutomaticEnable="True">
+              <Variable Name="DelayPusherBack" EURangeViolationId="2" EURangesId="76" EngineeringUnitId="5" />
+              <Variable Name="DelayPusherForward" EURangeViolationId="2" EURangesId="76" EngineeringUnitId="5" />
+            </Variable>
+            <Variable AclId="19" AclInherit="2" Name="OldEditProgNo" />
+          </Variable>
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylPusherServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+      </Task>
+      <Task Name="HangIn">
+        <Variable Name="hangInUI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="Service">
+            <Variable AclId="11" AclInherit="2" Name="ViewService" />
+            <Variable AclId="11" AclInherit="2" Name="EnableService" />
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="EditParameter">
+            <Variable AclId="11" AclInherit="2" Name="OldEditProgNo" />
+            <Variable Name="Program">
+              <Variable Name="DelayPusherBack" EURangeViolationId="2" EURangesId="57" EngineeringUnitId="5" />
+              <Variable Name="MinimumTimeHangIn" EURangeViolationId="2" EURangesId="57" EngineeringUnitId="5" />
+              <Variable Name="DelayPusherForward" EURangeViolationId="2" EURangesId="57" EngineeringUnitId="5" />
+              <Variable Name="DelayHangInBack" EURangeViolationId="2" EURangesId="57" EngineeringUnitId="5" />
+            </Variable>
+            <Variable Name="Machine">
+              <Variable Name="MFO_Index_PusherSlow" EURangeViolationId="2" EURangesId="99" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylHangInServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylHangInPusherServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+      </Task>
+      <Task Name="mnMsg">
+        <Variable AclId="12" AclInherit="2" Name="mnMsgUI" AutomaticEnable="True" />
+      </Task>
+      <Task Name="Station2">
+        <Variable Name="station2UI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="Service">
+            <Variable Name="TempSealLowerEdge" EURangeViolationId="2" EURangesId="58" />
+          </Variable>
+          <Variable AclId="16" AclInherit="2" Name="EditParameter">
+            <Variable AclId="11" AclInherit="2" Name="OldEditProgNo" />
+            <Variable Name="Machine">
+              <Variable Name="MinDistance" EURangeViolationId="2" EURangesId="84" EngineeringUnitId="3" />
+              <Variable Name="MaxLength" EURangeViolationId="2" EURangesId="84" EngineeringUnitId="3" />
+              <Variable Name="VelocityInit" EURangeViolationId="2" EURangesId="64" EngineeringUnitId="1" />
+            </Variable>
+            <Variable Name="Program">
+              <Variable Name="Heating">
+                <Variable Name="HeatOnTime" EURangeViolationId="2" EURangesId="41" EngineeringUnitId="5" />
+                <Variable Name="SealTime" EURangeViolationId="2" EURangesId="41" EngineeringUnitId="5" />
+                <Variable Name="SealTemp" EURangeViolationId="2" EURangesId="58" />
+                <Variable Name="CoolingTime" EURangeViolationId="2" EURangesId="41" EngineeringUnitId="5" />
+                <Variable Name="HeatOnTemp" EURangeViolationId="2" EURangesId="58" />
+                <Variable Name="BoostTemp" EURangesId="58" EngineeringUnitId="4" />
+              </Variable>
+              <Variable Name="SpeedDown" EURangeViolationId="2" EURangesId="89" EngineeringUnitId="1" />
+              <Variable Name="SpeedUp" EURangeViolationId="2" EURangesId="90" EngineeringUnitId="1" />
+              <Variable Name="AddLength" EURangeViolationId="2" EURangesId="87" EngineeringUnitId="3" />
+              <Variable Name="AddLengthSlanted" EURangeViolationId="2" EURangesId="87" EngineeringUnitId="3" />
+              <Variable Name="PredTimeCloseLowerSeal" EURangeViolationId="2" EURangesId="88" EngineeringUnitId="5" />
+              <Variable Name="DistanceStop" EURangeViolationId="2" EURangesId="56" EngineeringUnitId="3" />
+              <Variable Name="PredTimeLowerSealIsUp" EURangeViolationId="2" EURangesId="42" EngineeringUnitId="5" />
+              <Variable Name="DelayCarriageDown" EURangeViolationId="2" EURangesId="71" EngineeringUnitId="5" />
+              <Variable Name="DelayCarriageUp" EURangeViolationId="2" EURangesId="71" EngineeringUnitId="5" />
+            </Variable>
+          </Variable>
+          <Variable Name="State">
+            <Variable Name="MeasuredLength" EngineeringUnitId="3" />
+            <Variable Name="VoltageSealLowerEdge" EngineeringUnitId="9" />
+          </Variable>
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylSLE_ServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+      </Task>
+      <Task Name="HangOut">
+        <Variable Name="hangOutUI" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="Service" />
+          <Variable AclId="16" AclInherit="2" Name="EditParameter">
+            <Variable AclId="11" AclInherit="2" Name="OldEditProgNo" />
+            <Variable Name="Program">
+              <Variable Name="DelayTransfer" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayHangOut" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayHangOutBack" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayTransferForward" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayTransferBack" EURangesId="69" EngineeringUnitId="5" />
+              <Variable Name="DelayBlow" EURangeViolationId="2" EURangesId="71" EngineeringUnitId="5" />
+              <Variable Name="LengthBlow" EURangeViolationId="2" EURangesId="71" EngineeringUnitId="5" />
+            </Variable>
+            <Variable Name="Machine">
+              <Variable Name="MFO_Index_HangOutSlow" EURangeViolationId="2" EURangesId="99" />
+              <Variable Name="MFO_Index_BTB_Stopper" EURangeViolationId="2" EURangesId="99" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylHangOutServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylHangOutTransferServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" />
+        </Variable>
+        <Variable AclId="22" AclInherit="2" Name="cylHangOutStopperServiceUI" AutomaticEnable="True">
+          <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
+        </Variable>
+      </Task>
+      <Task Name="Sealing">
+        <Variable Name="sealingUI" AutomaticEnable="True" />
+      </Task>
+      <Task Name="BM_2_Info">
+        <Variable Name="siteManagerUI_Con" AutomaticEnable="True" />
+        <Variable Name="siteManagerUI_Cfg" AutomaticEnable="True">
+          <Variable AclId="23" AclInherit="2" Name="CmdSave" />
+          <Variable AclId="23" AclInherit="2" Name="CmdReset" />
+          <Variable AclId="23" AclInherit="2" Name="EditedParameter" />
+        </Variable>
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

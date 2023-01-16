@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="binding_Machine_IO_Parameter" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<!-- Service freigeben -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandMachine" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.State.EnableService" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandMachine" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandMachine" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandMachine" attribute="value" />
+		</Binding>
+
+		<!-- Save Button freigeben -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.IsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="MachineGeneralMacParIsDirty" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.Parameter.Machine.IsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="MachineGeneralMacParIsDirty" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.StartUpWarningMachine.IsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="MachineGeneralMacParIsDirty" attribute="inC" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="MachineGeneralMacParIsDirty" attribute="result" />
+			<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+
+		
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.DelayTimeTillStandBy" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="numInpParameter_02_5" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.AllowCounterReset" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cbParameter03_2" attribute="value" />
+		</Binding>
+		
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.IndexMFO_AutomaticRunInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="ddbParameter_02_10" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.IndexMFO_AutomaticRunOutput" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="ddbParameter02_11" attribute="selectedIndex" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.IndexMFO_Alarm" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="ddbParameter02_12" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.AutomaticRunInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="imgListSignalAutomaticRunLoad" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Service.AutomaticRunInput" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSignalAutomaticOnLoadingOn" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.EnableService" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSignalAutomaticOnLoadingOn" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varViewCommandMachine" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSignalAutomaticOnLoadingOn" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varViewCommandMachine" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSignalAutomaticOnUnloadingOn" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.AutomaticRunUnload" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="imgListSignalAutomaticRunUnload" attribute="selectedIndex" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.EnableService" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSignalAutomaticOnUnloadingOn" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Service.AutomaticRunOutput" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSignalAutomaticOnUnloadingOn" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Service.ReleaseOutputSafe" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSafeReleaseUnloadingSide" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.EnableService" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSafeReleaseUnloadingSide" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="session" refId="varViewCommandMachine" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnSafeReleaseUnloadingSide" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ReleaseOutputSafe" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="imgListSafeReleaseUnload" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewFDC" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpOutputSafeReleaseOutput" attribute="visible" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.State.AlarmSignal" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="imgListAlarmSignal" attribute="selectedIndex" />
+		</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.Service.AlarmSignal" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnAlarmSignal" attribute="value" />
+</Binding>
+
+
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varViewCommandMachine" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnAlarmSignal" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.EnableService" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="btnAlarmSignal" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.OcuupiedDischrg_2" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="imgListSignalDischrgFull_2" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.OccupiedDischrg_1" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="imgListSignalDischrgFull_1" attribute="selectedIndex" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.DelayTimeDischrgFull_2" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="numInpParameter_02_9" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.DelayTimeDischrgFull_1" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="numInpParameter_02_8" attribute="node" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUaComplexObject" refId="::Machine:machineUI.StartUpWarningMachine.Parameter" />
+			<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cw_MacStartUpWarning" attribute="value" />
+		</Binding>
+	<Binding mode="twoWay">
+<Source xsi:type="opcUaComplexObject" refId="::Machine:machineUI.StartUpWarningService" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="hasStartUpWarning" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:stateLight.UIvisible" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cwVP_StateStateLight1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUaComplexObject" refId="::mnMS:mnMS_UI.ServiceStateLight.White" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cwVP_StateStateLight1" attribute="valueWhite" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUaComplexObject" refId="::mnMS:mnMS_UI.ServiceStateLight.Blue" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cwVP_StateStateLight1" attribute="valueBlue" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUaComplexObject" refId="::mnMS:mnMS_UI.ServiceStateLight.Green" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cwVP_StateStateLight1" attribute="valueGreen" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUaComplexObject" refId="::mnMS:mnMS_UI.ServiceStateLight.Red" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cwVP_StateStateLight1" attribute="valueRed" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUaComplexObject" refId="::mnMS:mnMS_UI.Parameter.Machine.Parameter" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cwVP_MacStateLight1" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mnMS:stateLight.UIvisible" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="cwVP_MacStateLight1" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionSignalAlarm" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpParameter02_12" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewSignalAutomatic" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpParameter02_11" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewSignalAutomatic" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpParameter2_10" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewSignalAlarm" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpOutputAlarmSignal" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.State.ViewSignalAutomatic" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpOutputSignalAutoRunUnload" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionSignalAlarm" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpParameter02_14" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionSignalAlarm" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="grpParameter02_15" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.TimeSignalAlarmOn" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="numInpParameter_02_14" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.TimeSignalAlarmOff" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="numInpParameter_02_15" attribute="node" />
+</Binding>
+</Bindings>
+</BindingsSet>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="eventbinding_MachineStation2" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    
+		<EventBinding id="content_MachineStation2.numInpParameter_08_01.ValueChanged">
+			<Source contentRefId="content_MachineStation2" widgetRefId="numInpParameter_08_01" xsi:type="widgets.brease.NumericInput.Event" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station2:station2UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="content_MachineStation2.numInpParameter_08_02.ValueChanged">
+			<Source contentRefId="content_MachineStation2" widgetRefId="numInpParameter_08_02" xsi:type="widgets.brease.NumericInput.Event" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station2:station2UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+		
+		<EventBinding id="content_MachineStation2.cw_MacVelocityInit1.ParameterChanged">
+			<Source contentRefId="content_MachineStation2" widgetRefId="cw_MacVelocityInit1" xsi:type="widgets.vpWidgetLib.cw_MacVelocityInit.Event" event="ParameterChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station2:station2UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="content_MachineStation2.btnSave.Click">
+			<Source contentRefId="content_MachineStation2" widgetRefId="btnSave" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::mnParam:mnParamUI.SaveMachineParameter" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="content_MachineStation2.btnShowSLE_ServiceUI.Click">
+			<Source contentRefId="content_MachineStation2" widgetRefId="btnShowSLE_ServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="11" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat2SLE_UIDialog" headerText="$IAT/Sealing/txtGrpSealLowerEdge" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

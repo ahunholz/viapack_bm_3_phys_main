@@ -1,0 +1,755 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="SettingBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<!-- BACKUP RESTORE -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::BackRest:backrestUI.StatusText" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutStateBackRest" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::BackRest:backrestUI.BackupList" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbBackups" attribute="dataProvider" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::BackRest:backrestUI.Active" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbBackups" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnBackup" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnRestore" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnDelete" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::BackRest:backrestUI.EnableBackup" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnBackup" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::BackRest:backrestUI.EnableRestore" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnRestore" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::BackRest:backrestUI.EnableDelete" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnDelete" attribute="enable" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varSettingBackupRestoreSelectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbBackups" attribute="selectedValue" />
+		</Binding>
+		
+		<!-- Zeiteinstellung -->
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.SystemDateTime" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="outDateTime" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.AutoDayTimeSavingOn" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbDaytimeSaving" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.TimeZone" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="ddbDateTimeRegion" attribute="selectedValue" />
+		</Binding>
+		
+
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varSettingSetDateTime" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogSetDateTimeContent" widgetRefId="inputDateTime" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varSettingTimeZoneSelectedValue" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogSetDateTimeContent" widgetRefId="ddbTimeZone" attribute="selectedValue" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varSettingIsAutomaticDst" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogSetDateTimeContent" widgetRefId="cbIsAutomaticDst" attribute="value" />
+		</Binding>
+		
+		<!-- WERKSPARAMETER -->	
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.Model" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineContent" widgetRefId="ddbMachineModel" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.Side" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineContent" widgetRefId="ddbDrivePosition" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionUZ" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineContent" widgetRefId="cbSealLowerEdge" attribute="value" />
+		</Binding>
+	
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.IsDirty" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineContent" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+
+		<!-- Anzeige Maschinentyp -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.MachineType" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutMachineType" attribute="value" />
+		</Binding>
+
+		<!-- Anzeige Maschinenoptionen -->	
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionSlowTransport" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasSlowTransport" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionPrinter" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasPrinter" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasOPCserver" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasMFO" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFI" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasMFI" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionFDC" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasFDC" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasBTBStopper" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbHasBTBStopper" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasBTBStopper" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasBTBStopper" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.StartUpWarningFactory.Active" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasStartUpWarning" attribute="value" />
+		</Binding>
+
+		<!-- Bearbeite Maschinenoptionen -->
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionPrinter" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasPrinter" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionSlowTransport" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasSlowTransport" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionFDC" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasFDC" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFI" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasMFI" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFO" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasMFO" attribute="value" />
+		</Binding>
+		
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasBTBStopper" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasBTBStopper" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.StartUpWarningFactory.Parameter.Active" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasStartUpWarning" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.IsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="MachineOptionsIsDirty" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Machine:machineUI.StartUpWarningFactory.IsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="MachineOptionsIsDirty" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.Parameter.Factory.IsDirty" attribute="value" />
+			<Target xsi:type="expression" refId="MachineOptionsIsDirty" attribute="inC" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="MachineOptionsIsDirty" attribute="result" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+
+
+		
+		<!-- Anzeige Werksparameter Einlauf -->
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Factory.TypeInputConveyor" attribute="value" samplingRate="slow" />
+			<Target xsi:type="snippet" refId="SnippetInputConveyorType" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Factory.TypeInput" attribute="value" samplingRate="slow" />
+			<Target xsi:type="snippet" refId="SnippetInputType" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Factory.MFO_ReadyForInput" attribute="value" samplingRate="slow" />
+			<Target xsi:type="snippet" refId="SnippetInputMFO_MachineReady" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Factory.MFO_ReadyForInput" attribute="value" samplingRate="slow" />
+			<Target xsi:type="snippet" refId="SnippetInputMFO_ReadyToReceiveParts" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetInputConveyorType" attribute="value" />
+			<Target xsi:type="brease" widgetRefId="txtOutInputConveyorType" contentRefId="PageSettingContent" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetInputType" attribute="value" />
+			<Target xsi:type="brease" widgetRefId="txtOutInputType" contentRefId="PageSettingContent" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetInputMFO_MachineReady" attribute="value" />
+			<Target xsi:type="brease" widgetRefId="txtOutInputMFO_MachineReady" contentRefId="PageSettingContent" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbInputMFO_MachineReady" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutInputMFO_MachineReady" attribute="visible" />
+		</Binding>
+		
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbInputRemotePrgSelection" attribute="visible" />
+		</Binding>
+	
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::InputTr:parameter.Factory.EnableProgramSelectionRemote" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbInputrEnableRemotePrgSelection" attribute="value" />
+		</Binding>
+
+
+		<!-- Bearbeite Werksparameter Einlauf -->
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Factory.TypeInputConveyor" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="ddbInputConveyorType" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Factory.TypeInput" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="ddbInputType" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Factory.MFO_ReadyForInput" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="ddbInputMFO_MachineReady" attribute="selectedIndex" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="lbInputMFO_MachineReady" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="ddbInputMFO_MachineReady" attribute="visible" />
+		</Binding>
+		
+		
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.Factory.EnableProgramSelectionRemote" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="cbEnableRemotePrgSelection" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="cbEnableRemotePrgSelection" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="lbEnableRemotePrgSelection" attribute="visible" />
+		</Binding>
+
+		<!-- Anzeige Werksparameter Sammelstation -->
+
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:parameter.Factory.EnableMultiParts" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbCollectorEnableMultiParts" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Collector:parameter.Factory.OffsetLVE" attribute="node" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="numOutCollectorOffsetLVE" attribute="node" />
+		</Binding>
+
+		<!-- Bearbeite Werksparameter Sammelstation -->
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Factory.EnableMultiParts" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacCollectorContent" widgetRefId="cbEnableMultiParts" attribute="value" />
+		</Binding>
+	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.Factory.OffsetLVE" attribute="node" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacCollectorContent" widgetRefId="numInputOffsetLVE" attribute="node" />
+		</Binding>
+	
+		<!-- Anzeige Werkparameter Station 1 -->
+	
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.Model" attribute="value" samplingRate="slow" />
+			<Target xsi:type="expression" refId="ViewFactoryStation1Spreader" attribute="inModel" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionUZ" attribute="value" samplingRate="slow" />
+			<Target xsi:type="expression" refId="ViewFactoryStation1Spreader" attribute="inSealLowerEdge" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewFactoryStation1Spreader" attribute="result" />
+			<Target xsi:type="session" refId="varViewFactoryStation1Spreader" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionWithoutPackWithMove" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStation1EnableNoBaggingWithMove" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionWithoutPacking" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStation1EnableNoBagging" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionFixlength" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStation1EnableFixlength" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionWithoutPacking" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStation1EnableNoBaggingWithMove" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionWithoutPacking" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbStation1NoBaggingWithMove" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSuction" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStationSuction" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSlitter" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStationSlitter" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.HasOptionSpreader" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStationSpreader" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varViewFactoryStation1Spreader" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStationSpreader" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewFactoryStation1Spreader" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbStation1Spreading" attribute="visible" />
+		</Binding>
+
+		<!-- Bearbeite Werksparameter Station 1 -->
+			
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionWithoutPacking" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="lbEnableNoBaggingWithMove" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionWithoutPacking" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableNoBaggingWithMove" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionWithoutPackWithMove" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableNoBaggingWithMove" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionWithoutPacking" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableNoBagging" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionFixlength" attribute="value" samplingRate="slow" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableFixlength" attribute="value" />
+		</Binding>
+
+	
+	
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::InputTr:inputTrUI.EditParameter.FactoryIsDirty" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacInputContent" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Collector:collectorUI.EditParameter.FactoryIsDirty" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacCollectorContent" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.FactoryIsDirty" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="btnSave" attribute="enable" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionSuction" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableSuction" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewFactoryStation1Spreader" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableSpreader" attribute="visible" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionSpreader" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableSpreader" attribute="value" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.HasOptionSlitter" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbEnableSlitter" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varViewFactoryStation1Spreader" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="lbEnableSpreader" attribute="visible" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mnMS:MS_UI.State" attribute="value" />
+			<Target xsi:type="expression" refId="EnableEditFactoryParameter" attribute="inState" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="EnableEditFactoryParameter" attribute="result" />
+			<Target xsi:type="session" refId="varEnableEditSetting" attribute="value" />
+		</Binding>
+	
+		<!-- SLX Status -->
+		
+		<!-- OS-State -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.RedLED_color" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetLEDcolorSLXred" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetLEDcolorSLXred" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="imgSafeOsState" attribute="image" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.RedLED_text" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetTextSLXosState" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetTextSLXosState" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutOSState" attribute="value" />
+		</Binding>
+
+		<!-- Run-State -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.FailLED_color" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetLEDcolorSLXfail" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetLEDcolorSLXfail" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="imgRunState" attribute="image" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.FailLED_text" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetTextSLXfail" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetTextSLXfail" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutRunState" attribute="value" />
+		</Binding>
+
+		<!-- Firmware Safekey -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.FwAckLED_color" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetLEDcolorSLXfwAck" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetLEDcolorSLXfwAck" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="imgFirmwareSafekey" attribute="image" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.FwAckLED_text" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetTextSLXfwXchg" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetTextSLXfwXchg" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutFirmwareSafekey" attribute="value" />
+		</Binding>
+
+		<!-- Module -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.ModuleExchangeLED_color" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetLEDcolorSLXmodAck" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetLEDcolorSLXmodAck" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="imgModules" attribute="image" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.ModuleExchangeLED_text" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetTextSLXmodAck" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetTextSLXmodAck" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutModules" attribute="value" />
+		</Binding>
+		
+		<!-- State SLX 910 -->
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.StateSLX910Com" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetTextStateSLX910" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetTextStateSLX910" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutStateSLX910" attribute="value" />
+		</Binding>
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionOpcUA_Server" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbInputrEnableRemotePrgSelection" attribute="visible" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varEnableEditSetting" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnEditFacStation1" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varEnableEditSetting" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnEditFacCollector" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varEnableEditSetting" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnEditFacInput" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varEnableEditSetting" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnEditFacMachineOptions" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varEnableEditSetting" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnEditFacMachine" attribute="enable" />
+		</Binding>
+
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.ShowRequestConfirmMAOpt" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbMessageDifferenceSettingSafetyPLC" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Safety:safetyUI.SLX910.ShowRequestConfirmMAOpt" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnConfirmChangeMAopt" attribute="visible" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserMgrEnableLogin" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnUsrMgrLogin" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="session" refId="varUserMgrShowContent" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="grpUserManager" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varUserMgrEnableLogoff" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnUsrMgrLogOut" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.Commands.SelectedUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="ddpUsers" attribute="selectedIndex" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.EditUserList" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="ddpUsers" attribute="dataProvider" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.EnableNewUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnAddUser" attribute="visible" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.EnableDelete" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnDeleteUser" attribute="visible" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.EnableUserList" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="ddpUsers" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.UserType" attribute="value" />
+			<Target xsi:type="snippet" refId="SnippetUserType" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="snippet" refId="SnippetUserType" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutUserType" attribute="value" />
+		</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.DefLanguage" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="txtOutDefLanguage" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::mvClient:mvClientUserMgrUI.EnableEditUser" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnEditUser" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.ModeSealingUpperEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbStation1ModeSealingUpperEdge" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Factory.ModeSealingUpperEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacStation1Content" widgetRefId="cbModeSealingUpperEdge" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station1:parameter.Factory.ModeSealingUpperEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar55_73" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::BackRest:backrestUI.SelectFactoryParameter" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SelectRestore" widgetRefId="cbFactoryParameter" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::BackRest:backrestUI.SelectMachineParameter" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SelectRestore" widgetRefId="cbMachineParameter" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::BackRest:backrestUI.SelectProgramParameter" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_SelectRestore" widgetRefId="cbProgramParameter" attribute="value" />
+</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MSM_Parameter.StateLightFactory.Enable" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasStateLight" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::mnMS:mnMS_UI.Parameter.Factory.Parameter.Enable" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasStateLighting" attribute="value" />
+</Binding>
+
+
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="grpHasStartUpWarning" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="grpHasBTBStopper" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="grpHasSlowTransport" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="grpHasStateLighting" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasStartUpWarning" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbHasStartUpWarning" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasStateLight" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbHasStateLight" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbHasSlowTransport" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasSlowTransport" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionOpcUA_Server" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasOPCUAserver" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbHasSignalAutomatic" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasSignalAutomatic" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="lbHasSignalAlarm" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasSignalAlarm" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionSignalAlarm" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasSignalAlarm" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionSignalAutomatic" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasSignalAutomatic" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionSignalAlarm" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasSignalAlarm" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionSignalAutomatic" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasSignalAutomatic" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="grpHasSignalAlarm" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionMFO" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="grpHasSignalAutomatic" attribute="visible" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="opcUaComplexObject" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="SitemanagerCfgInfo" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Cfg.CmdResetVisible" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnResetSM" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Cfg.StateUI" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="TextOutputSMstate" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MachineParameter.Factory.HasOptionGettingFilm" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="cbHasGettingFilm" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditFactoryParameter.Parameter.HasOptionGettingFilm" attribute="value" />
+<Target xsi:type="brease" contentRefId="DialogEditFacMachineOptionsContent" widgetRefId="cbHasGettingFilm" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

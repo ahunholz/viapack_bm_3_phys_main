@@ -1,0 +1,5 @@
+VAR_CONFIG
+	::OutputTr:cylPusher.Position1 AT %IX."X20DI9371_21C5".DigitalInput03;
+	::OutputTr:cylPusher.Position0 AT %IX."X20DI9371_21C5".DigitalInput04;
+	::OutputTr:cylPusher.Activate1 AT %QX."X20DO9322_23C1".DigitalOutput09;
+END_VAR

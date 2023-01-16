@@ -1,0 +1,569 @@
+﻿FUNCTION_BLOCK NOTHALTKette
+{ VariableWorksheet := 'Variables' }
+﻿{GroupDefinition(0,'NewGroup')}
+
+VAR_INPUT {Group(0)}
+    {LINE(2)}
+    Einrichtbetrieb : SAFEBOOL;
+    {LINE(6)}
+    KeinTeilGefallen : SAFEBOOL;
+END_VAR
+
+VAR_OUTPUT {Group(0)}
+    {LINE(5)}
+    NH_KETTE_OK : SAFEBOOL;
+END_VAR
+
+VAR {Group(0)}
+    {LINE(1)}
+    NH_KETTE_TRITTMATTEN_OK : SAFEBOOL;
+    {LINE(3)}
+    WagenUZ_OK : SAFEBOOL;
+    {LINE(4)}
+    WagenGreifer_OK : SAFEBOOL;
+END_VAR
+
+{ CodeWorksheet := 'NOTHALTKette', Type := '.fbd' }
+﻿<?xml version="1.0" encoding="utf-16" standalone="yes"?><FBD>
+  <addData>
+    <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+      <line localId="0" beginX="89" beginY="16" endX="110" endY="16" />
+      <line localId="21" beginX="25" beginY="37" endX="109" endY="37" />
+      <line localId="25" beginX="4" beginY="37" endX="4" endY="45" />
+      <line localId="26" beginX="25" beginY="37" endX="25" endY="45" />
+      <line localId="29" beginX="25" beginY="77" endX="109" endY="77" />
+      <line localId="30" beginX="4" beginY="77" endX="4" endY="85" />
+      <line localId="31" beginX="25" beginY="77" endX="25" endY="85" />
+      <line localId="44" beginX="4" beginY="45" endX="4" endY="53" />
+      <line localId="45" beginX="25" beginY="45" endX="25" endY="53" />
+    </data>
+  </addData>
+  <comment localId="1" height="8" width="24">
+    <position x="2" y="16" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">Trittmatten</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <contact localId="2" height="8" width="42" negated="false">
+    <position x="12" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="15" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_37S1</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <coil localId="3" height="8" width="42" negated="false">
+    <position x="348" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="42" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>NH_KETTE_OK</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </coil>
+  <contact localId="4" height="8" width="42" negated="false">
+    <position x="54" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="2" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_37S4</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="5" height="8" width="42" negated="false">
+    <position x="96" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="4" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>WagenGreifer_OK</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="6" height="8" width="42" negated="false">
+    <position x="138" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="5" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>WagenUZ_OK</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="7" height="8" width="42" negated="false">
+    <position x="180" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="6" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>NH_KETTE_TRITTMATTEN_OK</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="8" height="8" width="42" negated="false">
+    <position x="222" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="7" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_X15</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="9" height="8" width="42" negated="false">
+    <position x="10" y="28" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="17" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_38S1_1</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <coil localId="10" height="8" width="42" negated="false">
+    <position x="220" y="28" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="13">
+        <position x="220" y="32" />
+        <position x="178" y="32" />
+      </connection>
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>NH_KETTE_TRITTMATTEN_OK</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </coil>
+  <contact localId="11" height="8" width="42" negated="false">
+    <position x="52" y="28" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="9" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_38S1_2</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="12" height="8" width="42" negated="false">
+    <position x="94" y="28" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="11" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_38S5_1</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="13" height="8" width="42" negated="false">
+    <position x="136" y="28" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="12" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_38S5_2</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="14" height="8" width="42" negated="false">
+    <position x="264" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="8" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_X22</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <leftPowerRail localId="15" height="0" width="4">
+    <position x="8" y="210" />
+    <connectionPointOut>
+      <relPosition x="4" y="0" />
+    </connectionPointOut>
+  </leftPowerRail>
+  <rightPowerRail localId="16" height="0" width="4">
+    <position x="390" y="210" />
+    <connectionPointIn>
+      <relPosition x="0" y="0" />
+      <connection refLocalId="3" />
+    </connectionPointIn>
+  </rightPowerRail>
+  <leftPowerRail localId="17" height="0" width="4">
+    <position x="6" y="32" />
+    <connectionPointOut>
+      <relPosition x="4" y="0" />
+    </connectionPointOut>
+  </leftPowerRail>
+  <rightPowerRail localId="18" height="0" width="4">
+    <position x="262" y="32" />
+    <connectionPointIn>
+      <relPosition x="0" y="0" />
+      <connection refLocalId="10" />
+    </connectionPointIn>
+  </rightPowerRail>
+  <contact localId="19" height="8" width="42" negated="false">
+    <position x="8" y="70" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="22" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_X25</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <coil localId="20" height="8" width="42" negated="false">
+    <position x="218" y="70" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="19">
+        <position x="218" y="74" />
+        <position x="50" y="74" />
+      </connection>
+      <connection refLocalId="24">
+        <position x="218" y="74" />
+        <position x="50" y="74" />
+        <position x="50" y="90" />
+      </connection>
+      <connection refLocalId="43">
+        <position x="218" y="74" />
+        <position x="50" y="74" />
+        <position x="50" y="90" />
+        <position x="50" y="106" />
+      </connection>
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>WagenUZ_OK</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </coil>
+  <leftPowerRail localId="22" height="0" width="4">
+    <position x="4" y="74" />
+    <connectionPointOut>
+      <relPosition x="4" y="0" />
+    </connectionPointOut>
+  </leftPowerRail>
+  <rightPowerRail localId="23" height="0" width="4">
+    <position x="260" y="74" />
+    <connectionPointIn>
+      <relPosition x="0" y="0" />
+      <connection refLocalId="20" />
+    </connectionPointIn>
+  </rightPowerRail>
+  <contact localId="24" height="8" width="42" negated="false">
+    <position x="8" y="86" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="22">
+        <position x="8" y="90" />
+        <position x="8" y="74" />
+      </connection>
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>Einrichtbetrieb</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <comment localId="27" height="8" width="72">
+    <position x="4" y="54" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">Rollenendschalter Wagen UZ OK</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <comment localId="28" height="8" width="36">
+    <position x="8" y="184" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">NOT-HALT-Kette</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <comment localId="32" height="8" width="80">
+    <position x="4" y="134" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">Rollenendschalter Wagen Greifer OK</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <contact localId="33" height="8" width="42" negated="false">
+    <position x="8" y="150" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="36" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>IN_NH_OK_X29</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <coil localId="34" height="8" width="42" negated="false">
+    <position x="218" y="150" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="33">
+        <position x="218" y="154" />
+        <position x="50" y="154" />
+      </connection>
+      <connection refLocalId="35">
+        <position x="218" y="154" />
+        <position x="50" y="154" />
+        <position x="50" y="170" />
+      </connection>
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>WagenGreifer_OK</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </coil>
+  <contact localId="35" height="8" width="42" negated="false">
+    <position x="8" y="166" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="36">
+        <position x="8" y="170" />
+        <position x="8" y="154" />
+      </connection>
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>Einrichtbetrieb</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <leftPowerRail localId="36" height="0" width="4">
+    <position x="4" y="154" />
+    <connectionPointOut>
+      <relPosition x="4" y="0" />
+    </connectionPointOut>
+  </leftPowerRail>
+  <rightPowerRail localId="37" height="0" width="4">
+    <position x="260" y="154" />
+    <connectionPointIn>
+      <relPosition x="0" y="0" />
+      <connection refLocalId="34" />
+    </connectionPointIn>
+  </rightPowerRail>
+  <comment localId="38" height="8" width="32">
+    <position x="12" y="222" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">Schaltschrank</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <comment localId="39" height="8" width="34">
+    <position x="58" y="222" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">Maschinenkopf</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <comment localId="40" height="8" width="24">
+    <position x="226" y="222" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">Zuführung</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <comment localId="41" height="8" width="24">
+    <position x="272" y="222" />
+    <content>
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title />
+        </head>
+        <body>
+          <p style="color:#000000;font-family:Arial;font-weight:normal;font-style:normal;font-size:18pt;">Abführung</p>
+        </body>
+      </html>
+    </content>
+  </comment>
+  <contact localId="42" height="8" width="42" negated="false">
+    <position x="306" y="206" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="14" />
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>KeinTeilGefallen</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+  <contact localId="43" height="8" width="42" negated="false">
+    <position x="8" y="102" />
+    <connectionPointIn>
+      <relPosition x="0" y="4" />
+      <connection refLocalId="22">
+        <position x="8" y="106" />
+        <position x="8" y="90" />
+        <position x="8" y="74" />
+      </connection>
+    </connectionPointIn>
+    <connectionPointOut>
+      <relPosition x="42" y="4" />
+    </connectionPointOut>
+    <variable>S_OhneStation2</variable>
+    <addData>
+      <data name="http://www.phoenixcontact-software.com" handleUnknown="preserve">
+        <contactData contactWidth="9" />
+      </data>
+    </addData>
+  </contact>
+</FBD>
+END_FUNCTION_BLOCK

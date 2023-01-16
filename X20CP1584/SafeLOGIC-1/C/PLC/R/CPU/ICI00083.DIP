@@ -1,0 +1,13 @@
+(*
+T: FUNCTION_BLOCK NOTHALTKette
+FW: NO
+CI#: 83
+QSL: 6
+QVE: 6
+QVPC: 6
+QPar: 3
+QFBI: 0
+*)
+Einrichtbetrieb	@IV 1	@TYP:43	VAR_INPUT
+KeinTeilGefallen	@IV 2	@TYP:43	VAR_INPUT
+NH_KETTE_OK	@IV 3	@TYP:43	VAR_OUTPUT

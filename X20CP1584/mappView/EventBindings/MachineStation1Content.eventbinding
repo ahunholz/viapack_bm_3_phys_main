@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="MachineStation1Content_eventbinding" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+    
+		<EventBinding id="PageMachineStation1Content.numInpParameter_06_07.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="numInpParameter_06_07" xsi:type="widgets.brease.NumericInput.Event" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.numInpParameter_06_08.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="numInpParameter_06_08" xsi:type="widgets.brease.NumericInput.Event" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.numInpParameter_5_1.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="numInpParameter_5_1" xsi:type="widgets.brease.NumericInput.Event" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.cbParameter_5_2.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="cbParameter_5_2" xsi:type="widgets.brease.CheckBox.Event" event="ValueChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.ddbMFO_Slitter.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Slitter" xsi:type="widgets.brease.DropDownBox.Event" event="SelectedIndexChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.ddbMFO_Suction.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Suction" xsi:type="widgets.brease.DropDownBox.Event" event="SelectedIndexChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.ddbMFO_Suction2.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Suction2" xsi:type="widgets.brease.DropDownBox.Event" event="SelectedIndexChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.ddbMFO_Spreader.ValueChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="ddbMFO_Spreader" xsi:type="widgets.brease.DropDownBox.Event" event="SelectedIndexChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.cw_MacVelocityInit1.ParameterChanged">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="cw_MacVelocityInit1" xsi:type="widgets.vpWidgetLib.cw_MacVelocityInit.Event" event="ParameterChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Station1:station1UI.EditParameter.MachineIsDirty">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.btnSave.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnSave" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::mnParam:mnParamUI.SaveMachineParameter" >
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
+
+		<EventBinding id="PageMachineStation1Content.btnShowStation1SUE_ServiceUI.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnShowStation1SUE_ServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="3" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat1SUE_UIDialog" headerText="$IAT/Sealing/txtGrpSealUpperEdge" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageMachineStation1Content.btnShowStation1SLE_ServiceUI.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnShowStation1SLE_ServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="4" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat1SLE_UIDialog" headerText="$IAT/Sealing/txtGrpSealLowerEdge" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageMachineStation1Content.btnShowStation1CutterServiceUI.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnShowStation1CutterServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="5" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat1CutterUIDialog" headerText="$IAT/Station1/txtGrpCutter" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageMachineStation1Content.btnShowStation1FilmStopperServiceUI.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnShowStation1FilmStopperServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="13" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat1FilmStopperUIDialog" headerText="$IAT/Station1/txtLabelFilmStopper" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageMachineStation1Content.btnShowStation1GripperServiceUI.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnShowStation1GripperServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="6" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat1GripperUIDialog" headerText="$IAT/Station1/txtGrpGripper" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageMachineStation1Content.btnShowStation1SlitterServiceUI.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnShowStation1SlitterServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="7" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat1SlitterUIDialog" headerText="$IAT/Station1/txtGrpSlitter" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+		<EventBinding id="PageMachineStation1Content.btnShowStation1SpreaderServiceUI.Click">
+			<Source contentRefId="PageMachineStation1Content" widgetRefId="btnShowStation1SpreaderServiceUI" xsi:type="widgets.brease.Button.Event" event="Click" />
+			<EventHandler>
+				<Sequence>
+					<Step order="0">
+						<Action>
+							<Target xsi:type="session.VariableAction" refId="varSelectCylinderServiceUI" >
+								<Method xsi:type="session.VariableAction.SetValueNumber" value="8" />
+							</Target>
+						</Action>
+					</Step>
+					<Step order="1">
+						<Action>
+							<Target xsi:type="clientSystem.Action">
+								<Method xsi:type="clientSystem.Action.OpenDialog" dialogId="CylServiceStat1SpreaderUIDialog" headerText="$IAT/Station1/txtGrpSpreader" autoClose="true" />
+							</Target>
+						</Action>
+					</Step>
+				</Sequence>
+			</EventHandler>
+		</EventBinding>
+
+	</Bindings>
+</EventBindingSet>

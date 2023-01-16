@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="binding_MachineStation2" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+		
+		<!-- Ermittlung, ob die Service-Taster angezeigt werden dürfen -->
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandStation2Machine" attribute="inA" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.State.ViewService" attribute="value" />
+			<Target xsi:type="expression" refId="ViewCommandStation2Machine" attribute="inB" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewCommandStation2Machine" attribute="result" />
+			<Target xsi:type="session" refId="varViewCommandStation2" attribute="value" />
+		</Binding>
+
+  <Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.PieceInStation2" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station2Content" widgetRefId="imgPieceInCollector" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.MeasuredLength" attribute="node" />
+<Target xsi:type="brease" contentRefId="Station2Content" widgetRefId="numOutMeasuredLength" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.PieceInStation2" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station2Content" widgetRefId="numOutMeasuredLength" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.PieceInStation2" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station2Content" widgetRefId="lbProgramNo" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.PieceInStation2" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station2Content" widgetRefId="numOutCurrentCount1" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.ProgramNo" attribute="value" />
+<Target xsi:type="brease" contentRefId="Station2Content" widgetRefId="numOutCurrentCount1" attribute="value" />
+</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.State.EnableService" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="numInpSealLowerEdgeHeatTemp" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.HeatSealLowerEdge" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="numOutSealLowerEdgeTemperature" attribute="value" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.VoltageSealLowerEdge" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="numOutSealLowerEdgeTemperatureV" attribute="node" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewCommandStation2Machine" attribute="result" />
+<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="numInpSealLowerEdgeHeatTemp" attribute="visible" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.Service.TempSealLowerEdge" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="numInpSealLowerEdgeHeatTemp" attribute="value" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.State.SealLowerEdgeDoClose" attribute="value" />
+			<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="imgListSealLowerEdgeClose" attribute="selectedIndex" />
+		</Binding>
+		<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.State.SealLowerEdgeIsClosed" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="imgListSealLowerEdgeClosed" attribute="selectedIndex" />
+</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Machine.MinDistance" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="numInpParameter_08_01" attribute="node" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Machine.MaxLength" attribute="node" />
+			<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="numInpParameter_08_02" attribute="node" />
+		</Binding>
+	<Binding mode="oneWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.MachineIsDirty" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="btnSave" attribute="enable" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="session" refId="varReleaseEditProgram" attribute="value" />
+<Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpProgramStation2Movement" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Station2:station2UI.EditParameter.Machine.VelocityInit" attribute="node" />
+<Target xsi:type="brease" contentRefId="content_MachineStation2" widgetRefId="cw_MacVelocityInit1" attribute="VelocityParameterNode" />
+</Binding>
+</Bindings>
+</BindingsSet>

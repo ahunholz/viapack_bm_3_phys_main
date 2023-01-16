@@ -1,0 +1,9 @@
+VAR_CONFIG
+	::HangIn:cylHangIn.Activate1 AT %QX."X20DO9322_23C1".DigitalOutput03;
+	::HangIn:cylHangInPusher.Activate1 AT %QX."X20DO9322_23C1".DigitalOutput04;
+	::HangIn:cylHangIn.Position0 AT %IX."X20DI9371_21C1".DigitalInput04;
+	::HangIn:cylHangIn.Position1 AT %IX."X20DI9371_21C1".DigitalInput05;
+	::HangIn:cylHangInPusher.Position1 AT %IX."X20DI9371_21C1".DigitalInput06;
+	::HangIn:cylHangInPusher.Position0 AT %IX."X20DI9371_21C1".DigitalInput07;
+	::HangIn:hangInIO.OUT.CloseStopper AT %QX."X20DO9322_23C1".DigitalOutput05;
+END_VAR

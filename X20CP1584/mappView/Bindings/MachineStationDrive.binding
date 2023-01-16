@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MachineStationDriveBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varMD_Header" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="txtOutHeader" attribute="value" />
+		</Binding>
+
+		<!-- POWER ON ==> -->
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.PowerIsOn" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.PowerIsOn" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="imgListPowerOn" contentRefId="PageMachineStationDriveContent" attribute="selectedIndex" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.PowerOn" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.PowerOn" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="tglSwitchPowerOn" contentRefId="PageMachineStationDriveContent" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.EnablePowerOn" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.EnablePowerOn" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="tglSwitchPowerOn" contentRefId="PageMachineStationDriveContent" attribute="enable" />
+		</Binding>	
+
+		
+			
+		<!-- <== POWER ON -->
+
+		<!-- OPEN BRAKE ==> -->
+
+		<Binding mode="oneWay">
+			<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+			<Target xsi:type="brease" widgetRefId="grpOpenBrake" contentRefId="PageMachineStationDriveContent" attribute="visible" />
+		</Binding>	
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.OpenBrakeActive" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.OpenBrakeActive" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="imgListOpenBrake" contentRefId="PageMachineStationDriveContent" attribute="selectedIndex" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.OpenBrake" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.OpenBrake" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varOpenBrake" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.EnableOpenBrake" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.EnableOpenBrake" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="btnToggleBrake" contentRefId="PageMachineStationDriveContent" attribute="enable" />
+		</Binding>	
+
+		<!-- <== OPEN BRAKE -->
+
+		<!-- TIPPEN ==> -->
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.JogUp" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.JogUp" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnUp" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.JogDown" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.JogDown" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnDown" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.EnableJogUp" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.EnableJogUp" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="btnUp" contentRefId="PageMachineStationDriveContent" attribute="enable" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.EnableJogDown" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.EnableJogDown" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="btnDown" contentRefId="PageMachineStationDriveContent" attribute="enable" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.JogVelocity" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.JogVelocity" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="sliderManualSpeed" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>	
+
+		
+
+		<!-- <== TIPPEN -->
+
+		<!-- JUSTIEREN ==> -->
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.EnableStartJust" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.EnableStartJust" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varEnableStartJust" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.StartJustUpperLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.StartJustUpperLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varStartJustUpperLimit" attribute="value" />
+		</Binding>	
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.StartJustLowerLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.StartJustLowerLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varStartJustLowerLimit" attribute="value" />
+		</Binding>	
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.StateJust" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.StateJust" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varDetectLimitState" attribute="value" />
+		</Binding>	
+				
+		<!-- <== JUSTIEREN -->
+		
+		<!-- DREHMOMENT ==> -->
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.CurrentTorque" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.CurrentTorque" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numOutCurrentTorque" contentRefId="DialogDetectLimitContent" attribute="node" />
+		</Binding>	
+
+		<!-- <== DREHMOMENT -->
+
+		<!-- POSITION ==> -->
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.CurrentPosition" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.CurrentPosition" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numOutPosition" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>	
+
+		<!-- <== POSITION -->
+		
+		<!-- PARAMETER ==> -->
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.IsDirty" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.IsDirty" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varParamDriveIsDirty" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varParamDriveIsDirty" attribute="value" />
+			<Target xsi:type="brease" widgetRefId="btnSave" contentRefId="PageMachineStationDriveContent" attribute="enable" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.SaveParameter" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.SaveParameter" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varParamDriveSave" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.ResetParameter" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.ResetParameter" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varParamDriveReset" attribute="value" />
+		</Binding>
+
+		<!-- Parameter Oberer Anschlag -->
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Factory.ReferenceUpperLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Factory.ReferenceUpperLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numInputUpperLimit" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>
+
+		<!-- Parameter Unterer Anschlag -->
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Factory.ReferenceLowerLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Factory.ReferenceLowerLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numInputLowerLimit" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>
+
+		<!-- Parameter Wagen oben -->
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Factory.OffsetULtoZero" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Factory.OffsetULtoZero" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numInputOffsetULtoZero" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>
+
+		<!-- Parameter Maximalweg -->
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Factory.WorkRange" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Factory.WorkRange" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numInputWorkRange" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>
+
+		<!-- Parameter Maximalgeschwindigkeit hoch -->
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Machine.VelocityUpMax" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Machine.VelocityUpMax" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numInputMaximumSpeedUp" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>
+
+		<!-- Parameter Maximalgeschwindigkeit runter -->
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="node">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Machine.VelocityDownMax" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Machine.VelocityDownMax" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numInputMaximumSpeedDown" contentRefId="PageMachineStationDriveContent" attribute="node" />
+		</Binding>
+
+		<!-- Parameter Maximalgeschwindigkeit runter -->
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.EnableSaveReferences" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.EnableSaveReferences" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveOffsetULtoZero" attribute="enable" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveWorkRange" attribute="enable" />
+		</Binding>
+
+		
+		
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.SaveOffsetULtoZero" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.SaveOffsetULtoZero" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varSaveOffsetULtoZero" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.SaveWorkRange" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.SaveWorkRange" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varSaveWorkRange" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveReferenceUpperLimit" attribute="enable" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveReferenceLowerLimit" attribute="enable" />
+		</Binding>
+
+		
+		
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.SaveRefUpperLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.SaveRefUpperLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varSaveReferenceUpperLimit" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.SaveRefLowerLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.SaveRefLowerLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varSaveReferenceLowerLimit" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Machine.JustageTorqueUp" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Machine.JustageTorqueUp" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varParamTorqueUpperLimit" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.Parameter.Machine.JustageTorqueDown" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.Parameter.Machine.JustageTorqueDown" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varParamTorqueLowerLimit" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.ChangedRefUpperLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.ChangedRefUpperLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varChangedReferenceUpperLimit" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.ChangedRefLowerLimit" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.ChangedRefLowerLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varChangedReferenceLowerLimit" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.ChangedOffsetULtoZero" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.ChangedOffsetULtoZero" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varChangedOffsetULtoZero" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.ChangedWorkRange" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.ChangedWorkRange" />
+				</be:List>
+			</Source>
+			<Target xsi:type="session" refId="varChangedWorkRange" attribute="value" />
+		</Binding>
+
+		<!-- <== PARAMETER -->
+
+		<!-- DIALOG DETECT LIMIT -->
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varLimitType" attribute="value" />
+				<be:List xsi:type="be:session" attribute="value">
+					<bt:Element index="0" refId="varParamTorqueUpperLimit" />
+					<bt:Element index="1" refId="varParamTorqueLowerLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="numInputTorqueLimit" contentRefId="DialogDetectLimitContent" attribute="value" />
+		</Binding>
+
+		<Binding mode="twoWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varLimitType" attribute="value" />
+				<be:List xsi:type="be:session" attribute="value">
+					<bt:Element index="0" refId="varStartJustUpperLimit" />
+					<bt:Element index="1" refId="varStartJustLowerLimit" />
+				</be:List>
+			</Source>
+			<Target xsi:type="brease" widgetRefId="btnStartDetect" contentRefId="DialogDetectLimitContent" attribute="value" />
+		</Binding>
+		
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varDetectLimitStateText" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogDetectLimitContent" widgetRefId="txtState" attribute="value" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableStartJust" attribute="value" />
+			<Target xsi:type="brease" contentRefId="DialogDetectLimitContent" widgetRefId="btnStartDetect" attribute="enable" />
+		</Binding>
+	
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnToggleBrake" attribute="visible" />
+		</Binding>
+		
+		
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputMaximumSpeedUp" attribute="enable" />
+		</Binding>
+		<Binding mode="twoWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputMaximumSpeedDown" attribute="enable" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputUpperLimit" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputLowerLimit" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputOffsetULtoZero" attribute="enable" />
+		</Binding>
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varEnableSaveReference" attribute="value" />
+			<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="numInputWorkRange" attribute="enable" />
+		</Binding>
+	
+		<Binding mode="oneWay">
+			<Source xsi:type="session" refId="varUserIsOperator" attribute="value" />
+			<Target xsi:type="expression" refId="ViewMachineDriveCommand" attribute="inA" />
+		</Binding>
+
+		<Binding mode="oneWay">
+			<Source xsi:type="listElement">
+				<Selector xsi:type="session" refId="varMD_Index" attribute="value" />
+				<be:List xsi:type="be:opcUa" attribute="value">
+					<bt:Element index="0" refId="::AxisCtrlm:axisUI.IsService" />
+					<bt:Element index="1" refId="::AxisCtrl2:axisUI.IsService" />
+				</be:List>
+			</Source>
+			<Target xsi:type="expression" refId="ViewMachineDriveCommand" attribute="inB" />
+		</Binding>
+
+	<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnOpenDetectUpperLimit" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnOpenDetectLowerLimit" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="grpMovement" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnReset" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSave" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveReferenceUpperLimit" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveReferenceLowerLimit" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveOffsetULtoZero" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="btnSaveWorkRange" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="ViewMachineDriveCommand" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageMachineStationDriveContent" widgetRefId="tglSwitchPowerOn" attribute="visible" />
+</Binding>
+</Bindings>
+</BindingsSet>

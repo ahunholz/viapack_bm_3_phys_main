@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gAlarmXCoreParameter" Type="mpalarmxcore">
+    <Group ID="mapp.AlarmX.Core">
+      <Group ID="Mapping">
+        <Group ID="[0]">
+          <Property ID="Alarm" Value="almCreateDirectoryParameter" />
+          <Selector ID="[0]" Value="Reaction">
+            <Property ID="Name" Value="ABORT" />
+          </Selector>
+          <Selector ID="[1]" Value="Escalate" />
+        </Group>
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Configuration">
+      <Group ID="[0]" Description="3400">
+        <Property ID="Name" Value="infoSaveDefaultFac" />
+        <Property ID="Message" Value="{$mnParam/txtMsgSaveDefaultFac}" />
+        <Property ID="Code" Value="3400" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[1]" Description="3401">
+        <Property ID="Name" Value="infoSaveDefaultMac" />
+        <Property ID="Message" Value="{$mnParam/txtMsgSaveDefaultMac}" />
+        <Property ID="Code" Value="3401" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[2]" Description="3402">
+        <Property ID="Name" Value="infoSaveDefaultProgram" />
+        <Property ID="Message" Value="{$mnParam/txtMsgSaveDefaultProgram}" />
+        <Property ID="Code" Value="3402" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[3]" Description="3403">
+        <Property ID="Name" Value="infoMappErrorFac" />
+        <Property ID="Message" Value="{$mnParam/txtMsgMappErrorFac} : {&amp;StatusIDFac} / {&amp;ErrorCodeFac}" />
+        <Property ID="Code" Value="3403" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[4]" Description="3404">
+        <Property ID="Name" Value="infoMappErrorMac" />
+        <Property ID="Message" Value="{$mnParam/txtMsgMappErrorMac} : {&amp;StatusIDMac} / {&amp;ErrorCodeMac}" />
+        <Property ID="Code" Value="3404" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[5]" Description="3405">
+        <Property ID="Name" Value="infoMappErrorProgram" />
+        <Property ID="Message" Value="{$mnParam/txtMsgMappErrorProgram} : {&amp;StatusIDPrg} / {&amp;ErrorCodePrg}" />
+        <Property ID="Code" Value="3405" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Name" Value="infoRejectedFac" />
+        <Property ID="Message" Value="{$mnParam/txtMsgRejectedFac}" />
+        <Property ID="Code" Value="3406" />
+        <Property ID="Severity" Value="10" />
+      </Group>
+      <Group ID="[7]" Description="3410">
+        <Property ID="Name" Value="almCreateDirectoryParameter" />
+        <Property ID="Message" Value="{$mnParam/txtMsgCreateDirectoryParameter} : {&amp;DirCreateStatus}" />
+        <Property ID="Code" Value="3410" />
+        <Property ID="Severity" Value="100" />
+        <Selector ID="Behavior" Value="PersistentAlarm">
+          <Property ID="ReactionUntilAcknowledged" Value="FALSE" />
+        </Selector>
+      </Group>
+      <Group ID="[8]" Description="3411">
+        <Property ID="Name" Value="infoCreateDirectoryTemp" />
+        <Property ID="Message" Value="{$mnParam/txtMsgCreateDirectoryTemp} : {&amp;DirCreateStatus}" />
+        <Property ID="Code" Value="3411" />
+        <Property ID="Severity" Value="20" />
+      </Group>
+    </Group>
+    <Group ID="mapp.AlarmX.Core.Snippets">
+      <Group ID="[0]">
+        <Property ID="Key" Value="DirCreateStatus" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::mnParam:createDir.status" />
+        </Selector>
+      </Group>
+      <Group ID="[1]">
+        <Property ID="Key" Value="StatusIDFac" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::mnParam:parFactoryXML.StatusID" />
+        </Selector>
+      </Group>
+      <Group ID="[2]">
+        <Property ID="Key" Value="StatusIDMac" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::mnParam:parMachineXML.StatusID" />
+        </Selector>
+      </Group>
+      <Group ID="[3]">
+        <Property ID="Key" Value="StatusIDPrg" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::mnParam:parProgramXML.StatusID" />
+        </Selector>
+      </Group>
+      <Group ID="[4]">
+        <Property ID="Key" Value="ErrorCodeFac" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::mnParam:parFactoryXML.Info.Diag.StatusID.Code" />
+        </Selector>
+      </Group>
+      <Group ID="[5]">
+        <Property ID="Key" Value="ErrorCodeMac" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::mnParam:parMachineXML.Info.Diag.StatusID.Code" />
+        </Selector>
+      </Group>
+      <Group ID="[6]">
+        <Property ID="Key" Value="ErrorCodePrg" />
+        <Selector ID="Value">
+          <Property ID="PV" Value="::mnParam:parProgramXML.Info.Diag.StatusID.Code" />
+        </Selector>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>
