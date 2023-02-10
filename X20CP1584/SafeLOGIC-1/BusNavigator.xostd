@@ -2,7 +2,7 @@
 <osdd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ethernet-powerlink.org/osdd osdd.xsd" xmlns:xlink="http://www.w3.org/1999/xlink" Version="1.6" xmlns="http://www.ethernet-powerlink.org/osdd">
   <Topology SafetyDomain="1">
     <GeneratorDescription Name="AutomationStudio" Version="4.12.3.127" LanguageID="1">
-      <Info Name="ARVersion" Value="46303" />
+      <Info Name="ARVersion" Value="49304" />
       <Info Name="SafetyRelease" Value="1.10" />
       <Info Name="Communication" Value="/IF=tcpip /LOPO=11159 /SA=1 /RT=1000 /AM=* /SDT=5 /DAIP=192.168.180.1 /REPO=11159 /ANSL=1 /PT=11169 /PORT=50000" />
     </GeneratorDescription>
@@ -15,7 +15,7 @@
       <DesignConfiguration>
         <ModuleSettings>
           <SettingsGroup id="DataFromAs">
-            <Setting id="SafeDesigner" Value="4.3.3.7" />
+            <Setting id="SafeDesigner" Value="4.4.0.0" />
           </SettingsGroup>
         </ModuleSettings>
       </DesignConfiguration>
@@ -33,6 +33,36 @@
         <Info Name="ProjectSL" Value="1" />
         <Info Name="Description-de" Value="X20 SafeLOGIC Compact, 20xE, 24V, 2xKAT4" />
         <Info Name="Description-en" Value="X20 SafeLOGIC Compact, 20xI, 24V, 2xCAT4" />
+        <Info Name="AsVariable" Value="BOOL004,Safety:safetyIO.COM.PartFallenBehindStation1" />
+        <Info Name="AsVariable" Value="BOOL009,Safety:safetyIO.COM.Lifesign" />
+        <Info Name="AsVariable" Value="SafeDigitalInput01,Safety:safetyIO.IN.RequestService" />
+        <Info Name="AsVariable" Value="SafeDigitalInput11,Safety:safetyIO.IN.PartFallen_39B1" />
+        <Info Name="AsVariable" Value="SafeDigitalInput09,Safety:safetyIO.IN.ESTOP_OK_38S5_1" />
+        <Info Name="AsVariable" Value="SafeDigitalInput06,Safety:safetyIO.IN.ESTOP_OK_X25" />
+        <Info Name="AsVariable" Value="SafeDigitalInput16,Safety:safetyIO.IN.ESTOP_OK_X15" />
+        <Info Name="AsVariable" Value="BOOL007,Safety:safetyIO.COM.IsService" />
+        <Info Name="AsVariable" Value="BOOL002,Safety:safetyIO.COM.PartFallenMachineInput" />
+        <Info Name="AsVariable" Value="BOOL102,Safety:safetyIO.COM.ButtonOffPushed" />
+        <Info Name="AsVariable" Value="SafeDigitalInput03,Safety:safetyIO.IN.ACOPOS_OK_15F1" />
+        <Info Name="AsVariable" Value="SafeDigitalInput13,Safety:safetyIO.IN.PartFallen_39B3" />
+        <Info Name="AsVariable" Value="SafeDigitalInput15,Safety:safetyIO.IN.PartFallen_39B5" />
+        <Info Name="AsVariable" Value="BOOL001,Safety:safetyIO.COM.NoPartFallen" />
+        <Info Name="AsVariable" Value="BOOL101,Safety:safetyIO.COM.ButtonOnPushed" />
+        <Info Name="AsVariable" Value="BOOL006,Safety:safetyIO.COM.PartFallenBehindStation2" />
+        <Info Name="AsVariable" Value="SafeDigitalInput10,Safety:safetyIO.IN.ESTOP_OK_38S5_2" />
+        <Info Name="AsVariable" Value="SafeDigitalInput08,Safety:safetyIO.IN.ESTOP_OK_38S1_2" />
+        <Info Name="AsVariable" Value="SafeDigitalInput05,Safety:safetyIO.IN.ESTOP_OK_X29" />
+        <Info Name="AsVariable" Value="ModuleOk,Safety:safetyIO.IN.ModulOK_SLX910" />
+        <Info Name="AsVariable" Value="BOOL008,Safety:safetyIO.COM.SwitchOnIsLocked" />
+        <Info Name="AsVariable" Value="SafeDigitalInput02,Safety:safetyIO.IN.ESTOP_OK_37S1" />
+        <Info Name="AsVariable" Value="SafeDigitalInput12,Safety:safetyIO.IN.PartFallen_39B2" />
+        <Info Name="AsVariable" Value="BOOL003,Safety:safetyIO.COM.PartFallenInFrontStation1" />
+        <Info Name="AsVariable" Value="SafeDigitalInput07,Safety:safetyIO.IN.ESTOP_OK_38S1_1" />
+        <Info Name="AsVariable" Value="SafeDigitalInput17,Safety:safetyIO.IN.ESTOP_OK_X22" />
+        <Info Name="AsVariable" Value="BOOL005,Safety:safetyIO.COM.PartFallenInFrontStation2" />
+        <Info Name="AsVariable" Value="BOOL010,Safety:safetyIO.COM.OptionStation2Disabled" />
+        <Info Name="AsVariable" Value="SafeDigitalInput04,Safety:safetyIO.IN.ESTOP_OK_37S4" />
+        <Info Name="AsVariable" Value="SafeDigitalInput14,Safety:safetyIO.IN.PartFallen_39B4" />
       </NodeDescription>
       <ChannelConfiguration>
         <DataTransport>
@@ -87,6 +117,8 @@
         <Info Name="FirstPublishedSafetyRelease" Value="1.5" />
         <Info Name="Description-de" Value="X20 Sicheres Einspeisemodul, 1xA, 24 V, 10A" />
         <Info Name="Description-en" Value="X20 Safe Power Supply, 1xO, 24 V, 10A" />
+        <Info Name="AsVariable" Value="PhysicalStateChannel1,Safety:safetyIO.OUT.ESTOP_OK" />
+        <Info Name="AsVariable" Value="ModuleOk,Safety:safetyIO.IN.ModulOK_SP1130" />
       </NodeDescription>
       <ChannelConfiguration>
         <DataTransport>
@@ -139,6 +171,9 @@
         <Info Name="FirstPublishedSafetyRelease" Value="1.5" />
         <Info Name="Description-de" Value="X20 Safe Digital Out, 2xA, 24 V, 0.5 A" />
         <Info Name="Description-en" Value="X20 Safe Digital Out, 2xO, 24 V, 0.5 A" />
+        <Info Name="AsVariable" Value="ModuleOk,Safety:safetyIO.IN.ModulOK_SO2110" />
+        <Info Name="AsVariable" Value="PhysicalStateChannel2,Safety:safetyIO.OUT.Axis2_OK" />
+        <Info Name="AsVariable" Value="PhysicalStateChannel1,Safety:safetyIO.OUT.AxisMain_OK" />
       </NodeDescription>
       <ChannelConfiguration>
         <DataTransport>
