@@ -200,5 +200,15 @@
 			</EventHandler>
 		</EventBinding>
 
+		<EventBinding id="content_PageMachine.ddbModeDI12_21C5.SelectedIndexChanged">
+			<Source xsi:type="widgets.brease.DropDownBox.Event" contentRefId="content_PageMachine" widgetRefId="ddbModeDI12_21C5" event="SelectedIndexChanged" />
+			<EventHandler>
+				<Action>
+					<Target xsi:type="opcUa.NodeAction" refId="::Machine:machineUI.EditMachineParameter.IsDirty">
+						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+					</Target>
+				</Action>
+			</EventHandler>
+		</EventBinding>
   </Bindings>
 </EventBindingSet>
