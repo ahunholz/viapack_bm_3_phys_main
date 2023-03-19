@@ -219,5 +219,9 @@
 <Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.TimeSignalAlarmOff" attribute="node" />
 <Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="numInpParameter_02_15" attribute="node" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Machine:machineUI.EditMachineParameter.Parameter.Mode21C5DI12" attribute="value" />
+<Target xsi:type="brease" contentRefId="content_PageMachine" widgetRefId="ddbModeDI12_21C5" attribute="selectedIndex" />
+</Binding>
 </Bindings>
 </BindingsSet>

@@ -1,5 +1,5 @@
 VAR_CONFIG
-	::Machine:machineIO.IN.DischrgFull_1 AT %IX."X20DI9371_21C5".DigitalInput12;
+	::Machine:machineIO.IN.DischrgSignal_1 AT %IX."X20DI9371_21C5".DigitalInput12;
 	::Machine:machineIO.IN.DischrgFull_2 AT %IX."X20DI9371_22C1".DigitalInput05;
 	::Machine:machineIO.OUT.OutputReleaseSafe AT %QX."X20DO9322_23C5".DigitalOutput06;
 	::Safety:safetyIO.OUT.AirPressureOn AT %QX."X20DO9322_23C1".DigitalOutput01;

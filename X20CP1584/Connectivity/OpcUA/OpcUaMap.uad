@@ -1,54 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<OpcUaSource FileVersion="7" ArVersion="C4.63">
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="9" ArVersion="D4.93">
   <Aliases>
     <ACLAliases>
       <ACL Id="1">
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
-        <ACE RoleId="1" RoleName="Everyone" Access="0x005F" />
+        <ACE RoleName="RlOperator" Access="0x005F" />
+        <ACE RoleName="Everyone" Access="0x005F" />
       </ACL>
       <ACL Id="11">
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0000" />
+        <ACE RoleName="RlOperator" Access="0x005F" />
+        <ACE RoleName="Everyone" Access="0x0000" />
       </ACL>
       <ACL Id="12">
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0057" />
+        <ACE RoleName="RlOperator" Access="0x005F" />
+        <ACE RoleName="Everyone" Access="0x0057" />
       </ACL>
       <ACL Id="13">
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
-        <ACE RoleId="1" RoleName="Everyone" Access="0x007F" />
+        <ACE RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleName="Everyone" Access="0x007F" />
       </ACL>
       <ACL Id="14">
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0008" />
+        <ACE RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleName="Everyone" Access="0x0008" />
       </ACL>
       <ACL Id="15">
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0008" />
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleName="Everyone" Access="0x0008" />
+        <ACE RoleName="RlOperator" Access="0x007F" />
       </ACL>
       <ACL Id="16">
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0000" />
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleName="Everyone" Access="0x0000" />
+        <ACE RoleName="RlOperator" Access="0x007F" />
       </ACL>
       <ACL Id="19">
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0008" />
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x005F" />
+        <ACE RoleName="Everyone" Access="0x0008" />
+        <ACE RoleName="RlOperator" Access="0x005F" />
       </ACL>
       <ACL Id="20">
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0057" />
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleName="Everyone" Access="0x0057" />
+        <ACE RoleName="RlOperator" Access="0x007F" />
       </ACL>
       <ACL Id="21">
-        <ACE RoleId="1" RoleName="Everyone" Access="0x005F" />
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x0017" />
+        <ACE RoleName="Everyone" Access="0x005F" />
+        <ACE RoleName="RlOperator" Access="0x0017" />
       </ACL>
       <ACL Id="22">
-        <ACE RoleId="1" RoleName="Everyone" Access="0x0017" />
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x007F" />
+        <ACE RoleName="Everyone" Access="0x0017" />
+        <ACE RoleName="RlOperator" Access="0x007F" />
       </ACL>
       <ACL Id="23">
-        <ACE RoleId="1" RoleName="Everyone" Access="0x005F" />
-        <ACE RoleId="2" RoleName="RlOperator" Access="0x0037" />
+        <ACE RoleName="Everyone" Access="0x005F" />
+        <ACE RoleName="RlOperator" Access="0x0037" />
       </ACL>
     </ACLAliases>
     <EURangeViolationAliases>
@@ -437,7 +438,7 @@
             <Variable Name="ShowRightToLeft" />
           </Variable>
         </Variable>
-        <Variable Name="AxisCtrlParameter" EnableArrayElements="True">
+        <Variable Name="AxisCtrlParameter" RecursiveEnable="1">
           <Variable Name="AxisCtrlParameter[0]">
             <Variable Name="Dynamic">
               <Variable Name="AccelerationMax" EngineeringUnitId="8" />
@@ -460,7 +461,7 @@
           </Variable>
         </Variable>
         <Variable Name="MachineParameter">
-          <Variable Name="Program" EnableArrayElements="True" />
+          <Variable Name="Program" RecursiveEnable="1" />
           <Variable Name="Factory">
             <Variable Name="HasOptionSlowTransport" />
             <Variable Name="HasOptionPrinter" />
@@ -478,18 +479,19 @@
           <Variable Name="Machine">
             <Variable Name="DelayTimeDischrgFull_1" EngineeringUnitId="5" />
             <Variable Name="DelayTimeDischrgFull_2" EngineeringUnitId="5" />
+            <Variable Name="Mode21C5DI12" />
           </Variable>
-          <Variable Name="StartUpWarningFactory" AutomaticEnable="True" />
-          <Variable Name="StartUpWarningMachine" AutomaticEnable="True" />
+          <Variable Name="StartUpWarningFactory" RecursiveEnable="1" />
+          <Variable Name="StartUpWarningMachine" RecursiveEnable="1" />
         </Variable>
         <Variable Name="PieceData">
-          <Variable Name="Data" EnableArrayElements="True" />
+          <Variable Name="Data" RecursiveEnable="1" />
         </Variable>
-        <Variable Name="CollectorParameter" AutomaticEnable="True">
-          <Variable Name="Program" EnableArrayElements="True" />
+        <Variable Name="CollectorParameter" RecursiveEnable="1">
+          <Variable Name="Program" RecursiveEnable="1" />
         </Variable>
         <Variable Name="MachineCounter">
-          <Variable Name="CounterSets" EnableArrayElements="True">
+          <Variable Name="CounterSets" RecursiveEnable="1">
             <Variable Name="CounterSets[0]">
               <Variable Name="FilmConsumtion" EngineeringUnitId="3" />
               <Variable Name="MachineTimePowerOn" EngineeringUnitId="7" />
@@ -516,12 +518,12 @@
             </Variable>
           </Variable>
         </Variable>
-        <Variable Name="BM_2_CPU_Info" AutomaticEnable="True">
+        <Variable Name="BM_2_CPU_Info" RecursiveEnable="1">
           <Variable Name="TemperatureCPU" EngineeringUnitId="4" />
           <Variable Name="TemperatureENV" EngineeringUnitId="4" />
         </Variable>
-        <Variable Name="BM_2_Version" AutomaticEnable="True" />
-        <Variable Name="MachineStatistic" AutomaticEnable="True">
+        <Variable Name="BM_2_Version" RecursiveEnable="1" />
+        <Variable Name="MachineStatistic" RecursiveEnable="1">
           <Variable Name="PeriodOutToOut" EngineeringUnitId="5" />
           <Variable Name="PeriodThrougMachine" EngineeringUnitId="5" />
         </Variable>
@@ -533,8 +535,8 @@
       </GlobalVariables>
       <Task Name="mvClient">
         <Variable Name="_MVCLIENT_MAX_IDX_CI" />
-        <Variable AclId="12" AclInherit="2" Name="UserList" EnableArrayElements="True" />
-        <Variable AclId="12" AclInherit="2" Name="ClientInfo" EnableArrayElements="True">
+        <Variable AclId="12" AclInherit="2" Name="UserList" RecursiveEnable="1" />
+        <Variable AclId="12" AclInherit="2" Name="ClientInfo" RecursiveEnable="1">
           <Variable Name="ClientInfo[0]">
             <Variable AclId="13" AclInherit="2" Name="FromClient" />
           </Variable>
@@ -545,17 +547,17 @@
             <Variable AclId="13" AclInherit="2" Name="FromClient" />
           </Variable>
         </Variable>
-        <Variable Name="editProgNo" EnableArrayElements="True" />
-        <Variable Name="editProgState" EnableArrayElements="True" />
-        <Variable AclId="14" AclInherit="2" Name="reqCopyProgNo" EnableArrayElements="True" />
-        <Variable AclId="14" AclInherit="2" Name="reqEditProgNo" EnableArrayElements="True" EURangeViolationId="2" EURangesId="44">
+        <Variable Name="editProgNo" RecursiveEnable="1" />
+        <Variable Name="editProgState" RecursiveEnable="1" />
+        <Variable AclId="14" AclInherit="2" Name="reqCopyProgNo" RecursiveEnable="1" />
+        <Variable AclId="14" AclInherit="2" Name="reqEditProgNo" RecursiveEnable="1" EURangeViolationId="2" EURangesId="44">
           <Variable Name="reqEditProgNo[0]" EURangeViolationId="2" EURangesId="44" />
           <Variable Name="reqEditProgNo[1]" EURangeViolationId="2" EURangesId="44" />
           <Variable Name="reqEditProgNo[2]" EURangeViolationId="2" EURangesId="44" />
         </Variable>
-        <Variable Name="enableResetCounterUser" EnableArrayElements="True" />
+        <Variable Name="enableResetCounterUser" RecursiveEnable="1" />
         <Variable AclId="16" AclInherit="2" Name="reloadProgram" />
-        <Variable Name="mvClientUserMgrClientUI" EnableArrayElements="True">
+        <Variable Name="mvClientUserMgrClientUI" RecursiveEnable="1">
           <Variable Name="mvClientUserMgrClientUI[0]">
             <Variable Name="LogoffButton">
               <Variable AclId="16" AclInherit="2" Name="Pressed" />
@@ -584,14 +586,14 @@
             <Variable AclId="16" AclInherit="2" Name="RequestLogIn" />
           </Variable>
         </Variable>
-        <Variable Name="mvClientUserMgrUI" AutomaticEnable="True">
+        <Variable Name="mvClientUserMgrUI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="Commands" />
-          <Variable Name="EditUserList" EnableArrayElements="True" />
-          <Variable Name="UserTypeList" EnableArrayElements="True" />
+          <Variable Name="EditUserList" RecursiveEnable="1" />
+          <Variable Name="UserTypeList" RecursiveEnable="1" />
         </Variable>
       </Task>
       <Task Name="AxisCtrlm">
-        <Variable Name="axisUI" AutomaticEnable="True">
+        <Variable Name="axisUI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="Parameter">
             <Variable AclId="11" AclInherit="2" Name="AbsuluteRange" EngineeringUnitId="3" />
             <Variable AclId="11" AclInherit="2" Name="MaxWorkRange" EngineeringUnitId="3" />
@@ -632,7 +634,7 @@
         </Variable>
       </Task>
       <Task Name="AxisCtrl2">
-        <Variable Name="axisUI" AutomaticEnable="True">
+        <Variable Name="axisUI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="Parameter">
             <Variable AclId="11" AclInherit="2" Name="AbsuluteRange" EngineeringUnitId="3" />
             <Variable AclId="11" AclInherit="2" Name="MaxWorkRange" EngineeringUnitId="3" />
@@ -673,12 +675,12 @@
         </Variable>
       </Task>
       <Task Name="mnMS">
-        <Variable Name="MS_UI" AutomaticEnable="True">
-          <Variable Name="SSFName" EnableArrayElements="True" />
-          <Variable Name="SubSysFinishedOrDis" EnableArrayElements="True" />
-          <Variable Name="SSFAddState" EnableArrayElements="True" />
+        <Variable Name="MS_UI" RecursiveEnable="1">
+          <Variable Name="SSFName" RecursiveEnable="1" />
+          <Variable Name="SubSysFinishedOrDis" RecursiveEnable="1" />
+          <Variable Name="SSFAddState" RecursiveEnable="1" />
         </Variable>
-        <Variable AclId="12" AclInherit="2" Name="mnMS_UI" AutomaticEnable="True">
+        <Variable AclId="12" AclInherit="2" Name="mnMS_UI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="SelTestMode" />
           <Variable Name="ServiceStateLight">
             <Variable Name="White">
@@ -720,14 +722,14 @@
         </Variable>
       </Task>
       <Task Name="Safety">
-        <Variable Name="safetyUI" AutomaticEnable="True">
+        <Variable Name="safetyUI" RecursiveEnable="1">
           <Variable AclId="12" AclInherit="2" Name="RemainTimeLocked" EngineeringUnitId="7" />
           <Variable AclId="16" AclInherit="2" Name="SLX910_Cmd" />
           <Variable AclId="12" AclInherit="2" Name="ShowMessageLogIn" />
         </Variable>
       </Task>
       <Task Name="BackRest">
-        <Variable Name="backrestUI" AutomaticEnable="True">
+        <Variable Name="backrestUI" RecursiveEnable="1">
           <Variable AclId="14" AclInherit="2" Name="Command" />
           <Variable AclId="14" AclInherit="2" Name="CommandBackup" />
           <Variable AclId="22" AclInherit="2" Name="SelectFactoryParameter" />
@@ -736,7 +738,7 @@
         </Variable>
       </Task>
       <Task Name="Machine">
-        <Variable Name="machineUI" AutomaticEnable="True">
+        <Variable Name="machineUI" RecursiveEnable="1">
           <Variable AclId="14" AclInherit="2" Name="DateTimeCommand" EURangeViolationId="2" EURangesId="40" />
           <Variable AclId="14" AclInherit="2" Name="SetSystemDateTime" />
           <Variable AclId="14" AclInherit="2" Name="SetAutoDayTimeSaving" />
@@ -767,6 +769,7 @@
               <Variable Name="DelayTimeDischrgFull_2" EURangesId="98" EngineeringUnitId="5" />
               <Variable Name="TimeSignalAlarmOn" EURangeViolationId="2" EURangesId="102" EngineeringUnitId="5" />
               <Variable Name="TimeSignalAlarmOff" EURangeViolationId="2" EURangesId="98" EngineeringUnitId="5" />
+              <Variable Name="Mode21C5DI12" EURangesId="40" />
             </Variable>
             <Variable Name="IsDirty" />
             <Variable Name="EditActive" />
@@ -780,16 +783,16 @@
             <Variable Name="IsDirty" />
             <Variable AclId="11" AclInherit="2" Name="OldEditProgNo" />
           </Variable>
-          <Variable Name="ProgramList" EnableArrayElements="True" />
+          <Variable Name="ProgramList" RecursiveEnable="1" />
           <Variable Name="StartProcedure">
             <Variable AclId="16" AclInherit="2" Name="AcknowledgeMove" />
           </Variable>
           <Variable AclId="16" AclInherit="2" Name="Command">
-            <Variable Name="ResetCounter" EnableArrayElements="True" />
+            <Variable Name="ResetCounter" RecursiveEnable="1" />
           </Variable>
           <Variable Name="State">
-            <Variable Name="ResetCounterET" EnableArrayElements="True" />
-            <Variable Name="ResetCounterPT" EnableArrayElements="True" />
+            <Variable Name="ResetCounterET" RecursiveEnable="1" />
+            <Variable Name="ResetCounterPT" RecursiveEnable="1" />
           </Variable>
           <Variable AclId="12" AclInherit="2" Name="MachineType" />
           <Variable AclId="22" AclInherit="2" Name="Service" />
@@ -825,7 +828,7 @@
             <Variable Name="OpcUA_ProgramSelectionType" />
           </Variable>
         </Variable>
-        <Variable Name="inputTrUI" AutomaticEnable="True">
+        <Variable Name="inputTrUI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="EditParameter">
             <Variable Name="Factory">
               <Variable Name="TypeInputConveyor" EURangeViolationId="2" EURangesId="40" />
@@ -862,12 +865,12 @@
             <Variable AclInherit="1" Name="EnableService" />
           </Variable>
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylSeparatorServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylSeparatorServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
       </Task>
       <Task Name="Collector">
-        <Variable Name="collectorUI" AutomaticEnable="True">
+        <Variable Name="collectorUI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="EditParameter">
             <Variable Name="EditFactoryActiv" />
             <Variable Name="EditMachineActiv" />
@@ -906,7 +909,7 @@
         </Variable>
       </Task>
       <Task Name="mnParam">
-        <Variable Name="mnParamUI" AutomaticEnable="True">
+        <Variable Name="mnParamUI" RecursiveEnable="1">
           <Variable AclId="14" AclInherit="2" Name="SaveFactoryParameter" />
           <Variable AclId="14" AclInherit="2" Name="SaveMachineParameter" />
           <Variable AclId="14" AclInherit="2" Name="SaveProgramParameter" />
@@ -914,7 +917,7 @@
       </Task>
       <Task Name="Station1">
         <Variable Name="parameter">
-          <Variable Name="Factory" AutomaticEnable="True" />
+          <Variable Name="Factory" RecursiveEnable="1" />
           <Variable Name="Dynamic">
             <Variable Name="HasSealLowerEdge" />
             <Variable Name="MinDistanceAllowSUE" EngineeringUnitId="3" />
@@ -930,10 +933,10 @@
             <Variable Name="ProgramIsDirty" />
             <Variable Name="EditFactoryActiv" />
             <Variable Name="EditMachineActiv" />
-            <Variable Name="Factory" AutomaticEnable="True">
+            <Variable Name="Factory" RecursiveEnable="1">
               <Variable Name="ModeSealingUpperEdge" EURangesId="40" />
             </Variable>
-            <Variable Name="Machine" AutomaticEnable="True">
+            <Variable Name="Machine" RecursiveEnable="1">
               <Variable Name="PredictionTimeCloseGripper" EURangesId="61" EngineeringUnitId="5" />
               <Variable Name="MaxLength" EURangesId="59" EngineeringUnitId="3" />
               <Variable Name="MinDistanceForSealingTop" EURangeViolationId="2" EURangesId="73" EngineeringUnitId="3" />
@@ -943,7 +946,7 @@
               <Variable Name="IndexMFO_EnableSpreader" EURangeViolationId="2" EURangesId="99" />
               <Variable Name="VelocityInit" EURangeViolationId="2" EURangesId="101" EngineeringUnitId="1" />
             </Variable>
-            <Variable Name="Program" AutomaticEnable="True">
+            <Variable Name="Program" RecursiveEnable="1">
               <Variable Name="Heating">
                 <Variable Name="HeatOnTemp" EURangeViolationId="2" EURangesId="58" EngineeringUnitId="4" />
                 <Variable Name="HeatOnTime" EURangesId="41" EngineeringUnitId="5" />
@@ -996,67 +999,67 @@
               <Variable Name="DelaySpreader" EURangesId="69" />
             </Variable>
           </Variable>
-          <Variable AclId="16" AclInherit="2" Name="Service" AutomaticEnable="True">
+          <Variable AclId="16" AclInherit="2" Name="Service" RecursiveEnable="1">
             <Variable Name="TempSealUpperEdge" EURangeViolationId="2" EURangesId="58" />
             <Variable Name="TempSealLowerEdge" EURangeViolationId="2" EURangesId="58" />
           </Variable>
-          <Variable Name="State" AutomaticEnable="True">
+          <Variable Name="State" RecursiveEnable="1">
             <Variable Name="MeasuredLength" EngineeringUnitId="3" />
             <Variable Name="VoltageSealUpperEdge" EngineeringUnitId="9" />
             <Variable Name="VoltageSealLowerEdge" EngineeringUnitId="9" />
           </Variable>
-          <Variable Name="Test" AutomaticEnable="True">
+          <Variable Name="Test" RecursiveEnable="1">
             <Variable AclId="16" AclInherit="2" Name="Length" EURangeViolationId="3" EURangesId="93" EngineeringUnitId="3" />
           </Variable>
-          <Variable AclId="23" AclInherit="2" Name="GetFilm" AutomaticEnable="True">
+          <Variable AclId="23" AclInherit="2" Name="GetFilm" RecursiveEnable="1">
             <Variable AclId="21" AclInherit="2" Name="EnableMoveUp" />
           </Variable>
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylCutterServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylCutterServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylGripperServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylGripperServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylSLE_ServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylSLE_ServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylSlitterServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylSlitterServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylSpreaderServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylSpreaderServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylSUE_ServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylSUE_ServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylFilmStopperServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylFilmStopperServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
       </Task>
       <Task Name="OutputTr">
         <Variable Name="parameter" />
-        <Variable Name="tranOutpUI" AutomaticEnable="True">
+        <Variable Name="tranOutpUI" RecursiveEnable="1">
           <Variable AclId="14" AclInherit="2" Name="EditParameter">
             <Variable Name="MachineIsDirty" />
             <Variable Name="ProgramIsDirty" />
             <Variable Name="EditMachineActiv" />
-            <Variable Name="Machine" AutomaticEnable="True">
+            <Variable Name="Machine" RecursiveEnable="1">
               <Variable Name="MFI_ReadyForUnload" EURangeViolationId="2" EURangesId="52" />
             </Variable>
-            <Variable Name="Program" AutomaticEnable="True">
+            <Variable Name="Program" RecursiveEnable="1">
               <Variable Name="DelayPusherBack" EURangeViolationId="2" EURangesId="76" EngineeringUnitId="5" />
               <Variable Name="DelayPusherForward" EURangeViolationId="2" EURangesId="76" EngineeringUnitId="5" />
             </Variable>
             <Variable AclId="19" AclInherit="2" Name="OldEditProgNo" />
           </Variable>
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylPusherServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylPusherServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
       </Task>
       <Task Name="HangIn">
-        <Variable Name="hangInUI" AutomaticEnable="True">
+        <Variable Name="hangInUI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="Service">
             <Variable AclId="11" AclInherit="2" Name="ViewService" />
             <Variable AclId="11" AclInherit="2" Name="EnableService" />
@@ -1074,18 +1077,18 @@
             </Variable>
           </Variable>
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylHangInServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylHangInServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylHangInPusherServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylHangInPusherServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
       </Task>
       <Task Name="mnMsg">
-        <Variable AclId="12" AclInherit="2" Name="mnMsgUI" AutomaticEnable="True" />
+        <Variable AclId="12" AclInherit="2" Name="mnMsgUI" RecursiveEnable="1" />
       </Task>
       <Task Name="Station2">
-        <Variable Name="station2UI" AutomaticEnable="True">
+        <Variable Name="station2UI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="Service">
             <Variable Name="TempSealLowerEdge" EURangeViolationId="2" EURangesId="58" />
           </Variable>
@@ -1121,12 +1124,12 @@
             <Variable Name="VoltageSealLowerEdge" EngineeringUnitId="9" />
           </Variable>
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylSLE_ServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylSLE_ServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
       </Task>
       <Task Name="HangOut">
-        <Variable Name="hangOutUI" AutomaticEnable="True">
+        <Variable Name="hangOutUI" RecursiveEnable="1">
           <Variable AclId="16" AclInherit="2" Name="Service" />
           <Variable AclId="16" AclInherit="2" Name="EditParameter">
             <Variable AclId="11" AclInherit="2" Name="OldEditProgNo" />
@@ -1145,22 +1148,22 @@
             </Variable>
           </Variable>
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylHangOutServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylHangOutServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylHangOutTransferServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylHangOutTransferServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" />
         </Variable>
-        <Variable AclId="22" AclInherit="2" Name="cylHangOutStopperServiceUI" AutomaticEnable="True">
+        <Variable AclId="22" AclInherit="2" Name="cylHangOutStopperServiceUI" RecursiveEnable="1">
           <Variable Name="PeriodTime" EURangeViolationId="2" EURangesId="94" EngineeringUnitId="5" />
         </Variable>
       </Task>
       <Task Name="Sealing">
-        <Variable Name="sealingUI" AutomaticEnable="True" />
+        <Variable Name="sealingUI" RecursiveEnable="1" />
       </Task>
       <Task Name="BM_2_Info">
-        <Variable Name="siteManagerUI_Con" AutomaticEnable="True" />
-        <Variable Name="siteManagerUI_Cfg" AutomaticEnable="True">
+        <Variable Name="siteManagerUI_Con" RecursiveEnable="1" />
+        <Variable Name="siteManagerUI_Cfg" RecursiveEnable="1">
           <Variable AclId="23" AclInherit="2" Name="CmdSave" />
           <Variable AclId="23" AclInherit="2" Name="CmdReset" />
           <Variable AclId="23" AclInherit="2" Name="EditedParameter" />
