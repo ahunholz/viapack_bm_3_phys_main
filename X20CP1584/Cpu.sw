@@ -30,7 +30,7 @@
     <Task Name="mnParam" Source="System.PkgParameter.mnParam.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="BackRest" Source="System.PkgBackuRestore.BackRest.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="globalvar" Source="System.PkgGlobal.globalvar.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="BM_2_Info" Source="System.PkgInfo.BM_2_Info.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="BM_3_Info" Source="System.PkgInfo.BM_3_Info.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <DataObjects>
     <DataObject Name="assl1" Source="" Memory="UserROM" Language="Binary" />
