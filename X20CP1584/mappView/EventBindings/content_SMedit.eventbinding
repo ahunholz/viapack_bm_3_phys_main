@@ -5,37 +5,37 @@
 		<EventBinding>
 			<Source xsi:type="clientSystem.Event" event="DialogOpened" />
 			<Operand name="opModeIP" datatype="ANY_INT">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Static" > 
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter.IP_Static" > 
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
 			<Operand name="opProxyOn" datatype="ANY_INT">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.PROX_Yes" > 
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter.PROX_Yes" > 
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
 			<Operand name="opIPAddress" datatype="ANY_STRING">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Address" > 
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter.IP_Address" > 
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
 			<Operand name="opIPMask" datatype="ANY_STRING">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Mask" > 
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter.IP_Mask" > 
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
 			<Operand name="opIPGateway" datatype="ANY_STRING">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.IP_Gateway" > 
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter.IP_Gateway" > 
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
 			<Operand name="opProxyIPAddress" datatype="ANY_STRING">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.PROX_Address" > 
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter.PROX_Address" > 
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
 			<Operand name="opProxyUsername" datatype="ANY_STRING">
-				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter.PROX_User" > 
+				<ReadTarget xsi:type="opcUa.NodeAction.Read" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter.PROX_User" > 
 					<Method xsi:type="opcUa.NodeAction.GetValue" />
 				</ReadTarget>
 			</Operand>
@@ -166,63 +166,63 @@
 				<Sequence>
 					<Step order="0">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Static">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.IP_Static">
 								<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=opModeIP" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="1">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_Yes">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.PROX_Yes">
 								<Method xsi:type="opcUa.NodeAction.SetValueNumber" value="=opProxyOn" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="2">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Address">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.IP_Address">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opIPAddress" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="3">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Mask">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.IP_Mask">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opIPMask" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="4">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.IP_Gateway">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.IP_Gateway">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opIPGateway" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="5">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_Address">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.PROX_Address">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opProxyIPAddress" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="6">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_User">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.PROX_User">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opProxyUsername" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="7">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.EditedParameter.PROX_Password">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.EditedParameter.PROX_Password">
 								<Method xsi:type="opcUa.NodeAction.SetValueString" value="=opProxyPassword" />
 							</Target>
 						</Action>
 					</Step>
 					<Step order="8">
 						<Action>
-							<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.CmdSave">
+							<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.CmdSave">
 								<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
 							</Target>
 						</Action>

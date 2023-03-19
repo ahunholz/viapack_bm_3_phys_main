@@ -816,7 +816,7 @@
 			<Source contentRefId="PageSettingContent" widgetRefId="btnResetSM" xsi:type="widgets.brease.Button.Event" event="Click" />
 			<EventHandler>
 				<Action>
-					<Target xsi:type="opcUa.NodeAction" refId="::BM_2_Info:siteManagerUI_Cfg.CmdReset">
+					<Target xsi:type="opcUa.NodeAction" refId="::BM_3_Info:siteManagerUI_Cfg.CmdReset">
 						<Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
 					</Target>
 				</Action>

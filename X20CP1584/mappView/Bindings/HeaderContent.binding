@@ -82,7 +82,7 @@
 
 
 		<Binding mode="oneWay">
-			<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.IdxSymbol" attribute="value" />
+			<Source xsi:type="opcUa" refId="::BM_3_Info:siteManagerUI_Con.IdxSymbol" attribute="value" />
 			<Target xsi:type="snippet" refId="SnippetSiteManagerState" attribute="value" />
 		</Binding>
 
@@ -96,15 +96,15 @@
 <Target xsi:type="brease" contentRefId="PageEditProgramContent" widgetRefId="grpPar56_03" attribute="visible" />
 </Binding>
 	<Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.Visible" attribute="value" />
+<Source xsi:type="opcUa" refId="::BM_3_Info:siteManagerUI_Con.Visible" attribute="value" />
 <Target xsi:type="brease" contentRefId="HeaderContent" widgetRefId="lbSitemanager" attribute="visible" />
 </Binding>
 <Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.Visible" attribute="value" />
+<Source xsi:type="opcUa" refId="::BM_3_Info:siteManagerUI_Con.Visible" attribute="value" />
 <Target xsi:type="brease" contentRefId="HeaderContent" widgetRefId="imgSitemanager" attribute="visible" />
 </Binding>
 <Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Con.Visible" attribute="value" />
+<Source xsi:type="opcUa" refId="::BM_3_Info:siteManagerUI_Con.Visible" attribute="value" />
 <Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="TabItemSiteManager" attribute="visible" />
 </Binding>
 

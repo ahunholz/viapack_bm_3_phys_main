@@ -518,11 +518,11 @@
             </Variable>
           </Variable>
         </Variable>
-        <Variable Name="BM_2_CPU_Info" RecursiveEnable="1">
+        <Variable Name="BM_3_CPU_Info" RecursiveEnable="1">
           <Variable Name="TemperatureCPU" EngineeringUnitId="4" />
           <Variable Name="TemperatureENV" EngineeringUnitId="4" />
         </Variable>
-        <Variable Name="BM_2_Version" RecursiveEnable="1" />
+        <Variable Name="BM_3_Version" RecursiveEnable="1" />
         <Variable Name="MachineStatistic" RecursiveEnable="1">
           <Variable Name="PeriodOutToOut" EngineeringUnitId="5" />
           <Variable Name="PeriodThrougMachine" EngineeringUnitId="5" />
@@ -1161,13 +1161,13 @@
       <Task Name="Sealing">
         <Variable Name="sealingUI" RecursiveEnable="1" />
       </Task>
-      <Task Name="BM_2_Info">
+      <Task Name="BM_3_Info">
         <Variable Name="siteManagerUI_Con" RecursiveEnable="1" />
         <Variable Name="siteManagerUI_Cfg" RecursiveEnable="1">
           <Variable AclId="23" AclInherit="2" Name="CmdSave" />
           <Variable AclId="23" AclInherit="2" Name="CmdReset" />
           <Variable AclId="23" AclInherit="2" Name="EditedParameter" />
-        </Variable>
+		</Variable>
       </Task>
     </Module>
   </DefaultView>

@@ -1,5 +1,5 @@
 VAR_CONFIG
-	::BM_2_Info:siteManagerIO.ModulOK AT %IX."0RMSM1115".ModuleOk;
-	::BM_2_Info:siteManagerIO.ConnectionStatus01 AT %IB."0RMSM1115".ConnectionStatus01;
-	::BM_2_Info:siteManagerIO.StatusUPLINK1 AT %IB."0RMSM1115".StatusUPLINK1;
+	::BM_3_Info:siteManagerIO.ModulOK AT %IX."0RMSM1115".ModuleOk;
+	::BM_3_Info:siteManagerIO.ConnectionStatus01 AT %IB."0RMSM1115".ConnectionStatus01;
+	::BM_3_Info:siteManagerIO.StatusUPLINK1 AT %IB."0RMSM1115".StatusUPLINK1;
 END_VAR

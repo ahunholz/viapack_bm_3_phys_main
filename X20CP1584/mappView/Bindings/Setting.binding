@@ -732,15 +732,15 @@
 </Binding>
 
 <Binding mode="oneWay">
-<Source xsi:type="opcUaComplexObject" refId="::BM_2_Info:siteManagerUI_Cfg.Parameter" />
+<Source xsi:type="opcUaComplexObject" refId="::BM_3_Info:siteManagerUI_Cfg.Parameter" />
 <Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="SitemanagerCfgInfo" attribute="value" />
 </Binding>
 <Binding mode="oneWay">
-<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Cfg.CmdResetVisible" attribute="value" />
+<Source xsi:type="opcUa" refId="::BM_3_Info:siteManagerUI_Cfg.CmdResetVisible" attribute="value" />
 <Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="btnResetSM" attribute="visible" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::BM_2_Info:siteManagerUI_Cfg.StateUI" attribute="value" />
+<Source xsi:type="opcUa" refId="::BM_3_Info:siteManagerUI_Cfg.StateUI" attribute="value" />
 <Target xsi:type="brease" contentRefId="PageSettingContent" widgetRefId="TextOutputSMstate" attribute="value" />
 </Binding>
 <Binding mode="oneWay">
