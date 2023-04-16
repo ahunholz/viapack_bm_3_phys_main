@@ -106,5 +106,13 @@
 <Source xsi:type="opcUa" refId="::Station1:station1UI.EditParameter.Machine.VelocityInit" attribute="node" />
 <Target xsi:type="brease" contentRefId="PageMachineStation1Content" widgetRefId="cw_MacVelocityInit1" attribute="VelocityParameterNode" />
 </Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="IsDischargeFull" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="lbOccupiedDischrg_1" attribute="visible" />
+</Binding>
+<Binding mode="oneWay">
+<Source xsi:type="expression" refId="IsDischargeReady" attribute="result" />
+<Target xsi:type="brease" contentRefId="PageOverviewContent" widgetRefId="lbOccupiedDischrg_1a" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>
